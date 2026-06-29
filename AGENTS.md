@@ -2,6 +2,11 @@
 
 This file captures the working studio hardware context for future Codex sessions in this folder.
 
+## Documentation Rules
+
+- In Mermaid connection diagrams, every physical cable must have its own line/edge. Do not combine stereo pairs, paired line outputs, or USB chains into a single diagram edge.
+- Internal device routing may be shown, but it must be labeled as internal routing rather than as a cable.
+
 ## Device Summary
 
 ### Focusrite Scarlett 4i4
@@ -50,45 +55,48 @@ This file captures the working studio hardware context for future Codex sessions
 ## Connection Diagram
 
 ```mermaid
-flowchart LR
-    subgraph AudioSources["Audio sources"]
-        MPCL["Akai MPC One Plus<br/>Main Out L"]
-        MPCR["Akai MPC One Plus<br/>Main Out R"]
+flowchart TB
+    subgraph MPC["Akai MPC One Plus"]
+        direction TB
+        MPCL["Main Out L"]
+        MPCR["Main Out R"]
     end
 
-    subgraph Saffire["Focusrite Saffire Pro 40<br/>standalone, default routing"]
+    subgraph Saffire["Focusrite Saffire Pro 40<br/>standalone default routing"]
+        direction TB
         SaffireIn3["Rear line input 3"]
-        SaffireIn4["Rear line input 4"]
         SaffireOut3["Line output 3"]
+        SaffireIn4["Rear line input 4"]
         SaffireOut4["Line output 4"]
-        SaffireIn3 --> SaffireOut3
-        SaffireIn4 --> SaffireOut4
+        SaffireIn3 -. "internal route" .-> SaffireOut3
+        SaffireIn4 -. "internal route" .-> SaffireOut4
     end
 
-    subgraph Interface["Focusrite Scarlett 4i4"]
+    subgraph Scarlett["Focusrite Scarlett 4i4"]
+        direction TB
         ScarlettIn3["Rear line input 3"]
         ScarlettIn4["Rear line input 4"]
         ScarlettUSB["USB audio interface"]
-        ScarlettIn3 --> ScarlettUSB
-        ScarlettIn4 --> ScarlettUSB
+        ScarlettIn3 -. "internal audio path" .-> ScarlettUSB
+        ScarlettIn4 -. "internal audio path" .-> ScarlettUSB
     end
 
-    subgraph Mac["Mac"]
-        Logic["Logic<br/>stereo audio track input 3-4"]
-    end
+    Logic["Mac / Logic<br/>stereo audio track input 3-4"]
 
-    subgraph MIDI["MIDI control"]
+    subgraph MIDI["USB MIDI control"]
+        direction TB
         V49["Alesis V49 MKII"]
-        Hub["Gitfos C1Pro USB hub<br/>or direct USB"]
+        Hub["Gitfos C1Pro USB hub"]
     end
 
     MPCL -- "1/4 inch cable" --> SaffireIn3
     MPCR -- "1/4 inch cable" --> SaffireIn4
-    SaffireOut3 -- "left" --> ScarlettIn3
-    SaffireOut4 -- "right" --> ScarlettIn4
-    ScarlettUSB -- "USB" --> Logic
-    V49 -- "USB MIDI" --> Hub
-    Hub -- "USB" --> Logic
+    SaffireOut3 -- "1/4 inch cable" --> ScarlettIn3
+    SaffireOut4 -- "1/4 inch cable" --> ScarlettIn4
+    ScarlettUSB -- "USB cable" --> Logic
+
+    V49 -- "USB cable" --> Hub
+    Hub -- "USB cable" --> Logic
 ```
 
 ## Current Stereo Capture Path

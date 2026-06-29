@@ -1,0 +1,16 @@
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
+  max-width: none;
+}
+
+.markdown-rendered .mermaid {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.markdown-rendered .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
