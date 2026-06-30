@@ -2,6 +2,26 @@
 
 This note covers MIDI behavior between the Akai MPC One Plus and Logic Pro 12.2. It intentionally keeps MIDI separate from the Saffire audio path except where the audio path is needed to hear MPC internal sounds.
 
+## RESOLVED: MPC -> Logic DIN MIDI Working (verified 2026-06-30)
+
+Root cause of the "no MIDI in Logic" failure: the Scarlett 4i4's 5-pin MIDI OUT was cabled straight back into the Scarlett's own MIDI IN (an accidental self-loopback). The MPC was therefore never in the MIDI path, so every test failed in both directions regardless of MPC or Logic settings. This was a cabling fault, not a software-settings fault. The previously suspected causes (drum track vs MIDI track, MPC preference toggles, Logic input routing) were not the problem.
+
+Correct cabling, OUT-to-IN at each end:
+
+- `MPC One Plus MIDI OUT -> 5-pin DIN -> Scarlett 4i4 MIDI IN` (MPC into Logic; this is the goal path, verified working).
+- `Scarlett 4i4 MIDI OUT -> 5-pin DIN -> MPC One Plus MIDI IN` (Logic into MPC; reverse path, cabled).
+
+Verified-working Logic receive setup (2026-06-30):
+
+- Incoming DIN MIDI arrives as a CoreMIDI source under `Scarlett 4i4 4th Gen`, not as an `Akai`/`MPC` device. In Audio MIDI Setup > MIDI Studio the Scarlett shows online with 1 MIDI In and 1 MIDI Out.
+- A record-enabled Software Instrument track captured a MIDI region from the MPC. Logic merges all MIDI inputs into the record-enabled (or focused) instrument track, so no per-device input selector is needed.
+
+Second gotcha (after the cabling fix): not every MPC pad was bound to send on the MIDI track, so hitting an unbound pad produced nothing in Logic and looked like a continued failure. Only pads mapped to the MIDI track transmit out the DIN. When testing, hit a pad you know is bound (or play the recorded sequence), not an arbitrary empty pad.
+
+Reverse direction (Logic -> MPC) also verified working 2026-06-30. Key gotcha: when you create a Logic External MIDI track, its **MIDI Destination defaults to `Logic Pro Virtual Out`**, which goes nowhere physical. You must change the MIDI Destination to **`Scarlett 4i4 4th Gen`** (channel 1 for the first pass). With that set, Logic's Musical Typing (or any region/controller on that track) transmits out the DIN and triggers the MPC's internal sounds. Audio MIDI Setup's "Test Setup" send is not a reliable way to test this and was misleading; use a correctly-routed Logic External MIDI track instead.
+
+Note on proof: an External MIDI track has no internal instrument, so notes on it can only leave via the assigned hardware MIDI port. The proof it crossed the wire is hearing the MPC's own engine (audio returns on Scarlett inputs 3-4), which Logic cannot produce by any other means. On the External MIDI track, Audio Input can be `No Input` and Audio Output `No Output` so the track is pure MIDI.
+
 ## Current Bench State
 
 Observed on 2026-06-30:
@@ -123,10 +143,20 @@ Scarlett 4i4 USB-C cable -> Mac
 
 Logic setup:
 
-- Use `Track > New External MIDI Track`.
-- Route the external MIDI track to `Scarlett 4i4 4th Gen`.
+- Use `Track > New External MIDI Track` (or the `+` button > MIDI > External MIDI).
+- In the create dialog, expand `Details` and set `MIDI Destination` to `Scarlett 4i4 4th Gen` - this defaults to `Logic Pro Virtual Out`, which sends MIDI nowhere physical. This is the single most common reason "Logic -> MPC" appears dead.
 - Use MIDI channel 1 for the first pass unless the MPC drum track is set to a different channel.
+- Optional but clean: set Audio Input `No Input` and Audio Output `No Output` so the track only transmits MIDI.
 - Keep a separate stereo audio track on input 3-4 to hear or record the MPC main outputs.
+
+What you are actually hearing:
+
+- The sound is produced by the MPC's internal engine, not by Logic. The Logic External MIDI track has no instrument loaded; it only transmits note number, velocity, and channel. Do not confuse this with a Logic software instrument.
+- The instrument is defined on the MPC, by three things:
+  - Which MPC track receives the MIDI. Set by `Preferences > MIDI / Sync` for the input port named `MPC`: `Global` routes incoming MIDI to the currently selected MPC track/program; `Track` makes the port selectable as a track's `MIDI Input` (the track whose `MIDI Input = MPC` on a matching channel receives it).
+  - The program loaded on that receiving track: Drum (kit of samples), Keygroup (multisampled instrument), or Plugin (internal MPC synth). Changing this program changes the sound; nothing in Logic changes.
+  - The note number selects the specific sound within the program. For a Drum program, notes ~36-51 map to the 16 pads, so a note with no pad mapped produces silence. For Keygroup/Plugin programs the note is the pitch.
+- The audio returns to Logic over the separate path: MPC Main Out L/R -> Saffire -> Scarlett inputs 3-4 -> Logic. MIDI and this audio are independent.
 
 MPC project setup:
 
