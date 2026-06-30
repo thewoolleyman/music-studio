@@ -89,10 +89,10 @@ flowchart TB
         Hub["Gitfos C1Pro USB hub"]
     end
 
-    MPCL -- "1/4 inch cable" --> SaffireIn3
-    MPCR -- "1/4 inch cable" --> SaffireIn4
-    SaffireOut3 -- "1/4 inch cable" --> ScarlettIn3
-    SaffireOut4 -- "1/4 inch cable" --> ScarlettIn4
+    MPCL -->|1/4" TRS cable| SaffireIn3
+    MPCR -->|1/4" TRS cable| SaffireIn4
+    SaffireOut3 -->|1/4" TRS cable| ScarlettIn3
+    SaffireOut4 -->|1/4" TRS cable| ScarlettIn4
     ScarlettUSB -- "USB cable" --> Logic
 
     V49 -- "USB cable" --> Hub
