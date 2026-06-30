@@ -41,8 +41,10 @@ This file captures the working studio hardware context for future Codex sessions
 - Role: Standalone sampler/sequencer/groovebox and stereo audio source.
 - Folder: `Akai MPC One Plus`
 - Manual: `Akai MPC One Plus/MPC Standalone OS - User Guide - v3.9.pdf`
+- Logic MIDI setup note: `Akai MPC One Plus/logic-midi-setup.md`
 - Current audio path: MPC main left/right outputs feed Scarlett 18i20 rear line inputs 3/4.
 - Cable approach: Use two separate 1/4" TRS cables for stereo, one for left and one for right. Short TS instrument cables can work if needed.
+- Current MIDI investigation: As of 2026-06-30, the active Logic Pro 12.2 bench uses the Scarlett 4i4 as the Mac MIDI interface. Audio MIDI Setup showed the Scarlett 4i4 and Alesis V49 MKII online, but did not show an Akai/MPC USB MIDI endpoint after rescan. Do not assume USB MIDI is working until the MPC appears in macOS; use the Scarlett 4i4 5-pin DIN MIDI path as the fallback.
 
 ### Roland V-Drums V51
 
