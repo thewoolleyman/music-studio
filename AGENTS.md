@@ -95,11 +95,11 @@ flowchart TB
         ScarlettIn6["Rear line input 6"]
         ScarlettMidiIn["MIDI IN"]
         ScarlettUSB["USB-C computer port"]
-        ScarlettIn3 -. "internal audio path" .-> ScarlettUSB
-        ScarlettIn4 -. "internal audio path" .-> ScarlettUSB
-        ScarlettIn5 -. "internal audio path" .-> ScarlettUSB
-        ScarlettIn6 -. "internal audio path" .-> ScarlettUSB
-        ScarlettMidiIn -. "internal MIDI interface" .-> ScarlettUSB
+        ScarlettIn3 -.-> ScarlettUSB
+        ScarlettIn4 -.-> ScarlettUSB
+        ScarlettIn5 -.-> ScarlettUSB
+        ScarlettIn6 -.-> ScarlettUSB
+        ScarlettMidiIn -.-> ScarlettUSB
     end
 
     Logic["Mac / Logic"]
@@ -110,10 +110,10 @@ flowchart TB
         Hub["Gitfos C1Pro USB hub"]
     end
 
-    MPCL -->|1/4" TRS cable| ScarlettIn3
-    MPCR -->|1/4" TRS cable| ScarlettIn4
-    V51OutL -->|1/4" TRS cable| ScarlettIn5
-    V51OutR -->|1/4" TRS cable| ScarlettIn6
+    MPCL -->|1/4&quot; TRS cable| ScarlettIn3
+    MPCR -->|1/4&quot; TRS cable| ScarlettIn4
+    V51OutL -->|1/4&quot; TRS cable| ScarlettIn5
+    V51OutR -->|1/4&quot; TRS cable| ScarlettIn6
     V51Midi -->|5-pin DIN MIDI cable| ScarlettMidiIn
     ScarlettUSB -->|USB-C cable| Logic
     V51USB -->|USB-C data cable| Logic
