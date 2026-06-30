@@ -1,0 +1,25 @@
+# macOS Finder and volume metadata
+.DS_Store
+**/.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100/
+.Trashes/
+.TemporaryItems/
+.fseventsd/
+Icon?
+
+# Removable-media and download cruft
+*.crdownload
+*.download
+*.part
+*.tmp
+*.temp
+
+# Roland device/browser sidecar metadata; keep manuals and installers tracked.
+Roland*/**/.DS_Store
+Roland*/**/._*
+Roland*/**/*.crdownload
+Roland*/**/*.download
+Roland*/**/*.part
