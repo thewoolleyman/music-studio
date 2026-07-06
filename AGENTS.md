@@ -7,6 +7,10 @@ This file captures the working studio hardware context for future Codex sessions
 - In Mermaid connection diagrams, every physical cable must have its own line/edge. Do not combine stereo pairs, paired line outputs, or USB chains into a single diagram edge.
 - Diagram edge labels must specify the cable type, such as `1/4" TRS cable`, `5-pin DIN MIDI cable`, or `USB-C cable`, rather than generic labels like `audio cable` or `USB cable`.
 - Internal device routing may be shown, but it must be labeled as internal routing rather than as a cable.
+- Preserve physical device identity in diagrams. Do not collapse multiple devices into a generic `Input devices` box just to make layout easier.
+- Keep stereo pairs visually grouped within their actual device, but still draw one cable edge per left/right connection.
+- Preferred diagram layout: input/source devices on the top row, the primary interface/mixer alone on the middle row, and monitoring/USB/computer destinations on the bottom row.
+- If a bidirectional MIDI loop causes Mermaid to make a bad horizontal layout, use an undirected edge for one physical MIDI cable rather than flattening device structure.
 
 ## Device Summary
 
@@ -82,14 +86,31 @@ This file captures the working studio hardware context for future Codex sessions
 
 ```mermaid
 flowchart TB
-    subgraph Inputs["Input devices"]
+    subgraph Sources["Input / source devices"]
         direction LR
-        V51OutL["V51 MASTER OUT L/MONO"]
-        V51OutR["V51 MASTER OUT R"]
-        MPCL["MPC Main Out L"]
-        MPCR["MPC Main Out R"]
-        MPCMidiOut["MPC MIDI OUT"]
-        MPCMidiIn["MPC MIDI IN"]
+
+        subgraph V51["Roland V-Drums V51"]
+            direction TB
+            subgraph V51Stereo["Stereo audio outputs"]
+                direction LR
+                V51OutL["MASTER OUT L/MONO"]
+                V51OutR["MASTER OUT R"]
+            end
+        end
+
+        subgraph MPC["Akai MPC One Plus"]
+            direction TB
+            subgraph MPCStereo["Stereo audio outputs"]
+                direction LR
+                MPCL["Main Out L"]
+                MPCR["Main Out R"]
+            end
+            subgraph MPCMidi["5-pin MIDI ports"]
+                direction LR
+                MPCMidiOut["MIDI OUT"]
+                MPCMidiIn["MIDI IN"]
+            end
+        end
     end
 
     subgraph Scarlett["Focusrite Scarlett 18i20 4th Gen"]
