@@ -1,0 +1,21 @@
+"Alert" = "Aviso";
+"FailToUninstall" = "Se ha producido un error en el proceso de desinstalación.";
+"DeviceFound" = "Desconecte los dispositivos USB, excepto el ratón y el teclado USB, del ordenador Mac. Tras desconectar los dispositivos USB, reinicie de nuevo este programa de desinstalación.";
+"SureToUninstall" = "¿Está seguro de que desea desinstalar el controlador?";
+"FinishUninstall" = "Proceso de desinstalación terminado. Haga clic en el botón Reiniciar.";
+"NoNeedUninstall" = "Como el controlador no existe en este Mac, no hay necesidad de desinstalarlo. Haga clic en el botón Salir.";
+"QuitBtn" = "Salir";
+"UninstallBtn" = "Desinstalar";
+"RestartBtn" = "Reiniciar";
+"CancelBtn" = "Cancelar";
+"OKBtn" = "Aceptar";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "PreScript Message, it returns negative value that leads app quits.";
+"PreScrptMsgP" = "PreScript Message, it returns positive value that leads back to top page.";
+"PostScrptMsgN" = "PostScript Message, it returns negative value that leads app quits.";
+"PostScrptMsgP" = "PostScript Message, it returns positive value that leads back to top page.";
+
+/* Messages */
+"IDS_FILEERROR" = "Los archivos estan incompletos o no se pueden leer.\nEl programa se ha finalizado.";
+"IDS_UNKNOWN_OS" = "El sistema operativo que utiliza no es compatible.\nCompruebe los sistemas operativos compatibles.";

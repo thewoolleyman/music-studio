@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0024)http://www.roland.co.jp/ -->
+<HTML lang="fr">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>README_FR - V51 Driver for macOS</TITLE>
+<STYLE type="text/css">
+<!--
+BODY	{background-color: #FFFFFF;	color: #000000;}
+DL	{margin-left: 15pt;}
+DT	{font-weight: bold;	margin-bottom: 5pt;}
+DT.FN	{font-weight: normal;	margin-bottom: 0pt;}
+DD.FS	{font-size: smaller;}
+OL.FS	{font-size: smaller;}
+LI.OL	{margin-bottom: 15pt;}
+TABLE	{margin-top: 3pt;	margin-bottom: 5pt;}
+TD	{vertical-align: top;	font-size: smaller;}
+H3	{color: #000080;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H2>Pilote V51 Ver.1.0.0 pour macOS 13/14/15</H2>
+
+<FONT size="-1">Remarque<BR>Roland Corporation (« Roland ») ne peut en aucun cas être tenu responsable, vis-à-vis des utilisateurs finaux, de quelque dommage qui soit, incluant, mais sans s'y limiter, les préjudices financiers occasionnés par la perte de bénéfices commerciaux ou la perte de données commerciales résultant de l'exploitation de ce produit ou de l'impossibilité d'utiliser celui-ci. La disposition présente s'applique même dans le cas où Roland a été informé de l'éventualité de tels dommages.</FONT>
+
+<TABLE><TR><TD>*</TD><TD>Tous les fichiers et autres éléments contenus dans ce dossier sont protégés par le droit d'auteur de Roland.  L'altération, la modification, la duplication, la distribution et la reproduction de ces éléments sont interdits. En outre, Roland se réserve le droit d'introduire des changements au sein de ces programmes et fichiers sans préavis.</TD></TR></TABLE>
+<TABLE cellspacing="0">
+<TR><TD>*</TD><TD>Apple et Mac sont des marques commerciales d'Apple Inc., déposées aux États-Unis et dans d'autres pays. </TD></TR>
+<TR><TD>*</TD><TD>macOS est une marque commerciale d'Apple Inc.</TD></TR>
+<TR><TD>*</TD><TD>Tous les noms de produits mentionnés dans le présent document sont des marques ou des marques déposées appartenant à leurs propriétaires respectifs.</TD></TR>
+</TABLE>
+
+<HR>
+
+<H2><A name="anchor0000">À propos de ce pilote</A></H2>
+
+	
+	Ce pilote sert à faire fonctionner le V51 sous macOS 13/14/15.
+
+		<BR>Pour exploiter ce pilote, il faut régler le USB AUDIO – Driver Mode du V51 sur &quot;VENDOR&quot;. 
+
+
+
+<H3><A name="anchor0005">Caractéristiques</A></H3>
+	<UL>
+		<LI>Pilote 'Universal Binary'(Pilote fonctionnant à la fois sur des processeurs Apple Silicon et Intel)</LI>
+		<LI>Compatibilité avec Apple CoreAudio et CoreMIDI</LI>
+		<LI>Personnalisation de la taille de la mémoire tampon du pilote et gestion précise des latences en lecture et enregistrement</LI>
+	</UL>
+
+<H3><A name="anchor0010">Configuration système requise</A></H3>
+	<P>Conditions d'exécution du pilote </P>
+	<TABLE><TR><TD>*</TD><TD>Vérifiez également la Configuration système requise pour l'application audio/MIDI et le système d'exploitation utilisés.</TD></TR></TABLE>
+	<DL>
+
+	<DT>Système d'exploitation</DT>
+		<DD>macOS 13/14/15</DD>
+		<DD>&nbsp;</DD>
+
+	<DT>Ordinateur</DT>
+		<DD>Ordinateur Apple Mac équipé d'un port USB intégré
+		<TABLE>
+			<TR><TD>*</TD><TD>Pilote fonctionnant à la fois sur des processeurs Apple Silicon et Intel</TD></TR>
+			<TR><TD>*</TD><TD>Les ordinateurs Mac fonctionnant avec Windows ne sont pas pris en charge.</TD></TR>
+        </TABLE>        
+		</DD>
+
+</DL>
+
+
+
+<H3><A name="anchor0020">Précautions et restrictions d'utilisation</A></H3>
+	<UL>
+		<LI>Avant de lancer votre application audio/MIDI, connectez votre V51 à votre ordinateur à l'aide du câble USB et mettez l’appareil sous tension.</LI>
+		<LI>Veillez à ne pas mettre le V51 hors tension ni à déconnecter le câble USB durant les opérations de lecture ou d'enregistrement. Ceci pourrait entraîner l'arrêt inopportun de votre logiciel ou système d'exploitation.</LI>
+		<LI>Fermez votre application audio/MIDI avant de couper l'alimentation de votre V51 ou de débrancher le câble USB.</LI>
+		<LI>Si vous démarrez ou redémarrez Mac alors que Le V51 est encore connecté à Mac, il se peut que le pilote ne se charge pas correctement et que vous puissiez pas utiliser Le V51.Dans ce cas, débranchez Le V51 et branchez-le sur un autre port USB ou mettez Le V51 sous tension après le démarrage de Mac.</LI>
+		<LI>Vous devez déconnecter le V51 de l'ordinateur avant d'effectuer une mise à jour logicielle du système macOS. Si vous procédez à une mise à jour de macOS tout en laissant le V51 connecté, vous serez obligé de réinstaller le pilote.</LI>
+		<LI>Si le  V51 ne fonctionne pas correctement lorsque l'ordinateur passe du mode Suspendre l'activité au mode de fonctionnement normal ou après le redémarrage du système d'exploitation, fermez toutes les applications utilisant le V51 et débranchez, puis rebranchez le câble USB du V51.</LI>
+	</UL>
+<HR>
+<H2><A name="anchor0100">Installation</A></H2>
+	<TABLE>
+		<TR><TD>*</TD><TD>Veillez à fermer au préalable toutes les applications en cours d'exécution. Votre ordinateur redémarrera lors de la procédure d'installation du pilote.</TD></TR>
+	</TABLE>
+	<OL>
+		<LI class="OL">Démarrez l'ordinateur en ayant pris soin, au préalable, de déconnecter tous les câbles USB(à l'exception de ceux du clavier et de la souris).
+			<TABLE><TR><TD>*</TD><TD>Ne connectez pas le V51 à votre ordinateur avant d'y avoir été invité.</TD></TR></TABLE></LI>
+		<LI class="OL">Double-cliquez sur V51_USBDriver13.pkg pour lancer l'installeur.</LI>
+		<LI class="OL">Suivez les instructions à l'écran pour procéder à l'installation.
+			<TABLE>
+				<TR><TD>*</TD><TD>Si le message &quot;« Programme d'installation » souhaite accéder aux fichiers de votre dossier de téléchargement.&quot; s'affiche pendant l'installation, cliquez sur [OK].</TD></TR>
+			</TABLE></LI>
+		<LI class="OL">Lorsque l'installation est terminée, cliquez sur [Redémarrer] pour redémarrer votre ordinateur.
+			<TABLE>
+				<TR><TD>*</TD><TD>Si vous êtes invité à confirmer le déplacement du programme d'installation vers la corbeille, cliquez sur [Conserver].</TD></TR>
+				<TR><TD>*</TD><TD>Le redémarrage de votre ordinateur peut prendre un certain temps.</TD></TR>
+			</TABLE></LI>
+    </OL>
+    <P>
+        Lorsque l’ordinateur redémarre, connectez le V51 à l’ordinateur avec un câble USB, puis mettez le V51 sous tension.
+    </P>
+	<TABLE>
+		<TR><TD>*</TD><TD>Lorsqu’on vous invite à confirmer l'autorisation de connexion de votre périphérique USB, cliquez sur [Autoriser].</TD></TR>
+	</TABLE>
+	<P>L'installation du pilote V51 est à présent terminée.</P>
+	<TABLE>
+		<TR><TD>*</TD><TD>Le fichier Lisez-moi et le désinstallateur du pilote sont installés dans le dossier Applications - Roland - V51 Driver.</TD></TR>
+	</TABLE>
+
+<HR>
+	<H2><A name="anchor0200">Avant de commencer</A></H2>
+
+
+		<TABLE><TR><TD>*</TD><TD>Pour exploiter ce pilote, il faut régler le USB AUDIO – Driver Mode du V51 sur &quot;VENDOR&quot;. </TD></TR></TABLE>
+
+
+
+
+		<H3><A name="anchor0210">Réglage des entrées/sorties audio sous macOS</A></H3>
+		<OL>
+  <LI class="OL">Connectez le V51 à votre ordinateur avec un câble USB puis mettez le V51 sous tension.
+  </LI>
+  <LI class="OL">Dans &quot;Réglages Système&quot;, cliquez sur &quot;Son&quot;.</LI>
+  <LI class="OL">Dans &quot;Émettre les effets sonores via&quot; et &quot;Sortie et entrée&quot;, sélectionnez &quot;V51&quot;.<BR>
+  </LI>
+</OL>
+
+		<H3><A name="anchor0220">Réglage des entrées/sorties MIDI sous macOS</A></H3>
+<OL>
+  <LI class="OL">Connectez le V51 à votre ordinateur avec un câble USB puis mettez le V51 sous tension.
+  </LI>
+
+  <LI class="OL">Dans le dossier Applications - Utilitaires, double-cliquez sur &quot;Configuration audio et MIDI&quot; pour lancer l'application.</LI>
+  <LI class="OL">Dans le menu Fenêtre, sélectionnez &quot;Afficher le studio MIDI&quot; pour ouvrir la fenêtre de Studio MIDI.</LI>
+  <LI class="OL">Dans la fenêtre &quot;Studio MIDI&quot;, vérifiez que le modèle &quot;V51&quot; est affiché.
+    <TABLE>
+      <TR><TD>*</TD><TD>Si le modèle &quot;V51&quot; n'est pas affiché ou qu'il apparaît en grisé, cela signifie que le V51 n'est pas correctement reconnu. Double-cliquez sur &quot;Réinitialiser&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAOpSURBVEhLxVfNL2NxFD3vtT5ShNigaZuqqe2ImdFuNLPB3h/AasbOwkokrETsRSysbCQSsRaCHSZTIoZFSz/MlNkJQhVt3/zOnXYyM31TNcmY+8vxmvd+H+ede+59oRkq7u7u8PXsK3RdFzxXZLNZZNIZ2B12VFRUAKlUyjgKHZHTfwueTx5aLBoz3M1upNPpHN/nD6vVingsDt3IGshkMyLZ/0L+fF236CAhpdaTYLFYUF5eXgDeN5tfFOp8rtNikZjhcDmQyWRyohUPTdPk0NPTU6ysrCAcDuPq6go1NTVobW1Fd3c3HA4H7u/v5aBSgkQSnxOKjPKM0+UsiQyJlJWVYXZ2Fpubm6iurpZ7LpcLoVBIcq+MCL/fj4GBATw8PJREiGS+fP4Cnbn6RbIiIJHJyUns7u6ivr5eXuDy8hI+nw8zMzOw2+2oqqrC3t4eJiYmZL7ZPmYQz2hQQ73dY2AfWF9fRzQahc1mk9T09/djbm4OnZ2dosro6KikinNPTk4kjfxttl8B1NAVL1Omv4OxuLgoqbm4uMD4+Di8Xi+GhoawvLwMNs6xsTHxEIlRoaWlJVlntl8B1NANzTBn+hModzwel15EMC0NDQ1ChL44ODjA4OCgqEUluDk7OaWPRCKy3mzfn0EeaoViztIuAjUdZ6dnYjSS6XjTgY2NDUkXD2dlUTE+p4GpEglRIT7TtVz7KALyKNkzv4dFU/1EDfnNHqHmJJNJvH/3Xirp9vZWnqnV/FOwXwHU0LPG92ri9U9g1TTaG+XKt93+sI3A2wBSt6kf5csrFXnZ9lJUY2qoYlNTk3wMzfbNI3++KPMY83QmDU+zR4gQwWAQiUQCU1NTqKurE0Oz1Kenp8Uj+/v7ohZ988L7Qtab7ZvHdwpqKPcbbrf70aZXWVmJtbU1LCwsSLdlf+nr60MgEMjNgJT+/Pw8amtrcX19jd7eXvT09IiPigWJs0C0cChsNHuaS+rANCubHnsIzUtfMBUkx0riZ4Kk6R2n04mRkRFJ3WNBMupLoKpJBXNWCrjx8PAw2tvbcX5+Lpuwn7CEWU1MC++3tbX9IGK2jxkYT1KGwRznP5Srq6vS5G5ubkQpdt+urq6/+lBSGe3w4NDwtHhKJpMPGpmkxIC54OEkwdQ9JUgmGokqMp8OjRZvS0m5/VdBLx6Hj6EpsxnBj0H4/D4pwVwfe55QolotVmxtbqHD3wH57yB5k8ROcEceUrLnCrGGevlXr1/BVmXDN/6aBv+IRenaAAAAAElFTkSuQmCC" width="35" height="23" alt=""/>. Alternativement, mettez le V51 hors tension puis sous tension à nouveau.</TD></TR>
+      <TR><TD>*</TD><TD>Si vous avez précédemment installé une autre version de ce pilote, il se peut que le système ait conservé les réglages y afférents. Le cas échéant, cliquez sur les mentions &quot;V51&quot; apparaissant en grisé afin de sélectionner l'élément correspondant, puis cliquez sur &quot;Retirer&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAGbSURBVEhLzVfLboJAFL13wNKPULoRf8FuTBM/vKau6g53DdCYoh9RHGB6z4BuSoo2LePBQ8Zk5J4c7mNkI9BHTXmek1KKRv6IiOlvYfCRWwsJSYoV6VJTXdcUhiGN7iTusTiaOI6hyRm28RaGGE6T1EyjKVVV1eoeHp7nUZZk8mbELhFn7XJFxGfFpDzfs+qY2RkB3/dJ2dWNgHfvOzMOx85z5pAfSKHkuqwbmtBhXxMSyDUBhWy+FLAzCIKLiL3XADo4yzKDDtiXM8j2NE0pSRK7/gllWdJsNqMoiuy6DxBuJ4CpxaYraLv6Bez6bR9ZOp8JH/qdAXzPp1Nf6kNVVlRW/a4A1pmPnDh5S8wknDgv7X2+l2qSBmhYbHJM6LA5w7XUumNCh6pZhtWNUEFVVzUMTeiw48BeHV1xMLaX0lp3zoqhiaOvnKzEJVEHfFM8AJvATWwuPguzel7R4mlhFZ43/BdwlmpDnOKtX9a0XC7J/jsoioI2rxvb+IL74Lz5DHxvDmS/hvggj2iKBX0Fa8RFw5s/zmW4BvQFiq7KOllybi8AAAAASUVORK5CYII=" width="35" height="23" alt=""/> pour supprimer les réglages précédents.</TD></TR>
+    </TABLE>
+  </LI>
+
+
+  <LI class="OL">Pour vérifier le bon fonctionnement de la transmission/réception MIDI, exécutez la procédure suivante.</LI>
+  <LI class="OL">Cliquez sur &quot;Tester&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAMVSURBVEhLxVdNT1pBFD3vgYrWmOjChZLGjzRxo4lK1ETpopAgcWPiXuMvcOePcOWfcee6LqqJsbjAr0cAq3FpBEF5vM65OOTxOtqmVnvgeHnjnbmHO3c+sDyFarWKqx9XsG1b+F6o1+tway4GogPo6OgAKpWKd5o9pab/BsanDsu5cLyh4SHUarUnve+PcDiMnJOD7dU9uHVXUmaidn4tCdP4pI5vKUXeYHQQrutKBz9YPyqL2N3dfWr5eySTSViWJUGDCIVCuCxewnLOHS/6MWoUw6La3NzE7e2tdAjCNLU6C35w7J6eHmxtbYGLJQiOXcwXYcOCKDaRuLm5QXd3Nzo7O1vIoFNTU5iYmGgyFotJe9CX/TkOYYpDUofNtHEqTCRMGSGYlfHxcYyNjTVJQc8tBD2OKQ5JHbbSZVRK6s50DJL1lMlkkM1mmzw6OpJ2k7+GKY5QvWyl6xeVmkR7ezv6+vrQ29vbwv7+fhSLRVxfXzdZKBSkPejL/nq8YIwm1cv2LM+sVFFDbUhi7+/vxepnTgnJOmGRtrW1iU/QT1vCFIekDpVTpVbtNSYSpVIJqVQKuVwOS0tLcBwH6cW02EQigcSXBPL5PBZTi4029cx2v186nW6uIlMckjp+WzOPj4+Ix+OyvOfn58UuxBfEiphkAnd3d4h/bvjwme1+P/arVBvZMcURsmbqXmM10Qb5L8FghCmOji+ZkbdBrR/ButGW+NM2whhH3syMmqyWqvbRj7W1NbHr6+stllhdXRXLNt3P5EcEY2hSB06yJ56qCznCgyRWVlbEvhbLy8tiTXEYnzos/uEVwnQ2RSIRbGxsYHJyUrb1INTYT58a6TeBmyBX5OHhIba3t1uWuQZ3Z14hRMzwyPCLp/bOzo7Y5wK+BN2P2wKtfzfWoBh1r4J1nDn2RkZHjGIICuIu/Fo8PDwYhRAUc3F+ocR8P/ZGP40aj/b3Aq8qZydnsMrlsrf/bR+zc7OouerEbV1Ebws16+FQGHtf9zAzNwP5dVAulXGwfyD/fO7K8BaQ0lBffjo2ja4PXfgJxk+JldoZAp0AAAAASUVORK5CYII=" width="35" height="23" alt=""/>.
+    <TABLE><TR><TD>*</TD><TD>L'étape suivante entraîne l'émission d'un son trop fort pour être produit sur un générateur audio. Il vaut mieux d'abord baisser complètement le volume du générateur.</TD></TR></TABLE>
+  </LI>
+  <LI class="OL">Cliquez sur &#x25BC; du V51 comme illustré à l'étape 4. Si vous entendez du bruit, les paramètres ont été correctement définis.</LI>
+  <LI class="OL">Cliquez à nouveau sur &quot;Tester&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAN4SURBVEhLxVfNaxNBFP/N7jb9EBUKgrRpbBulIOKl0vai4tdBBA8e1JtfePSgUgSLVQ8evehd8B/wIOhFL17swRbBtkI/0rRp0oKiUMW4SXd3fG92YifptEXE+mt+ebuzL+/95s2b3a2QhFKphMWFRTiOo7hZiKIIYRCiJdmC+vp6wPd9OTUxxZr+Gzg/6xDZmaxs72hHEARa7+bD8zzMZmfhyEgijEJVMhsdROT89+Q4tvjMSn5BimRrshVhGGqdK/CofUIp8PCNHhDa/glkbG4eBlwhEUTxuQnXdVHIFyCymaxMppJWMdxTrfcdLHwXSLh60EDZsrIJTx8YKFPolq0ShbsRaK+sAovJ5/IkhnqmLdVmFZNISIhrLnY06wEDPgk52SVRMgQ1kJCXE0LZWnz+SkV6HKJcXl1eFjOfm4fDa0UNbaXCGjudRZzqinB8t2Y6wum91eKqoOPY8jBZhyOoEYSws4KQ1rmW3E8vJhy8no75ivj8o4j7zOJfgS2PIv9lpjMytSu1Zs+4/S727yTlulAmeKlqYVsil+b1fk5APgrX7JncXI62NnW4VSmRQRXEN18drlgdkBuYWU8CuElZCPvU+i0ZAmx5mKyDtz/4XmMjQxaB28ckPuQF7p0gOy9w52hsbxySuHFQYrQgMHAkHrtO5zxu+g3S71FW4ax5mKwDmamMDJYDWfJLqyilL3F1ObZXtL3E9qe2frWPOVbjh4uxteXh/KzDiWS8m9jWkuahPvrLsJWO5PPaa+aY6RdbW55KfrWb1MeyjlXQfQCfx4nKavy+pi3D5kew5lEfQfcZUs/KbDRn1H8uPu8/H89WWe1y62zlGlld0Co/5ciw52GyDjE5MSk7OjvW2Nq00y57kE8qe5hnyYFNy9hojI4uUJynAW3tyvUV8NamJ0Eshl8hbGIaGoDtAx7O7AvR3EiTjuPGWB1zBeTH1WdQH+AL7chnYy6WHgT0/hSPm2Ax6hWCT2zryAyWBT4N0pvYNocegA4aEwbr1iFdbyDLrHMd9XuOw/FseZhKx/jYuOxMd1orw6BYFJQO1qvERqBK+cvVjwUTXJmZzAyJGR2X6T1pWkvLfXqTwO+/05PTEMViUQ6/G0ZvXy+CkBrV7It/Daq253oYejuEnr4eqP8Oij+KGBkeURe5ZJsF1Ro0+e4D3Wja0oRfJO5QwcBxWYgAAAAASUVORK5CYII=" width="35" height="23" alt=""/> pour confirmer la vérification.</LI>
+  <LI class="OL">Dans le menu Configuration audio et MIDI, sélectionnez &quot;Quitter Configuration audio et MIDI&quot; pour sortir des réglages.</LI>
+</OL>
+
+
+
+<H3><A name="anchor0230">Avant d'utiliser le V51 avec un logiciel</A></H3>
+<OL>
+  <LI class="OL">Connectez le V51 à votre ordinateur avec un câble USB. Vous pouvez ensuite lancer le logiciel que vous comptez utiliser.
+  </LI>
+  <LI class="OL">Sélectionnez &quot;V51&quot; comme pilote audio de votre logiciel.
+  </LI>
+
+  <LI class="OL">Sélectionnez &quot;V51&quot; comme pilote MIDI de votre logiciel.</LI>
+</OL>
+<P>Pour plus de détails, reportez-vous au manuel fourni avec votre logiciel. </P>
+
+<HR>
+<H2><A name="anchor0300">Pour modifier les réglages (V51 Driver Setup)</A></H2>
+<H3><A name="anchor0310">Pour modifier ou tester les réglages</A></H3>
+
+	<OL>
+	<LI class="OL">Connectez le V51 à votre ordinateur avec un câble USB puis mettez le V51 sous tension.
+	</LI>
+
+	<LI class="OL">Dans le dossier Applications - Roland - V51 Driver, double-cliquez sur &quot;V51 Driver Setup&quot; pour lancer l'application.<BR>Le panneau Paramètres du pilote apparaît.</LI>
+	</OL>
+
+<H3><A name="anchor0320">À propos des éléments de la fenêtre Paramètres du pilote</A></H3>
+	<DL>
+
+	<DT>&quot;Taille de la mémoire tampon&quot;</DT>
+		<DD>Vous pouvez modifier la taille de la mémoire tampon pour l'entrée/sortie audio.</DD>
+		<DD>Une mémoire tampon moins importante permet de réduire la latence et d'améliorer les performances en temps réel mais peut augmenter les risques d'apparitions de clics et de craquements selon la puissance de traitement de votre ordinateur et la quantité de données du morceau.<BR>Une mémoire tampon plus importante augmente la latence mais permet de stabiliser la diffusion audio en continu et diminue les risques d'apparition de clics et de craquements.</DD>
+		<DD>De manière générale, il est conseillé de réduire la taille de la mémoire tampon pour améliorer les performances lors de la lecture en temps réel d'un synthétiseur logiciel ou lors du contrôle d'un signal audio d'entrée traité par votre logiciel DAW.<BR>À l'inverse, augmentez la mémoire tampon pour éviter l'apparition de clics et de craquements lors de l'enregistrement et la lecture de morceaux comprenant plusieurs pistes et qui représentent une charge de traitement importante.</DD>
+		<DD>En adaptant la taille de la mémoire tampon à vos besoins, vous pouvez obtenir le bon équilibre entre les performances en temps réel et la stabilité de diffusion audio en continu.</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Marge d'enregistrement&quot;</DT>
+		<DD>Si les données audio enregistrées présentent des pertes de niveau ou des bruits après que vous ayez réglé la taille de la mémoire tampon dans votre logiciel et ajusté le réglage &quot;Taille de la mémoire tampon&quot; comme expliqué ci-dessus, essayez d'augmenter la valeur du paramètre &quot;Marge d'enregistrement&quot;.
+		<TABLE><TR><TD>*</TD><TD>Notez que certains logiciels ne permettent pas d'ajuster la taille de la mémoire tampon.</TD></TR></TABLE>
+		</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Synchronisation de l'enregistrement&quot;</DT>
+		<DD>Si la synchronisation des données audio enregistrées est incorrecte, modifiez cette valeur.</DD>
+		<DD>&nbsp;</DD>
+	<DT class="FN"><FONT size="-1">Remarque :<BR>Lorsque vous cliquez sur [Appliquer] durant l'exécution de votre logiciel audio, les changements de réglage ne sont pas immédiatement appliqués. Les réglages modifiés ne prennent effet qu'après le redémarrage du logiciel audio.</FONT></DT>
+	</DL>
+
+
+<HR>
+<H2><A name="anchor0400">Désinstallation du pilote</A></H2>
+	<OL>
+	<LI class="OL">Démarrez l'ordinateur en ayant pris soin, au préalable, de déconnecter tous les câbles USB<BR>(à l'exception de ceux du clavier et de la souris).</LI>
+	<LI class="OL">Double-cliquez sur &quot;Uninstaller&quot;.</LI>
+	<LI class="OL">À l'écran &quot;Désinstalle le pilote V51 de l'ordinateur Mac&quot;, cliquez sur [Désinstaller].
+		<TABLE><TR><TD>*</TD><TD>Si d'autres messages s'affichent, suivez les instructions correspondantes.</TD></TR></TABLE></LI>
+	<LI class="OL">À l'écran &quot;Êtes-vous sûr de vouloir désinstaller le pilote ?&quot;, cliquez sur [OK].</LI>
+	<LI class="OL">Une boîte de dialogue vous demande alors de saisir un mot de passe ; saisissez votre mot de passe et cliquez sur [OK].</LI>
+	<LI class="OL">À l'écran &quot;La désinstallation est à présent terminée.&quot;, cliquez sur [Redémarrer]. Votre ordinateur redémarre.
+		<TABLE><TR><TD>*</TD><TD>Le redémarrage de votre ordinateur peut prendre un certain temps.</TD></TR></TABLE></LI>
+	</OL>
+<HR>
+<H2><A name="anchor0500">Dysfonctionnements</A></H2>
+
+<H3><A name="anchor0540">Impossible d'installer/de désinstaller le pilote</A></H3>
+	<DL>
+
+	<DT>Suivez la procédure décrite ci-dessous pour démarrer l'installateur/le désinstallateur.</DT>
+	
+		<DD><OL class="FS">
+			<LI class="OL">Maintenez la touche Contrôle enfoncée, puis cliquez sur l'icône de l'installateur/du désinstallateur.</LI>
+			<LI class="OL">Dans le menu qui s'affiche, sélectionnez &quot;Ouvrir&quot;.</LI>
+			<LI class="OL">Lorsque vous êtes invité à confirmer que vous souhaitez lancer l'application, cliquez sur &quot;Ouvrir&quot;.</LI>
+		</OL></DD>
+
+	<DT>Les paramètres Sécurité peuvent avoir un effet. Utilisez la procédure suivante pour vérifier les paramètres  Sécurité dans  macOS.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">Dans &quot;Réglages Système&quot;, cliquez sur &quot;Confidentialité et sécurité&quot;.</LI>
+		<LI class="OL">Dans les paramètres Sécurité , modifiez le paramètre &quot;Autoriser les applications depuis&quot; ou &quot;Autoriser les applications téléchargées depuis&quot; en &quot;L'App Store et les développeurs connus&quot; ou &quot;L'App Store et les développeurs identifiés&quot;.</LI>
+		<LI class="OL">Une boîte de dialogue apparaîtra vous invitant à confirmer les modifications. Entrez le mot de passe et cliquez sur [Modifier les réglages].
+			<TABLE><TR><TD>*</TD><TD>Une fois l'installation ou la désinstallation du pilote terminée, répétez la procédure pour rétablir le paramètre d'origine.</TD></TR></TABLE></LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+
+<H3><A name="anchor0505">Le V51 ne peut pas être utilisé ni reconnu</A></H3>
+	<DL>
+		<DT>Le USB AUDIO – Driver Mode du V51 est il réglé sur &quot;VENDOR&quot; ?</DT>
+			<DD class="FS">Assurez-vous de régler le USB AUDIO – Driver Mode du V51 sur &quot;VENDOR&quot;.</DD>
+			<DD>&nbsp;</DD>
+	<DT>L'ordinateur est-il passé en mode de suspension automatique d'activité alors que le V51 est connecté et sous tension ?</DT>
+		<DD class="FS">Si l'ordinateur est passé en mode de suspension automatique d'activité alors que le V51 est connecté et sous tension, ce dernier risque de ne pas fonctionner correctement. Dans ce cas, dès que l'ordinateur repasse en mode de fonctionnement normal, quittez toutes les applications faisant appel au V51, puis remettez le V51 sous tension.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Si vous démarrez ou redémarrez Mac alors que Le V51 est encore connecté à Mac, il se peut que le pilote ne se charge pas correctement et que vous puissiez pas utiliser Le V51.</DT>
+		<DD class="FS">Dans ce cas, débranchez Le V51 et branchez-le sur un autre port USB ou mettez Le V51 sous tension après le démarrage de Mac.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0510">Aucun son ne sort. Impossible de lire ou d’enregistrer</A></H3>
+	<DL>
+	<DT>Êtes-vous passé en mode de suspension automatique d'activité en cours de lecture ou d'enregistrement ?</DT>
+		<DD class="FS">Si vous passez en mode de suspension automatique d'activité en cours de lecture ou d'enregistrement, vous ne pouvez plus effectuer de lecture ou d'enregistrement à partir du V51. Quittez toutes les applications en cours de lecture ou d'enregistrement et mettez le V51 hors tension puis sous tension à nouveau.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Essayez de régler la taille de la mémoire tampon audio du pilote</DT>
+		<DD class="FS">Si la taille de la mémoire tampon audio est trop petite, le son ne peut être émis ou il est impossible d’effectuer des opérations de lecture ou d’enregistrement dans des conditions normales.</DD>
+		<DD class="FS">Dans ce cas, voir &quot;<A href="ReadmeFR2.htm#anchor0310">Pour modifier ou tester les réglages</A>,&quot; et augmentez la taille de la mémoire tampon. </DD>
+		<DD>&nbsp;</DD>
+	<DT>Les paramètres Confidentialité peuvent avoir un effet. Utilisez la procédure suivante pour vérifier les paramètres de votre Confidentialité dans macOS.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">Dans &quot;Réglages Système&quot;, cliquez sur &quot;Confidentialité et sécurité&quot;.</LI>
+		<LI class="OL">Dans la liste des paramètres Confidentialité, sélectionnez &quot;Microphone&quot;.</LI>
+		<LI class="OL">Activez les commutateurs à côté de chaque application pour laquelle l'accès à l'entrée audio doit être autorisé.</LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+<H3><A name="anchor0520">Des coupures sonores ou des bruits se produisent occasionnellement</A></H3>
+	<DL>
+	<DT>Essayez de régler la taille de la mémoire tampon audio du logiciel que vous utilisez.</DT>
+		<DD class="FS">Tout d'abord, essayez de régler la taille de la mémoire tampon audio du logiciel que vous utilisez.<BR>Si des pertes de niveau ou des bruits se produisent encore en cours de lecture ou d'enregistrement, essayez de régler la &quot;<A href="ReadmeFR2.htm#anchor0300">Taille de la mémoire tampon</A>&quot; dans le panneau &quot;Paramètres du pilote&quot;.
+		<TABLE><TR><TD>*</TD><TD>Notez que certains logiciels ne permettent pas d'ajuster la taille de la mémoire tampon.</TD></TR></TABLE></DD>
+		<DD>&nbsp;</DD>
+	<DT>Auriez-vous exécuté une mise à jour du logiciel macOS alors que le périphérique était encore connecté ?</DT>
+		<DD class="FS">Si vous exécutez une mise à jour du logiciel macOS alors que le périphérique est connecté, des pertes de niveau sonore risquent de se produire. Dans ce cas, réinstallez le pilote.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Le V51 est-il relié à un Hub USB ?</DT>
+		<DD class="FS">Essayez de connecter le V51 directement au port USB de votre ordinateur.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0530">Des interruptions sonores ou des bruits sont occasionnellement audibles sur les données audio enregistrées</A></H3>
+	<DL>
+	<DD class="FS">Si les données audio enregistrées comportent des pertes de niveau sonore ou des bruits alors que vous avez réglé la taille de la mémoire tampon audio, comme indiqué au paragraphe &quot;Des coupures sonores ou des bruits se produisent occasionnellement&quot; (ci-dessus), essayez d'augmenter la valeur de &quot;<A href="ReadmeFR2.htm#anchor0300">Marge d'enregistrement</A>&quot; dans le panneau Paramètres du pilote.<BR>
+		<TABLE><TR><TD>*</TD><TD>Notez que certains logiciels ne permettent pas d'ajuster la taille de la mémoire tampon.</TD></TR></TABLE></DD>
+	</DL>
+
+<HR>
+
+<P>Copyright (C) 2025 Roland Corporation. Tous droits réservés.</P>
+
+</BODY>
+</HTML>

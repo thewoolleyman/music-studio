@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0024)http://www.roland.co.jp/ -->
+<HTML lang="nl">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>README_NL - V51 Driver for macOS</TITLE>
+<STYLE type="text/css">
+<!--
+BODY	{background-color: #FFFFFF;	color: #000000;}
+DL	{margin-left: 15pt;}
+DT	{font-weight: bold;	margin-bottom: 5pt;}
+DT.FN	{font-weight: normal;	margin-bottom: 0pt;}
+DD.FS	{font-size: smaller;}
+OL.FS	{font-size: smaller;}
+LI.OL	{margin-bottom: 15pt;}
+TABLE	{margin-top: 3pt;	margin-bottom: 5pt;}
+TD	{vertical-align: top;	font-size: smaller;}
+H3	{color: #000080;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H2>V51 Stuurprogramma Ver.1.0.0 voor macOS 13/14/15</H2>
+
+<FONT size="-1">Opmerking<BR>In geen geval wordt Roland Corporation ("Roland") aansprakelijk gehouden ten opzichte van eindgebruikers voor eventuele schade, inclusief maar niet beperkt tot financiële schade door verlies of winstderving voortkomende uit het gebruik van het product of onvermogen om het product te gebruiken. Het voorgaande is van kracht, zelfs als Roland werd geïnformeerd over de mogelijkheid van dergelijke schade.</FONT>
+
+<TABLE><TR><TD>*</TD><TD>Alle bestanden en ander materiaal in deze map zijn auteursrechtelijk beschermd door Roland. Deze informatie mag niet gewijzigd, aangepast, gekopieerd, verdeeld of nagemaakt worden. Bovendien behoudt Roland het recht om deze programma’s en bestanden te wijzigen zonder voorafgaande kennisgeving.</TD></TR></TABLE>
+<TABLE cellspacing="0">
+<TR><TD>*</TD><TD>Apple en Mac zijn handelsmerken van Apple Inc., geregistreerd in de VS en andere landen.</TD></TR>
+<TR><TD>*</TD><TD>macOS is een handelsmerk van Apple Inc.</TD></TR>
+<TR><TD>*</TD><TD>Alle productnamen in dit document zijn handelsmerken of gedeponeerde handelsmerken van hun respectieve eigenaars.</TD></TR>
+</TABLE>
+
+<HR>
+
+<H2><A name="anchor0000">Over dit stuurprogramma</A></H2>
+
+	
+	Dit is een stuurprogramma voor het gebruik van V51 op macOS 13/14/15.
+
+		<BR>Om dit stuurprogramma te gebruiken moet u de USB AUDIO – Driver Mode van de V51 op &quot;VENDOR instellen.&quot;
+
+
+
+<H3><A name="anchor0005">Functies</A></H3>
+	<UL>
+		<LI>Universal Binary stuurprogramma(Dit stuurprogramma werkt zowel op Apple Silicon als Intel-processors.)</LI>
+		<LI>Compatibel met de Apple-standaarden van CoreAudio en CoreMIDI.</LI>
+		<LI>Kan buffergrootte van het stuurprogramma aanpassen en nauwkeurig de opname- en afspeellatenties bepalen.</LI>
+	</UL>
+
+<H3><A name="anchor0010">Systeemvereisten</A></H3>
+	<P>Dit stuurprogramma heeft de volgende vereisten.</P>
+	<TABLE><TR><TD>*</TD><TD>Controleer ook de Systeemvereisten voor de audio/MIDI-toepassing en het besturingssysteem dat u gebruikt.</TD></TR></TABLE>
+	<DL>
+
+	<DT>Besturingssysteem</DT>
+		<DD>macOS 13/14/15</DD>
+		<DD>&nbsp;</DD>
+
+	<DT>Computer</DT>
+		<DD>Apple Mac series computer met geïntegreerde USB
+		<TABLE>
+			<TR><TD>*</TD><TD>Dit stuurprogramma werkt zowel op Apple Silicon als Intel-processors.</TD></TR>
+			<TR><TD>*</TD><TD>Mac computers met Microsoft Windows worden niet ondersteund.</TD></TR>
+        </TABLE>        
+		</DD>
+
+</DL>
+
+
+
+<H3><A name="anchor0020">Waarschuwingen en beperkingen</A></H3>
+	<UL>
+		<LI>Voordat u uw audio-/MIDI-toepassing start, sluit u V51 met de USB-kabel aan op uw computer en zet u de stroom aan.</LI>
+		<LI>Schakel de V51 uit of koppel de USB-kabel los tijdens het afspelen of opnemen. Hierdoor kan uw software of besturingssysteem abnormaal afsluiten.</LI>
+		<LI>Sluit uw audio-/MIDI-toepassing voordat u de stroom van V51 uitschakelt of de USB-kabel loskoppelt.</LI>
+		<LI>Als u Mac opstart of opnieuw opstart terwijl de V51 nog steeds verbonden is met Mac, wordt het stuurprogramma mogelijk niet correct geladen en kunt u de V51 mogelijk niet gebruiken.Koppel in dat geval de V51 los en sluit deze aan op een andere USB-poort of schakel de V51 in nadat Mac wordt opgestart.</LI>
+		<LI>U moet de V51 van de computer loskoppelen voordat u een software-update voor macOS uitvoert. Als u de macOS software-update hebt uitgevoerd met de V51 aangesloten, moet u mogelijk het stuurprogramma opnieuw installeren.</LI>
+		<LI>Indien de V51 niet naar behoren functioneert nadat u terugkeert uit de Sluimer-modus of nadat het bedieningssysteem opnieuw is gestart, sluit u alle toepassingen die de V51 gebruiken af, koppelt u de USB-kabel van de V51 los en sluit u deze opnieuw aan.</LI>
+	</UL>
+<HR>
+<H2><A name="anchor0100">Installatie</A></H2>
+	<TABLE>
+		<TR><TD>*</TD><TD>Let erop dat u vooraf alle actieve toepassingen sluit. Uw computer wordt opnieuw opgestart tijdens de installatie van het stuurprogramma.</TD></TR>
+	</TABLE>
+	<OL>
+		<LI class="OL">Start de computer met alle USB-kabels losgekoppeld.(behalve toetsenbord en muis)
+			<TABLE><TR><TD>*</TD><TD>Sluit de V51 niet aan op uw computer totdat u daarom wordt gevraagd.</TD></TR></TABLE></LI>
+		<LI class="OL">Dubbelklik op V51_USBDriver13.pkg om het installatieprogramma te starten.</LI>
+		<LI class="OL">Volg de aanwijzingen op het scherm om door te gaan met de installatie.
+			<TABLE>
+				<TR><TD>*</TD><TD>Als het bericht &quot;Installatieprogramma wil toegang tot bestanden in de map 'Downloads'. &quot; wordt weergegeven tijdens de installatie, klikt u op [OK].</TD></TR>
+			</TABLE></LI>
+		<LI class="OL">Als de installatie is voltooid, klikt u op [Herstart] op de computer opnieuw op te starten.
+			<TABLE>
+				<TR><TD>*</TD><TD>Als u wordt gevraagd om te bevestigen of u het installatieprogramma naar de prullenbak wilt verplaatsen, klikt u op [Laat staan].</TD></TR>
+				<TR><TD>*</TD><TD>Het kan even duren voordat de computer opnieuw wordt opgestart.</TD></TR>
+			</TABLE></LI>
+    </OL>
+    <P>
+        Als de computer opnieuw wordt opgestart, sluit u de V51 aan op de computer met een USB-kabel en schakelt u de V51 in.
+    </P>
+	<TABLE>
+		<TR><TD>*</TD><TD>Wanneer u wordt gevraagd om te bevestigen of u de verbinding met het USB-apparaat wilt toestaan, klikt u op [Sta toe].</TD></TR>
+	</TABLE>
+	<P>Dit voltooit de installatie van het V51-stuurprogramma.</P>
+	<TABLE>
+		<TR><TD>*</TD><TD>Het programma voor het verwijderen van het Leesmij-bestand en het stuurprogramma is geïnstalleerd in de map Apps/Programma’s - Roland - V51 Driver.</TD></TR>
+	</TABLE>
+
+<HR>
+	<H2><A name="anchor0200">Voordat u begint</A></H2>
+
+
+		<TABLE><TR><TD>*</TD><TD>Om dit stuurprogramma te gebruiken moet u de USB AUDIO – Driver Mode van de V51 op &quot;VENDOR instellen.&quot;</TD></TR></TABLE>
+
+
+
+
+		<H3><A name="anchor0210">Instellingen voor audio-invoer en -uitvoer op macOS</A></H3>
+		<OL>
+  <LI class="OL">Gebruik een USB-kabel om de V51 op uw computer aan te sluiten en schakel de V51 uit.
+  </LI>
+  <LI class="OL">Klik in &quot;Systeeminstellingen&quot; op &quot;Geluid&quot;.</LI>
+  <LI class="OL">Selecteer &quot;V51&quot; in &quot;Speel geluidseffecten af via&quot; en &quot;Uitvoer en invoer&quot;.<BR>
+  </LI>
+</OL>
+
+		<H3><A name="anchor0220">Instellingen voor MIDI-invoer en -uitvoer op macOS</A></H3>
+<OL>
+  <LI class="OL">Gebruik een USB-kabel om de V51 op uw computer aan te sluiten en schakel de V51 uit.
+  </LI>
+
+  <LI class="OL">Dubbelklik op &quot;Audio/MIDI-configuratie&quot; in de map Apps/Programma’s - Hulpprogramma’s om het op te starten.</LI>
+  <LI class="OL">Selecteer in het menu Venster de optie &quot;Toon MIDI-studio&quot; om het scherm MIDI-studio te openen.</LI>
+  <LI class="OL">Zorg er in het dialoogvenster &quot;MIDI-studio&quot; voor dat &quot;V51&quot; wordt weergegeven.
+    <TABLE>
+      <TR><TD>*</TD><TD>Als &quot;V51&quot; niet wordt getoond, werd de V51 niet correct herkend. Klik op &quot;Scan MIDI-bus&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAOpSURBVEhLxVfNL2NxFD3vtT5ShNigaZuqqe2ImdFuNLPB3h/AasbOwkokrETsRSysbCQSsRaCHSZTIoZFSz/MlNkJQhVt3/zOnXYyM31TNcmY+8vxmvd+H+ede+59oRkq7u7u8PXsK3RdFzxXZLNZZNIZ2B12VFRUAKlUyjgKHZHTfwueTx5aLBoz3M1upNPpHN/nD6vVingsDt3IGshkMyLZ/0L+fF236CAhpdaTYLFYUF5eXgDeN5tfFOp8rtNikZjhcDmQyWRyohUPTdPk0NPTU6ysrCAcDuPq6go1NTVobW1Fd3c3HA4H7u/v5aBSgkQSnxOKjPKM0+UsiQyJlJWVYXZ2Fpubm6iurpZ7LpcLoVBIcq+MCL/fj4GBATw8PJREiGS+fP4Cnbn6RbIiIJHJyUns7u6ivr5eXuDy8hI+nw8zMzOw2+2oqqrC3t4eJiYmZL7ZPmYQz2hQQ73dY2AfWF9fRzQahc1mk9T09/djbm4OnZ2dosro6KikinNPTk4kjfxttl8B1NAVL1Omv4OxuLgoqbm4uMD4+Di8Xi+GhoawvLwMNs6xsTHxEIlRoaWlJVlntl8B1NANzTBn+hModzwel15EMC0NDQ1ChL44ODjA4OCgqEUluDk7OaWPRCKy3mzfn0EeaoViztIuAjUdZ6dnYjSS6XjTgY2NDUkXD2dlUTE+p4GpEglRIT7TtVz7KALyKNkzv4dFU/1EDfnNHqHmJJNJvH/3Xirp9vZWnqnV/FOwXwHU0LPG92ri9U9g1TTaG+XKt93+sI3A2wBSt6kf5csrFXnZ9lJUY2qoYlNTk3wMzfbNI3++KPMY83QmDU+zR4gQwWAQiUQCU1NTqKurE0Oz1Kenp8Uj+/v7ohZ988L7Qtab7ZvHdwpqKPcbbrf70aZXWVmJtbU1LCwsSLdlf+nr60MgEMjNgJT+/Pw8amtrcX19jd7eXvT09IiPigWJs0C0cChsNHuaS+rANCubHnsIzUtfMBUkx0riZ4Kk6R2n04mRkRFJ3WNBMupLoKpJBXNWCrjx8PAw2tvbcX5+Lpuwn7CEWU1MC++3tbX9IGK2jxkYT1KGwRznP5Srq6vS5G5ubkQpdt+urq6/+lBSGe3w4NDwtHhKJpMPGpmkxIC54OEkwdQ9JUgmGokqMp8OjRZvS0m5/VdBLx6Hj6EpsxnBj0H4/D4pwVwfe55QolotVmxtbqHD3wH57yB5k8ROcEceUrLnCrGGevlXr1/BVmXDN/6aBv+IRenaAAAAAElFTkSuQmCC" width="35" height="23" alt=""/>. U kunt ook de V51 uitschakelen en vervolgens weer inschakelen.</TD></TR>
+      <TR><TD>*</TD><TD>Als u een andere versie van het stuurprogramma gebruikt, is het mogelijk dat de vorige instellingen nog aanwezig zijn. Klik in dit geval op de uitgegrijsde &quot;V51&quot; om het te selecteren en klik vervolgens op &quot;Verwijder&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAGbSURBVEhLzVfLboJAFL13wNKPULoRf8FuTBM/vKau6g53DdCYoh9RHGB6z4BuSoo2LePBQ8Zk5J4c7mNkI9BHTXmek1KKRv6IiOlvYfCRWwsJSYoV6VJTXdcUhiGN7iTusTiaOI6hyRm28RaGGE6T1EyjKVVV1eoeHp7nUZZk8mbELhFn7XJFxGfFpDzfs+qY2RkB3/dJ2dWNgHfvOzMOx85z5pAfSKHkuqwbmtBhXxMSyDUBhWy+FLAzCIKLiL3XADo4yzKDDtiXM8j2NE0pSRK7/gllWdJsNqMoiuy6DxBuJ4CpxaYraLv6Bez6bR9ZOp8JH/qdAXzPp1Nf6kNVVlRW/a4A1pmPnDh5S8wknDgv7X2+l2qSBmhYbHJM6LA5w7XUumNCh6pZhtWNUEFVVzUMTeiw48BeHV1xMLaX0lp3zoqhiaOvnKzEJVEHfFM8AJvATWwuPguzel7R4mlhFZ43/BdwlmpDnOKtX9a0XC7J/jsoioI2rxvb+IL74Lz5DHxvDmS/hvggj2iKBX0Fa8RFw5s/zmW4BvQFiq7KOllybi8AAAAASUVORK5CYII=" width="35" height="23" alt=""/> om de vorige instellingen te verwijderen.</TD></TR>
+    </TABLE>
+  </LI>
+
+
+  <LI class="OL">Voer de volgende procedure uit om te controleren of de MIDI-ontvangst en –overdracht correct gebeurt.</LI>
+  <LI class="OL">Klik op &quot;Test&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAMVSURBVEhLxVdNT1pBFD3vgYrWmOjChZLGjzRxo4lK1ETpopAgcWPiXuMvcOePcOWfcee6LqqJsbjAr0cAq3FpBEF5vM65OOTxOtqmVnvgeHnjnbmHO3c+sDyFarWKqx9XsG1b+F6o1+tway4GogPo6OgAKpWKd5o9pab/BsanDsu5cLyh4SHUarUnve+PcDiMnJOD7dU9uHVXUmaidn4tCdP4pI5vKUXeYHQQrutKBz9YPyqL2N3dfWr5eySTSViWJUGDCIVCuCxewnLOHS/6MWoUw6La3NzE7e2tdAjCNLU6C35w7J6eHmxtbYGLJQiOXcwXYcOCKDaRuLm5QXd3Nzo7O1vIoFNTU5iYmGgyFotJe9CX/TkOYYpDUofNtHEqTCRMGSGYlfHxcYyNjTVJQc8tBD2OKQ5JHbbSZVRK6s50DJL1lMlkkM1mmzw6OpJ2k7+GKY5QvWyl6xeVmkR7ezv6+vrQ29vbwv7+fhSLRVxfXzdZKBSkPejL/nq8YIwm1cv2LM+sVFFDbUhi7+/vxepnTgnJOmGRtrW1iU/QT1vCFIekDpVTpVbtNSYSpVIJqVQKuVwOS0tLcBwH6cW02EQigcSXBPL5PBZTi4029cx2v186nW6uIlMckjp+WzOPj4+Ix+OyvOfn58UuxBfEiphkAnd3d4h/bvjwme1+P/arVBvZMcURsmbqXmM10Qb5L8FghCmOji+ZkbdBrR/ButGW+NM2whhH3syMmqyWqvbRj7W1NbHr6+stllhdXRXLNt3P5EcEY2hSB06yJ56qCznCgyRWVlbEvhbLy8tiTXEYnzos/uEVwnQ2RSIRbGxsYHJyUrb1INTYT58a6TeBmyBX5OHhIba3t1uWuQZ3Z14hRMzwyPCLp/bOzo7Y5wK+BN2P2wKtfzfWoBh1r4J1nDn2RkZHjGIICuIu/Fo8PDwYhRAUc3F+ocR8P/ZGP40aj/b3Aq8qZydnsMrlsrf/bR+zc7OouerEbV1Ebws16+FQGHtf9zAzNwP5dVAulXGwfyD/fO7K8BaQ0lBffjo2ja4PXfgJxk+JldoZAp0AAAAASUVORK5CYII=" width="35" height="23" alt=""/>.
+    <TABLE><TR><TD>*</TD><TD>De volgende stap zorgt ervoor dat een relatief luid geluid door de geluidsgenerator wordt geproduceerd. Het is dus een goed idee om het volume op de geluidsgenerator eerst te verlagen.</TD></TR></TABLE>
+  </LI>
+  <LI class="OL">Klik op de &#x25BC; van V51 die is aangegeven in stap 4. Als u een geluid hoort, zijn de instellingen correct uitgevoerd.</LI>
+  <LI class="OL">Klik opnieuw op &quot;Test&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAN4SURBVEhLxVfNaxNBFP/N7jb9EBUKgrRpbBulIOKl0vai4tdBBA8e1JtfePSgUgSLVQ8evehd8B/wIOhFL17swRbBtkI/0rRp0oKiUMW4SXd3fG92YifptEXE+mt+ebuzL+/95s2b3a2QhFKphMWFRTiOo7hZiKIIYRCiJdmC+vp6wPd9OTUxxZr+Gzg/6xDZmaxs72hHEARa7+bD8zzMZmfhyEgijEJVMhsdROT89+Q4tvjMSn5BimRrshVhGGqdK/CofUIp8PCNHhDa/glkbG4eBlwhEUTxuQnXdVHIFyCymaxMppJWMdxTrfcdLHwXSLh60EDZsrIJTx8YKFPolq0ShbsRaK+sAovJ5/IkhnqmLdVmFZNISIhrLnY06wEDPgk52SVRMgQ1kJCXE0LZWnz+SkV6HKJcXl1eFjOfm4fDa0UNbaXCGjudRZzqinB8t2Y6wum91eKqoOPY8jBZhyOoEYSws4KQ1rmW3E8vJhy8no75ivj8o4j7zOJfgS2PIv9lpjMytSu1Zs+4/S727yTlulAmeKlqYVsil+b1fk5APgrX7JncXI62NnW4VSmRQRXEN18drlgdkBuYWU8CuElZCPvU+i0ZAmx5mKyDtz/4XmMjQxaB28ckPuQF7p0gOy9w52hsbxySuHFQYrQgMHAkHrtO5zxu+g3S71FW4ax5mKwDmamMDJYDWfJLqyilL3F1ObZXtL3E9qe2frWPOVbjh4uxteXh/KzDiWS8m9jWkuahPvrLsJWO5PPaa+aY6RdbW55KfrWb1MeyjlXQfQCfx4nKavy+pi3D5kew5lEfQfcZUs/KbDRn1H8uPu8/H89WWe1y62zlGlld0Co/5ciw52GyDjE5MSk7OjvW2Nq00y57kE8qe5hnyYFNy9hojI4uUJynAW3tyvUV8NamJ0Eshl8hbGIaGoDtAx7O7AvR3EiTjuPGWB1zBeTH1WdQH+AL7chnYy6WHgT0/hSPm2Ax6hWCT2zryAyWBT4N0pvYNocegA4aEwbr1iFdbyDLrHMd9XuOw/FseZhKx/jYuOxMd1orw6BYFJQO1qvERqBK+cvVjwUTXJmZzAyJGR2X6T1pWkvLfXqTwO+/05PTEMViUQ6/G0ZvXy+CkBrV7It/Daq253oYejuEnr4eqP8Oij+KGBkeURe5ZJsF1Ro0+e4D3Wja0oRfJO5QwcBxWYgAAAAASUVORK5CYII=" width="35" height="23" alt=""/> om de test te beëindigen.</LI>
+  <LI class="OL">Selecteer in het menu Audio/MIDI-configuratie de optie &quot;Stop Audio/MIDI-configuratie&quot; om de instellingen af te sluiten.</LI>
+</OL>
+
+
+
+<H3><A name="anchor0230">Voordat u de V51 met de software gebruikt</A></H3>
+<OL>
+  <LI class="OL">Gebruik een USB-kabel om de V51 aan te sluiten op uw computer. Start vervolgens de software die u zult gebruiken.
+  </LI>
+  <LI class="OL">Selecteer &quot;V51&quot; in de instelling voor het audiostuurprogramma van uw software.
+  </LI>
+
+  <LI class="OL">Selecteer &quot;V51&quot; in de instelling voor het MIDI-stuurprogramma van uw software.</LI>
+</OL>
+<P>Voor meer informatie, raadpleeg de handleiding bij uw software. </P>
+
+<HR>
+<H2><A name="anchor0300">Om de instellingen te wijzigen (V51 Driver Setup)</A></H2>
+<H3><A name="anchor0310">Instellingen wijzigen of controleren</A></H3>
+
+	<OL>
+	<LI class="OL">Gebruik een USB-kabel om de V51 op uw computer aan te sluiten en schakel de V51 uit.
+	</LI>
+
+	<LI class="OL">Dubbelklik op &quot;V51 Driver Setup&quot; in de map Apps/Programma’s - Roland - V51 Driver om het op te starten.<BR>Het Stuurprogramma-instellingen-paneel wordt weergegeven.</LI>
+	</OL>
+
+<H3><A name="anchor0320">Over de items in het Stuurprogramma-instellingen-paneel</A></H3>
+	<DL>
+
+	<DT>&quot;Audiobuffergrootte&quot;</DT>
+		<DD>U kunt de buffergrootte voor audio-invoer/uitvoer aanpassen.</DD>
+		<DD>Als u de buffergrootte vermindert, wordt de latentie verminderd en de real-time prestatie verbeterd, maar is er een grotere kans dat klik- en plofgeluiden worden weergegeven afhankelijk van de verwerkingsmogelijkheden van de computer en de belasting van de songdata.<BR>Als u de buffergrootte vergroot, wordt de latentie verlengd, maar is audiostreaming stabieler en is de kans dat klik- en plofgeluiden worden weergegeven veel kleiner.</DD>
+		<DD>Over het algemeen kunt u het beste de buffergrootte verkleinen zodat de real-time prestaties verbeteren als u een softwaresynthesizer gebruikt in real-time of als u een audio-invoer controleert die via de DAW-software wordt geleid.<BR>Omgekeerd, kunt u de buffergrootte vergroten om het weergeven van klik- en plofgeluiden te voorkomen als u songdata opneemt of afspeelt die meerdere tracks bevatten en een grote verwerkingsbelasting veroorzaken.</DD>
+		<DD>Door de buffergrootte aan te passen aan uw situatie, kunt u de juiste balans vinden tussen real-time prestaties en stabiliteit voor audiostreaming.</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Opnamespeling&quot;</DT>
+		<DD>Als het opgenomen geluid geregeld wegvalt of ruis bevat, zelfs als u de audiobuffergrootte hebt aangepast in uw software en ook de bovenstaande &quot;Audiobuffergrootte&quot; hebt aangepast, kunt u deze &quot;Opnamespeling&quot;–instelling verhogen.
+		<TABLE><TR><TD>*</TD><TD>Voor bepaalde software is het wellicht niet mogelijk om de buffergrootte te wijzigen.</TD></TR></TABLE>
+		</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Opname-timing&quot;</DT>
+		<DD>Pas deze waarde aan als de timing van de opgenomen audiogegevens niet correct is.</DD>
+		<DD>&nbsp;</DD>
+	<DT class="FN"><FONT size="-1">Opmerking)<BR>Als u klikt op de [Toepassen] terwijl uw audiosoftware werkt, worden de gewijzigde instellingen niet onmiddellijk actief. Alleen nadat alle audiosoftware is gesloten en de software opnieuw is opgestart, worden de instellingen actief.</FONT></DT>
+	</DL>
+
+
+<HR>
+<H2><A name="anchor0400">Installatie ongedaan maken</A></H2>
+	<OL>
+	<LI class="OL">Start de computer met alle USB-kabels losgekoppeld.<BR>(behalve toetsenbord en muis)</LI>
+	<LI class="OL">Dubbelklik op &quot;Uninstaller&quot;.</LI>
+	<LI class="OL">Het scherm toont &quot;Dit maakt de installatie van het V51–stuurprogramma op deze Mac ongedaan&quot;; klik op [Verwijderen].
+		<TABLE><TR><TD>*</TD><TD>Volg de aanwijzingen van een eventueel ander bericht dat verschijnt.</TD></TR></TABLE></LI>
+	<LI class="OL">Het scherm toont &quot;Bent u zeker dat u het stuurprogramma wilt verwijderen?&quot;; klik op [OK].</LI>
+	<LI class="OL">Er wordt een dialoogvenster geopend waarin u wordt gevraagd om uw wachtwoord op te geven; voer uw wachtwoord in en klik op [OK].</LI>
+	<LI class="OL">Het scherm toont &quot;Installatie ongedaan gemaakt.&quot;; klik op [Opnieuw opstarten]. Uw computer zal vervolgens opnieuw opstarten.
+		<TABLE><TR><TD>*</TD><TD>Het kan even duren voordat de computer opnieuw wordt opgestart.</TD></TR></TABLE></LI>
+	</OL>
+<HR>
+<H2><A name="anchor0500">Problemen oplossen</A></H2>
+
+<H3><A name="anchor0540">Kan de installatie van het stuurprogramma niet uitvoeren of ongedaan maken</A></H3>
+	<DL>
+
+	<DT>Volg de onderstaande procedure om het programma voor installeren of verwijderen te starten.</DT>
+	
+		<DD><OL class="FS">
+			<LI class="OL">Hou de Control-toets ingedrukt en klik op het pictogram voor installeren of verwijderen.</LI>
+			<LI class="OL">Selecteer &quot;Open&quot; in het menu dat verschijnt.</LI>
+			<LI class="OL">Als u wordt gevraagd om te bevestigen dat u de toepassing wilt starten, klikt u op &quot;Open&quot;.</LI>
+		</OL></DD>
+
+	<DT>Beveiliging-instellingen kunnen van invloed zijn. Gebruik de volgende procedure om de  Beveiliging-instellingen in  macOS te controleren.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">Klik in &quot;Systeeminstellingen&quot; op &quot;Privacy en beveiliging&quot;.</LI>
+		<LI class="OL">Wijzig bij de Beveiliging -instellingen de instelling voor &quot;Sta apps toe van&quot; of &quot;Sta apps toe die zijn gedownload bij&quot; in &quot;App Store en bekende ontwikkelaars&quot;.</LI>
+		<LI class="OL">Er verschijnt een dialoogvenster waarin u wordt gevraagd de wijzigingen te bevestigen. Voer het wachtwoord in en klik op [Wijzig instellingen].
+			<TABLE><TR><TD>*</TD><TD>Als u de installatie van het stuurprogramma hebt uitgevoerd of ongedaan gemaakt, stelt u de instelling weer in op de oorspronkelijke instelling met behulp van dezelfde procedure.</TD></TR></TABLE></LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+
+<H3><A name="anchor0505">V51 kan niet worden gebruikt of wordt niet herkend</A></H3>
+	<DL>
+		<DT>Is de USB AUDIO – Driver Mode van de V51 ingesteld op &quot;VENDOR&quot;?</DT>
+			<DD class="FS">Zorg ervoor dat u de USB AUDIO – Driver Mode van de V51 instelt op &quot;VENDOR&quot;.</DD>
+			<DD>&nbsp;</DD>
+	<DT>Ging de computer in de Sluimer-stand terwijl de V51 was aangesloten en ingeschakeld?</DT>
+		<DD class="FS">Als de computer in een Sluimer-modus is gegaan terwijl de V51 was aangesloten terwijl het toestel is ingeschakeld, werkt het mogelijk niet correct. Verlaat in dit geval, na het hervatten, alle software die de V51 gebruikt en schakel de V51 opnieuw in.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Als u Mac opstart of opnieuw opstart terwijl de V51 nog steeds verbonden is met Mac, wordt het stuurprogramma mogelijk niet correct geladen en kunt u de V51 mogelijk niet gebruiken.</DT>
+		<DD class="FS">Koppel in dat geval de V51 los en sluit deze aan op een andere USB-poort of schakel de V51 in nadat Mac wordt opgestart.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0510">Er is geen geluid; er kan niet worden afgespeeld of opgenomen</A></H3>
+	<DL>
+	<DT>Is de computer overgegaan in de Sluimer–stand tijdens weergave of opname?</DT>
+		<DD class="FS">Als u in Sluimer-modus bent gegaan tijdens afspelen of opnemen, is het niet meer mogelijk om op te nemen of af te spelen met de V51. Sluit alle afspeel- of opnamesoftware en schakel de V51 uit en schakel hem terug in.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Probeer de audiobuffergrootte van het stuurprogramma aan te passen.</DT>
+		<DD class="FS">Als de grootte van de audiobuffer van het stuurprogramma te klein is, hoort u mogelijk geen geluid of is het onmogelijk om normaal af te spelen of op te nemen.</DD>
+		<DD class="FS">In dergelijke gevallen raadpleegt u &quot;<A href="ReadmeNL2.htm#anchor0310">Instellingen wijzigen of controleren</A>,&quot; en vergroot u de grootte van de buffer. </DD>
+		<DD>&nbsp;</DD>
+	<DT>Privacy-instellingen kunnen van invloed zijn. Gebruik de volgende procedure om de Privacy-instellingen in macOS te controleren.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">Klik in &quot;Systeeminstellingen&quot; op &quot;Privacy en beveiliging&quot;.</LI>
+		<LI class="OL">Selecteer &quot;Microfoon&quot; in de lijst met Privacy-instellingen.</LI>
+		<LI class="OL">Zet de schakelaars aan naast elke applicatie waarvoor toegang tot de audio-ingang moet worden toegestaan.</LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+<H3><A name="anchor0520">Het geluid wordt soms onderbroken of bevat ruis</A></H3>
+	<DL>
+	<DT>Pas de audiobuffergrootte aan voor de software die u gebruikt.</DT>
+		<DD class="FS">Pas eerst de audiobuffergrootte aan voor de software die u gebruikt.<BR>Als het geluid nog steeds wegvalt of ruis bevat tijdens weergave of opname, kunt u de &quot;<A href="ReadmeNL2.htm#anchor0300">Audiobuffergrootte</A>&quot; aanpassen in het Stuurprogramma-instellingen paneel.
+		<TABLE><TR><TD>*</TD><TD>Voor bepaalde software is het wellicht niet mogelijk om de buffergrootte te wijzigen.</TD></TR></TABLE></DD>
+		<DD>&nbsp;</DD>
+	<DT>Hebt u een macOS softwareupdate uitgevoerd terwijl het apparaat nog steeds aangesloten was?</DT>
+		<DD class="FS">Als u de macOS-softwareupdate hebt uitgevoerd met het apparaat aangesloten, kan het geluid wegvallen. Installeer het stuurprogramma opnieuw als dit gebeurt.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Is de V51 op een USB-hub aangesloten?</DT>
+		<DD class="FS">Sluit de V51 rechtstreeks op de USB-aansluiting van uw computer aan.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0530">Het geluid of opgenomen audiogegevens worden soms onderbroken of bevatten ruis</A></H3>
+	<DL>
+	<DD class="FS">Als de opgenomen audio nog steeds onderbroken wordt of ruis bevat nadat u de audiobuffergrootte hebt aangepast, zoals vermeld in &quot;Het geluid wordt soms onderbroken of bevat ruis&quot; (bovenaan), kunt u de &quot;<A href="ReadmeNL2.htm#anchor0300">Opnamespeling</A>&quot; verhogen in het Stuurprogramma-instellingen-paneel.<BR>
+		<TABLE><TR><TD>*</TD><TD>Voor bepaalde software is het wellicht niet mogelijk om de buffergrootte te wijzigen.</TD></TR></TABLE></DD>
+	</DL>
+
+<HR>
+
+<P>Copyright (C) 2025 Roland Corporation. Alle rechten voorbehouden.</P>
+
+</BODY>
+</HTML>

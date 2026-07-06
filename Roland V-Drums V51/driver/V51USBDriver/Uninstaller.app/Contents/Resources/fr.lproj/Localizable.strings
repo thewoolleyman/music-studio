@@ -1,0 +1,21 @@
+"Alert" = "Alerte";
+"FailToUninstall" = "La désinstallation a échoué.";
+"DeviceFound" = "Veuillez débrancher tous les périphériques USB de l'ordinateur Mac, à l'exception du clavier et de la souris USB. Après avoir débranché les périphériques USB, redémarrez le programme de désinstallation.";
+"SureToUninstall" = "Êtes-vous sûr de vouloir désinstaller le pilote ?";
+"FinishUninstall" = "La désinstallation est à présent terminée. Cliquez sur le bouton Redémarrer.";
+"NoNeedUninstall" = "Ce pilote n'étant pas installé sur l'ordinateur Mac, il est inutile de le désinstaller. Cliquez sur le bouton Quitter.";
+"QuitBtn" = "Quitter";
+"UninstallBtn" = "Désinstaller";
+"RestartBtn" = "Redémarrer";
+"CancelBtn" = "Annuler";
+"OKBtn" = "OK";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "PreScript Message, it returns negative value that leads app quits.";
+"PreScrptMsgP" = "PreScript Message, it returns positive value that leads back to top page.";
+"PostScrptMsgN" = "PostScript Message, it returns negative value that leads app quits.";
+"PostScrptMsgP" = "PostScript Message, it returns positive value that leads back to top page.";
+
+/* Messages */
+"IDS_FILEERROR" = "Fichiers incomplets ou illisibles.\nLe programme a ete interrompu.";
+"IDS_UNKNOWN_OS" = "Le système d’exploitation que vous utilisez n’est pas pris en charge.\nVérifiez les systèmes d’exploitation pris en charge.";

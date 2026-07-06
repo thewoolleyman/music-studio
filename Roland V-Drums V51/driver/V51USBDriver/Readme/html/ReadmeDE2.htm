@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0024)http://www.roland.co.jp/ -->
+<HTML lang="de">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>README_DE - V51 Driver for macOS</TITLE>
+<STYLE type="text/css">
+<!--
+BODY	{background-color: #FFFFFF;	color: #000000;}
+DL	{margin-left: 15pt;}
+DT	{font-weight: bold;	margin-bottom: 5pt;}
+DT.FN	{font-weight: normal;	margin-bottom: 0pt;}
+DD.FS	{font-size: smaller;}
+OL.FS	{font-size: smaller;}
+LI.OL	{margin-bottom: 15pt;}
+TABLE	{margin-top: 3pt;	margin-bottom: 5pt;}
+TD	{vertical-align: top;	font-size: smaller;}
+H3	{color: #000080;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H2>V51-Treiber Ver.1.0.0 für macOS 13/14/15</H2>
+
+<FONT size="-1">Hinweis<BR>Roland Corporation („Roland“) ist unter keinen Umständen haftbar für Schäden jeglicher Art, insbesondere nicht für finanzielle Schäden aus entgangenem Gewinn oder dem Verlust geschäftlicher Informationen, die aus der Verwendung oder der Unfähigkeit, dieses Produkt zu verwenden, entstehen. Dies gilt auch dann, wenn Roland über die Möglichkeit des Auftretens solcher Schäden informiert wurde.</FONT>
+
+<TABLE><TR><TD>*</TD><TD>Alle Dateien und andere Materialien, die in diesem Ordner enthalten sind, sind von Roland urheberrechtlich geschützt. Das Ändern, im Ganzen oder teilweise, sowie das Duplizieren, Verteilen und Vervielfältigen dieses Materials ist untersagt. Zusätzlich behält sich Roland das Recht vor, diese Anwendungen und Dateien ohne vorherige Ankündigung zu ändern.</TD></TR></TABLE>
+<TABLE cellspacing="0">
+<TR><TD>*</TD><TD>Apple und Mac sind in den USA und anderen Ländern eingetragene Marken von Apple Inc. </TD></TR>
+<TR><TD>*</TD><TD>macOS ist eine Marke von Apple Inc.</TD></TR>
+<TR><TD>*</TD><TD>Alle in diesem Dokument aufgeführten Produktnamen sind Warenzeichen oder eingetragene Warenzeichen ihrer entsprechenden Eigentümer.</TD></TR>
+</TABLE>
+
+<HR>
+
+<H2><A name="anchor0000">Informationen zu diesem Treiber</A></H2>
+
+	
+	Dieser Treiber ist erforderlich, um V51 auf macOS 13/14/15 auszuführen.
+
+		<BR>Um diesen Treiber verwenden zu können, müssen Sie den USB AUDIO – Driver Mode des V51 auf &quot;VENDOR&quot; setzen.
+
+
+
+<H3><A name="anchor0005">Funktionen</A></H3>
+	<UL>
+		<LI>Universal Binary-Treiber(Dieser Treiber läuft auf Apple Silicon- und Intel-Prozessoren.)</LI>
+		<LI>Kompatibel mit den Apple Standards CoreAudio und CoreMIDI</LI>
+		<LI>Möglichkeit, die Treiberpuffergröße einzustellen sowie Aufnahme- und Wiedergabelatenz exakt festzulegen</LI>
+	</UL>
+
+<H3><A name="anchor0010">Systemanforderungen</A></H3>
+	<P>Der Treiber hat folgende Systemanforderungen:</P>
+	<TABLE><TR><TD>*</TD><TD>Überprüfen Sie ebenfalls die Systemanforderungen der Audio- und MIDI-Anwendung und des verwendeten Betriebssystems.</TD></TR></TABLE>
+	<DL>
+
+	<DT>Betriebssystem</DT>
+		<DD>macOS 13/14/15</DD>
+		<DD>&nbsp;</DD>
+
+	<DT>Computer</DT>
+		<DD>Computer der Apple Mac-Serie mit integriertem USB
+		<TABLE>
+			<TR><TD>*</TD><TD>Dieser Treiber läuft auf Apple Silicon- und Intel-Prozessoren.</TD></TR>
+			<TR><TD>*</TD><TD>Mac-Computer mit Microsoft Windows werden nicht unterstützt.</TD></TR>
+        </TABLE>        
+		</DD>
+
+</DL>
+
+
+
+<H3><A name="anchor0020">Warnungen und Einschränkungen</A></H3>
+	<UL>
+		<LI>Schließen Sie das V51 mit dem USB-Kabel an Ihren Computer an, bevor Sie Ihre Audio-/MIDI-Anwendung starten, und schalten Sie es ein.</LI>
+		<LI>Während der Wiedergabe oder der Aufnahme darf das V51 nicht ausgeschaltet werden und das USB-Kabel nicht getrennt werden. Dadurch könnte die Software oder das Betriebssystem nicht normal beendet werden.</LI>
+		<LI>Schließen Sie Ihre Audio/MIDI-Anwendung, bevor Sie das V51 ausschalten oder das USB-Kabel abziehen.</LI>
+		<LI>Wenn Sie Ihren Mac hochfahren oder einen Neustart durchführen, während V51 noch mit dem Mac verbunden ist, wird der Treiber möglicherweise nicht korrekt geladen, sodass Sie V51 eventuell nicht nutzen können.Trennen Sie V51 in einem solchen Fall und schließen Sie es an einen anderen USB-Anschluss an bzw. schalten Sie V51 erst ein, nachdem der Mac hochgefahren wurde.</LI>
+		<LI>Sie müssen das V51 vom Computer trennen, bevor Sie eine Softwareaktualisierung für macOS durchführen. Bleibt das V51 während der macOS Softwareaktualisierung verbunden, muss der Treiber neu installiert werden.</LI>
+		<LI>Wenn das V51 nach der Rückkehr aus dem Ruhezustand-Modus oder nach dem Neustart des Betriebssystems nicht ordnungsgemäß funktioniert, sollten Sie alle Anwendungen beenden, die das V51 verwenden und das USB-Kabel des V51 trennen und erneut verbinden.</LI>
+	</UL>
+<HR>
+<H2><A name="anchor0100">Installation</A></H2>
+	<TABLE>
+		<TR><TD>*</TD><TD>Schließen Sie sämtliche Anwendungen, die gerade ausgeführt werden. Ihr Computer wird während der Treiberinstallierung neu starten.</TD></TR>
+	</TABLE>
+	<OL>
+		<LI class="OL">Trennen Sie alle USB-Kabel, und starten Sie den Computer.(außer für Tastatur und Maus)
+			<TABLE><TR><TD>*</TD><TD>Verbinden Sie V51 erst mit Ihrem Computer, wenn Sie die entsprechende Anweisung erhalten.</TD></TR></TABLE></LI>
+		<LI class="OL">Doppelklicken Sie auf V51_USBDriver13.pkg, um das Installationsprogramm zu starten.</LI>
+		<LI class="OL">Befolgen Sie die Anweisungen auf dem Bildschirm, um mit der Installation fortzufahren.
+			<TABLE>
+				<TR><TD>*</TD><TD>Falls während der Installierung die Nachricht &quot;„lnstallationsprogramm" möchte Zugriff auf Dateien in deinem Ordner „Downloads".&quot; angezeigt wird, klicken Sie auf [OK].</TD></TR>
+			</TABLE></LI>
+		<LI class="OL">Klicken Sie nach abgeschlossener Installation auf [Neustart], um Ihren Computer neu zu starten.
+			<TABLE>
+				<TR><TD>*</TD><TD>Wenn Sie bestätigen sollen, dass das Installationsprogramm in den Papierkorb verschoben werden kann, klicken Sie auf [Behalten].</TD></TR>
+				<TR><TD>*</TD><TD>Der Neustart des Computers kann u. U. eine Weile dauern.</TD></TR>
+			</TABLE></LI>
+    </OL>
+    <P>
+        Wenn der Computer neu startet, schließen Sie V51 mit einem USB-Kabel an den Computer an, und schalten Sie V51 ein.
+    </P>
+	<TABLE>
+		<TR><TD>*</TD><TD>Wenn Sie zur Bestätigung aufgefordert werden, ob Sie die Verbindung des USB-Geräts zulassen möchten, klicken Sie auf [Erlauben].</TD></TR>
+	</TABLE>
+	<P>Damit ist die Installation des V51-Treibers abgeschlossen.</P>
+	<TABLE>
+		<TR><TD>*</TD><TD>Die Readme-Datei und das Deinstallationsprogramm für den Treiber werden im Ordner Programme - Roland - V51 Driver installiert.</TD></TR>
+	</TABLE>
+
+<HR>
+	<H2><A name="anchor0200">Vorbereitung</A></H2>
+
+
+		<TABLE><TR><TD>*</TD><TD>Um diesen Treiber verwenden zu können, müssen Sie den USB AUDIO – Driver Mode des V51 auf &quot;VENDOR&quot; setzen.</TD></TR></TABLE>
+
+
+
+
+		<H3><A name="anchor0210">Einstellungen für Audioeingang und -ausgang im macOS</A></H3>
+		<OL>
+  <LI class="OL">Verbinden Sie das V51 über ein USB-Kabel mit Ihrem Computer, und das V51 einschalten.
+  </LI>
+  <LI class="OL">Klicken Sie in &quot;Systemeinstellungen&quot; auf &quot;Ton&quot;.</LI>
+  <LI class="OL">Wählen Sie in &quot;Toneffekte abspielen über&quot; und &quot;Ausgabe & Eingabe&quot; &quot;V51&quot; aus.<BR>
+  </LI>
+</OL>
+
+		<H3><A name="anchor0220">Einstellungen für MIDI-Eingang und -Ausgang auf macOS</A></H3>
+<OL>
+  <LI class="OL">Verbinden Sie das V51 über ein USB-Kabel mit Ihrem Computer, und das V51 einschalten.
+  </LI>
+
+  <LI class="OL">Doppelklicken Sie im Ordner Programme - Dienstprogramme auf &quot;Audio-MIDI-Setup&quot;, um die Anwendung zu starten.</LI>
+  <LI class="OL">Wählen Sie im Menü Fenster &quot;MIDI-Studio einblenden&quot; aus, um das Fenster MIDI-Studio zu öffnen.</LI>
+  <LI class="OL">Überprüfen Sie, ob im Dialogfeld &quot;MIDI-Studio&quot; das &quot;V51&quot; angezeigt wird.
+    <TABLE>
+      <TR><TD>*</TD><TD>Wenn das &quot;V51&quot; nicht angezeigt wird bzw. wenn es ausgegraut ist, wurde das V51 nicht korrekt erkannt. Klicken Sie auf &quot;Neu suchen&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAOpSURBVEhLxVfNL2NxFD3vtT5ShNigaZuqqe2ImdFuNLPB3h/AasbOwkokrETsRSysbCQSsRaCHSZTIoZFSz/MlNkJQhVt3/zOnXYyM31TNcmY+8vxmvd+H+ede+59oRkq7u7u8PXsK3RdFzxXZLNZZNIZ2B12VFRUAKlUyjgKHZHTfwueTx5aLBoz3M1upNPpHN/nD6vVingsDt3IGshkMyLZ/0L+fF236CAhpdaTYLFYUF5eXgDeN5tfFOp8rtNikZjhcDmQyWRyohUPTdPk0NPTU6ysrCAcDuPq6go1NTVobW1Fd3c3HA4H7u/v5aBSgkQSnxOKjPKM0+UsiQyJlJWVYXZ2Fpubm6iurpZ7LpcLoVBIcq+MCL/fj4GBATw8PJREiGS+fP4Cnbn6RbIiIJHJyUns7u6ivr5eXuDy8hI+nw8zMzOw2+2oqqrC3t4eJiYmZL7ZPmYQz2hQQ73dY2AfWF9fRzQahc1mk9T09/djbm4OnZ2dosro6KikinNPTk4kjfxttl8B1NAVL1Omv4OxuLgoqbm4uMD4+Di8Xi+GhoawvLwMNs6xsTHxEIlRoaWlJVlntl8B1NANzTBn+hModzwel15EMC0NDQ1ChL44ODjA4OCgqEUluDk7OaWPRCKy3mzfn0EeaoViztIuAjUdZ6dnYjSS6XjTgY2NDUkXD2dlUTE+p4GpEglRIT7TtVz7KALyKNkzv4dFU/1EDfnNHqHmJJNJvH/3Xirp9vZWnqnV/FOwXwHU0LPG92ri9U9g1TTaG+XKt93+sI3A2wBSt6kf5csrFXnZ9lJUY2qoYlNTk3wMzfbNI3++KPMY83QmDU+zR4gQwWAQiUQCU1NTqKurE0Oz1Kenp8Uj+/v7ohZ988L7Qtab7ZvHdwpqKPcbbrf70aZXWVmJtbU1LCwsSLdlf+nr60MgEMjNgJT+/Pw8amtrcX19jd7eXvT09IiPigWJs0C0cChsNHuaS+rANCubHnsIzUtfMBUkx0riZ4Kk6R2n04mRkRFJ3WNBMupLoKpJBXNWCrjx8PAw2tvbcX5+Lpuwn7CEWU1MC++3tbX9IGK2jxkYT1KGwRznP5Srq6vS5G5ubkQpdt+urq6/+lBSGe3w4NDwtHhKJpMPGpmkxIC54OEkwdQ9JUgmGokqMp8OjRZvS0m5/VdBLx6Hj6EpsxnBj0H4/D4pwVwfe55QolotVmxtbqHD3wH57yB5k8ROcEceUrLnCrGGevlXr1/BVmXDN/6aBv+IRenaAAAAAElFTkSuQmCC" width="35" height="23" alt=""/>. Sie können das V51 auch ausschalten und dann wieder einschalten.</TD></TR>
+      <TR><TD>*</TD><TD>Wenn Sie einen Treiber einer anderen Version installiert haben, werden die vorherigen Einstellungen u. U. beibehalten. Wenn dies der Fall ist, wählen Sie das ausgegraute &quot;V51&quot; durch Anklicken aus. Klicken Sie anschließend auf &quot;Entfernen&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAGbSURBVEhLzVfLboJAFL13wNKPULoRf8FuTBM/vKau6g53DdCYoh9RHGB6z4BuSoo2LePBQ8Zk5J4c7mNkI9BHTXmek1KKRv6IiOlvYfCRWwsJSYoV6VJTXdcUhiGN7iTusTiaOI6hyRm28RaGGE6T1EyjKVVV1eoeHp7nUZZk8mbELhFn7XJFxGfFpDzfs+qY2RkB3/dJ2dWNgHfvOzMOx85z5pAfSKHkuqwbmtBhXxMSyDUBhWy+FLAzCIKLiL3XADo4yzKDDtiXM8j2NE0pSRK7/gllWdJsNqMoiuy6DxBuJ4CpxaYraLv6Bez6bR9ZOp8JH/qdAXzPp1Nf6kNVVlRW/a4A1pmPnDh5S8wknDgv7X2+l2qSBmhYbHJM6LA5w7XUumNCh6pZhtWNUEFVVzUMTeiw48BeHV1xMLaX0lp3zoqhiaOvnKzEJVEHfFM8AJvATWwuPguzel7R4mlhFZ43/BdwlmpDnOKtX9a0XC7J/jsoioI2rxvb+IL74Lz5DHxvDmS/hvggj2iKBX0Fa8RFw5s/zmW4BvQFiq7KOllybi8AAAAASUVORK5CYII=" width="35" height="23" alt=""/>, um die vorherigen Einstellungen zu löschen.</TD></TR>
+    </TABLE>
+  </LI>
+
+
+  <LI class="OL">Führen Sie folgende Schritte aus, um sicherzustellen, dass MIDI-Empfang und -Übertragung korrekt erfolgen.</LI>
+  <LI class="OL">Klicken Sie auf &quot;Konfig. testen&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAMVSURBVEhLxVdNT1pBFD3vgYrWmOjChZLGjzRxo4lK1ETpopAgcWPiXuMvcOePcOWfcee6LqqJsbjAr0cAq3FpBEF5vM65OOTxOtqmVnvgeHnjnbmHO3c+sDyFarWKqx9XsG1b+F6o1+tway4GogPo6OgAKpWKd5o9pab/BsanDsu5cLyh4SHUarUnve+PcDiMnJOD7dU9uHVXUmaidn4tCdP4pI5vKUXeYHQQrutKBz9YPyqL2N3dfWr5eySTSViWJUGDCIVCuCxewnLOHS/6MWoUw6La3NzE7e2tdAjCNLU6C35w7J6eHmxtbYGLJQiOXcwXYcOCKDaRuLm5QXd3Nzo7O1vIoFNTU5iYmGgyFotJe9CX/TkOYYpDUofNtHEqTCRMGSGYlfHxcYyNjTVJQc8tBD2OKQ5JHbbSZVRK6s50DJL1lMlkkM1mmzw6OpJ2k7+GKY5QvWyl6xeVmkR7ezv6+vrQ29vbwv7+fhSLRVxfXzdZKBSkPejL/nq8YIwm1cv2LM+sVFFDbUhi7+/vxepnTgnJOmGRtrW1iU/QT1vCFIekDpVTpVbtNSYSpVIJqVQKuVwOS0tLcBwH6cW02EQigcSXBPL5PBZTi4029cx2v186nW6uIlMckjp+WzOPj4+Ix+OyvOfn58UuxBfEiphkAnd3d4h/bvjwme1+P/arVBvZMcURsmbqXmM10Qb5L8FghCmOji+ZkbdBrR/ButGW+NM2whhH3syMmqyWqvbRj7W1NbHr6+stllhdXRXLNt3P5EcEY2hSB06yJ56qCznCgyRWVlbEvhbLy8tiTXEYnzos/uEVwnQ2RSIRbGxsYHJyUrb1INTYT58a6TeBmyBX5OHhIba3t1uWuQZ3Z14hRMzwyPCLp/bOzo7Y5wK+BN2P2wKtfzfWoBh1r4J1nDn2RkZHjGIICuIu/Fo8PDwYhRAUc3F+ocR8P/ZGP40aj/b3Aq8qZydnsMrlsrf/bR+zc7OouerEbV1Ebws16+FQGHtf9zAzNwP5dVAulXGwfyD/fO7K8BaQ0lBffjo2ja4PXfgJxk+JldoZAp0AAAAASUVORK5CYII=" width="35" height="23" alt=""/>.
+    <TABLE><TR><TD>*</TD><TD>Durch den folgenden Schritt wird ein relativ lauter Ton erzeugt. Daher ist es ratsam, vorher die Lautstärke zu reduzieren.</TD></TR></TABLE>
+  </LI>
+  <LI class="OL">Klicken Sie auf den &#x25BC; des V51, der in Schritt 4 gezeigt wurde. Wenn Sie etwas hören, wurden die Einstellungen korrekt vorgenommen.</LI>
+  <LI class="OL">Klicken Sie erneut auf &quot;Konfig. testen&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAN4SURBVEhLxVfNaxNBFP/N7jb9EBUKgrRpbBulIOKl0vai4tdBBA8e1JtfePSgUgSLVQ8evehd8B/wIOhFL17swRbBtkI/0rRp0oKiUMW4SXd3fG92YifptEXE+mt+ebuzL+/95s2b3a2QhFKphMWFRTiOo7hZiKIIYRCiJdmC+vp6wPd9OTUxxZr+Gzg/6xDZmaxs72hHEARa7+bD8zzMZmfhyEgijEJVMhsdROT89+Q4tvjMSn5BimRrshVhGGqdK/CofUIp8PCNHhDa/glkbG4eBlwhEUTxuQnXdVHIFyCymaxMppJWMdxTrfcdLHwXSLh60EDZsrIJTx8YKFPolq0ShbsRaK+sAovJ5/IkhnqmLdVmFZNISIhrLnY06wEDPgk52SVRMgQ1kJCXE0LZWnz+SkV6HKJcXl1eFjOfm4fDa0UNbaXCGjudRZzqinB8t2Y6wum91eKqoOPY8jBZhyOoEYSws4KQ1rmW3E8vJhy8no75ivj8o4j7zOJfgS2PIv9lpjMytSu1Zs+4/S727yTlulAmeKlqYVsil+b1fk5APgrX7JncXI62NnW4VSmRQRXEN18drlgdkBuYWU8CuElZCPvU+i0ZAmx5mKyDtz/4XmMjQxaB28ckPuQF7p0gOy9w52hsbxySuHFQYrQgMHAkHrtO5zxu+g3S71FW4ax5mKwDmamMDJYDWfJLqyilL3F1ObZXtL3E9qe2frWPOVbjh4uxteXh/KzDiWS8m9jWkuahPvrLsJWO5PPaa+aY6RdbW55KfrWb1MeyjlXQfQCfx4nKavy+pi3D5kew5lEfQfcZUs/KbDRn1H8uPu8/H89WWe1y62zlGlld0Co/5ciw52GyDjE5MSk7OjvW2Nq00y57kE8qe5hnyYFNy9hojI4uUJynAW3tyvUV8NamJ0Eshl8hbGIaGoDtAx7O7AvR3EiTjuPGWB1zBeTH1WdQH+AL7chnYy6WHgT0/hSPm2Ax6hWCT2zryAyWBT4N0pvYNocegA4aEwbr1iFdbyDLrHMd9XuOw/FseZhKx/jYuOxMd1orw6BYFJQO1qvERqBK+cvVjwUTXJmZzAyJGR2X6T1pWkvLfXqTwO+/05PTEMViUQ6/G0ZvXy+CkBrV7It/Daq253oYejuEnr4eqP8Oij+KGBkeURe5ZJsF1Ro0+e4D3Wja0oRfJO5QwcBxWYgAAAAASUVORK5CYII=" width="35" height="23" alt=""/>, um den Test abzuschließen.</LI>
+  <LI class="OL">Wählen Sie im Menü Audio-MIDI-Setup &quot;Audio-MIDI-Setup beenden&quot; aus, um die Einstellungen zu verlassen.</LI>
+</OL>
+
+
+
+<H3><A name="anchor0230">Bevor Sie das V51 mit Software verwenden</A></H3>
+<OL>
+  <LI class="OL">Verbinden Sie das V51 über ein USB-Kabel mit Ihrem Computer. Starten Sie anschließend die Software, die Sie verwenden möchten.
+  </LI>
+  <LI class="OL">Wählen Sie &quot;V51&quot; in den Audio-Treibereinstellungen Ihrer Software.
+  </LI>
+
+  <LI class="OL">Wählen Sie &quot;V51&quot; in den MIDI-Treibereinstellungen Ihrer Software.</LI>
+</OL>
+<P>Weitere Informationen finden Sie in der Bedienungsanleitung für die verwendete Software. </P>
+
+<HR>
+<H2><A name="anchor0300">Die Einstellungen ändern (V51 Driver Setup)</A></H2>
+<H3><A name="anchor0310">Die Einstellungen ändern oder überprüfen</A></H3>
+
+	<OL>
+	<LI class="OL">Verbinden Sie das V51 über ein USB-Kabel mit Ihrem Computer, und das V51 einschalten.
+	</LI>
+
+	<LI class="OL">Doppelklicken Sie im Ordner Programme - Roland - V51 Driver auf &quot;V51 Driver Setup&quot;, um die Anwendung zu starten.<BR>Das Feld Treibereinstellungen wird angezeigt.</LI>
+	</OL>
+
+<H3><A name="anchor0320">Informationen zu den Einträgen im Treibereinstellungen-Feld</A></H3>
+	<DL>
+
+	<DT>&quot;Audiopuffergröße&quot;</DT>
+		<DD>Sie können die Puffergröße des Audioeingangs/-ausgangs anpassen.</DD>
+		<DD>Durch eine Reduzierung der Puffergröße wird die Latenz verkürzt. Dies steigert die Echtzeit-Performance, erhöht jedoch auch je nach Rechenleistung des Computers und nach Audiodatenlast die Wahrscheinlichkeit von Klick- und Poppgeräuschen.<BR>Eine Erhöhung der Puffergröße führt zu einer Verlängerung der Latenz, aber die Stabilität des Audio-Streaming nimmt ebenfalls zu, und die Wahrscheinlichkeit von Popp- und Klickgeräuschen nimmt ab.</DD>
+		<DD>Im Allgemeinen empfiehlt sich eine Reduzierung der Puffergröße zur Verbesserung der Echtzeit-Performance, wenn Sie eine Synthesizer-Software in Echtzeit wiedergeben oder einen Audioeingang über die DAW-Software überwachen.<BR>Umgekehrt können Sie durch eine Erhöhung der Puffergröße verhindern, dass bei der Aufzeichnung oder Wiedergabe von Audiodaten, die aus zahlreichen Titeln bestehen und eine große Verarbeitungsleistung erfordern, Klick- und Poppgeräusche auftreten.</DD>
+		<DD>Indem Sie die Puffergröße je nach Situation individuell einstellen, erhalten Sie die richtige Balance zwischen Echtzeit-Performance und Stabilität des Audio-Streams.</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Aufnahmebandbreite&quot;</DT>
+		<DD>Treten auch nach der Anpassung der Audiopuffergröße in der Software und der genannten &quot;Audiopuffergröße&quot; bei den aufgenommenen Audiodaten Aussetzer im Tonsignal oder störende Geräusche auf, können Sie die &quot;Aufnahmebandbreite&quot;-Einstellung erhöhen.
+		<TABLE><TR><TD>*</TD><TD>Bei einigen Softwareanwendungen ist eine Einstellung der Puffergröße u. U. jedoch nicht möglich.</TD></TR></TABLE>
+		</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Aufnahmetaktung&quot;</DT>
+		<DD>Stellen Sie diesen Wert ein, wenn die Taktung der aufgenommenen Audiodaten nicht korrekt ist.</DD>
+		<DD>&nbsp;</DD>
+	<DT class="FN"><FONT size="-1">Hinweis)<BR>Wenn Sie auf [Übernehmen] klicken, während die Audiosoftware ausgeführt wird, werden diese Einstellungen nicht sofort aktiv. Das geschieht erst, nachdem alle Audioanwendungen beendet und die Software neu gestartet wurde.</FONT></DT>
+	</DL>
+
+
+<HR>
+<H2><A name="anchor0400">Deinstallieren</A></H2>
+	<OL>
+	<LI class="OL">Trennen Sie alle USB-Kabel, und starten Sie den Computer.<BR>(außer für Tastatur und Maus)</LI>
+	<LI class="OL">Doppelklicken Sie auf &quot;Uninstaller.&quot;</LI>
+	<LI class="OL">Auf dem Bildschirm wird die Meldung &quot;Hiermit wird der V51-Treiber von diesem Mac entfernt&quot; angezeigt. Klicken Sie auf [Deinstallieren].
+		<TABLE><TR><TD>*</TD><TD>Wird eine andere Meldung angezeigt, folgen Sie den Anweisungen in dieser Meldung.</TD></TR></TABLE></LI>
+	<LI class="OL">Auf dem Bildschirm wird die Meldung &quot;Möchten Sie den Treiber wirklich deinstallieren?&quot; angezeigt. Klicken Sie auf [OK].</LI>
+	<LI class="OL">Sie werden über ein Dialogfenster nach einem Kennwort gefragt; geben Sie es ein und klicken Sie auf [OK].</LI>
+	<LI class="OL">Auf dem Bildschirm wird die Meldung &quot;Die Deinstallation ist abgeschlossen.&quot; angezeigt. Klicken Sie auf [Neustart]. Ihr Computer wird jetzt neu gestartet.
+		<TABLE><TR><TD>*</TD><TD>Der Neustart des Computers kann u. U. eine Weile dauern.</TD></TR></TABLE></LI>
+	</OL>
+<HR>
+<H2><A name="anchor0500">Fehlerbehebung</A></H2>
+
+<H3><A name="anchor0540">Der Treiber kann nicht installiert/deinstalliert werden</A></H3>
+	<DL>
+
+	<DT>Führen Sie das unten erläuterte Verfahren aus, um das Installations-/Deinstallationsprogramm zu starten.</DT>
+	
+		<DD><OL class="FS">
+			<LI class="OL">Halten Sie die Ctrl-Taste gedrückt, und klicken Sie auf das Symbol für das Installations-/Deinstallationsprogramm.</LI>
+			<LI class="OL">Wählen Sie im angezeigten Menü &quot;Öffnen&quot; aus.</LI>
+			<LI class="OL">Wenn Sie zur Bestätigung des Startens der Anwendung aufgefordert werden, klicken Sie auf &quot;Öffnen&quot;.</LI>
+		</OL></DD>
+
+	<DT>Sicherheit-Einstellungen können Auswirkungen zeigen. Verwenden Sie das folgende Verfahren, zur Überprüfung der  Sicherheit-Einstellungen in  macOS.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">Klicken Sie in &quot;Systemeinstellungen&quot; auf &quot;Datenschutz & Sicherheit&quot;.</LI>
+		<LI class="OL">In den Sicherheit -Einstellungen ändern Sie die Einstellung für &quot;Apps erlauben von&quot; oder &quot;Apps erlauben, die geladen wurden von&quot; zu &quot;App Store & Bekannte Entwicklungsteams&quot; oder &quot;App Store und verifizierten Entwicklern&quot;.</LI>
+		<LI class="OL">Ein Dialogfeld erscheint, in dem Sie aufgefordert werden, die Änderungen zu bestätigen. Geben Sie das Passwort ein und klicken Sie auf [Einstellungen verändern].
+			<TABLE><TR><TD>*</TD><TD>Wenn Sie die Installation oder Deinstallation des Treibers abgeschlossen haben, setzen Sie die Einstellung unter Verwendung des gleichen Verfahrens wieder auf die ursprüngliche Einstellung zurück.</TD></TR></TABLE></LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+
+<H3><A name="anchor0505">Ihr Computer kann V51 nicht verwenden oder erkennen</A></H3>
+	<DL>
+		<DT>Ist der USB AUDIO – Driver Mode des V51 auf &quot;VENDOR&quot; eingestellt?</DT>
+			<DD class="FS">Stellen Sie sicher, dass der USB AUDIO – Driver Mode des V51 auf &quot;VENDOR&quot; eingestellt ist.</DD>
+			<DD>&nbsp;</DD>
+	<DT>Ist der Computer in einen Ruhezustand-Modus übergegangen, während das V51 verbunden und eingeschaltet war?</DT>
+		<DD class="FS">Wenn der Computer in einen Ruhezustand-Modus übergegangen ist, während das V51 verbunden und eingeschaltet war, funktioniert es u. U. nicht ordnungsgemäß. Nachdem der Computer aus dem Ruhezustand zurückgekehrt ist, beenden Sie alle Softwareanwendungen, die das V51 verwenden, und schalten Sie das V51 wieder ein.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Wenn Sie Ihren Mac hochfahren oder einen Neustart durchführen, während V51 noch mit dem Mac verbunden ist, wird der Treiber möglicherweise nicht korrekt geladen, sodass Sie V51 eventuell nicht nutzen können.</DT>
+		<DD class="FS">Trennen Sie V51 in einem solchen Fall und schließen Sie es an einen anderen USB-Anschluss an bzw. schalten Sie V51 erst ein, nachdem der Mac hochgefahren wurde.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0510">Es wird kein Ton ausgegeben, die Wiedergabe oder Aufnahme ist nicht möglich</A></H3>
+	<DL>
+	<DT>Kann es sein, dass Sie den Computer während der Wiedergabe oder der Aufnahme in den Ruhezustand-Modus versetzt haben?</DT>
+		<DD class="FS">Wenn Sie den Computer während der Wiedergabe oder der Aufnahme in den Ruhezustand-Modus versetzt haben, können vom V51 keine Audiodaten mehr wiedergegeben oder aufgenommen werden. Beenden Sie alle derzeit aktiven Softwareanwendungen zur Wiedergabe oder Aufnahme, schalten Sie das V51 aus und erneut ein.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Ändern Sie die Audiopuffergröße des Treibers.</DT>
+		<DD class="FS">Wenn der Audiopuffer des Treibers zu klein ist, wird möglicherweise kein Ton ausgegeben, oder eine normale Wiedergabe oder Aufnahme ist nicht möglich.</DD>
+		<DD class="FS">In diesem Fall finden Sie unter &quot;<A href="ReadmeDE2.htm#anchor0310">Die Einstellungen ändern</A>&quot; weitere Informationen, wie Sie die Größe des Puffers erhöhen. </DD>
+		<DD>&nbsp;</DD>
+	<DT>Datenschutz-Einstellungen können Auswirkungen zeigen. Verwenden Sie das folgende Verfahren, zur Überprüfung der Datenschutz-Einstellungen in macOS.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">Klicken Sie in &quot;Systemeinstellungen&quot; auf &quot;Datenschutz & Sicherheit&quot;.</LI>
+		<LI class="OL">In der Liste der Datenschutz-Einstellungen, wählen Sie &quot;Mikrofon&quot; aus.</LI>
+		<LI class="OL">Schalten Sie die Schalter neben jeder Anwendung ein, für die der Zugriff auf den Audio-Eingang zugelassen werden soll.</LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+<H3><A name="anchor0520">Gelegentlich treten Unterbrechungen oder störende Geräusche auf</A></H3>
+	<DL>
+	<DT>Ändern Sie die Audiopuffergröße in der verwendeten Software.</DT>
+		<DD class="FS">Ändern Sie zunächst die Audiopuffergröße in der verwendeten Software.<BR>Treten bei der Wiedergabe oder Aufnahme weiterhin Aussetzer im Tonsignal oder störende Geräusche auf, dann ändern bzw. vergrößern Sie die &quot;<A href="ReadmeDE2.htm#anchor0300">Audiopuffergröße</A>&quot; im Feld &quot;Treibereinstellungen&quot;.
+		<TABLE><TR><TD>*</TD><TD>Bei einigen Softwareanwendungen ist eine Einstellung der Puffergröße u. U. jedoch nicht möglich.</TD></TR></TABLE></DD>
+		<DD>&nbsp;</DD>
+	<DT>Haben Sie die macOS-Software u. U. aktualisiert, während das Gerät angeschlossen war?</DT>
+		<DD class="FS">Wenn Sie die macOS-Software aktualisiert haben, während das Gerät angeschlossen war, können Aussetzer im Tonsignal auftreten. Ist dies der Fall, installieren Sie den Treiber erneut.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Ist das V51 mit einem USB-Hub verbunden?</DT>
+		<DD class="FS">Verbinden Sie das V51 direkt mit einem USB-Anschluss des Computers.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0530">Bei den aufgenommenen Audiodaten treten gelegentlich Unterbrechungen im Tonsignal oder störende Geräusche auf</A></H3>
+	<DL>
+	<DD class="FS">Treten auch nach der Änderung der Audiopuffergröße, wie oben unter &quot;Gelegentlich treten Unterbrechungen oder störende Geräusche auf&quot; beschrieben, bei den aufgenommenen Audiodaten Aussetzer im Tonsignal oder störende Geräusche auf, können Sie im Feld Treibereinstellungen die &quot;<A href="ReadmeDE2.htm#anchor0300">Aufnahmebandbreite</A>&quot;-Einstellung erhöhen.<BR>
+		<TABLE><TR><TD>*</TD><TD>Bei einigen Softwareanwendungen ist eine Einstellung der Puffergröße u. U. jedoch nicht möglich.</TD></TR></TABLE></DD>
+	</DL>
+
+<HR>
+
+<P>Copyright (C) 2025 Roland Corporation. Alle Rechte vorbehalten.</P>
+
+</BODY>
+</HTML>

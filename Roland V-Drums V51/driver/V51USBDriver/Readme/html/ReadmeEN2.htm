@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0024)http://www.roland.co.jp/ -->
+<HTML lang="en">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>README_EN - V51 Driver for macOS</TITLE>
+<STYLE type="text/css">
+<!--
+BODY	{background-color: #FFFFFF;	color: #000000;}
+DL	{margin-left: 15pt;}
+DT	{font-weight: bold;	margin-bottom: 5pt;}
+DT.FN	{font-weight: normal;	margin-bottom: 0pt;}
+DD.FS	{font-size: smaller;}
+OL.FS	{font-size: smaller;}
+LI.OL	{margin-bottom: 15pt;}
+TABLE	{margin-top: 3pt;	margin-bottom: 5pt;}
+TD	{vertical-align: top;	font-size: smaller;}
+H3	{color: #000080;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H2>V51 Driver Ver.1.0.0 for macOS 13/14/15</H2>
+
+<FONT size="-1">Note<BR>In no event shall Roland Corporation ("Roland") be liable to end-users for any damages whatsoever, including but not limited to financial damages for loss of business profits or business information arising from the use of, or inability to use this product. The foregoing provision is effective even if Roland has been advised of the possibility of such damages.</FONT>
+
+<TABLE><TR><TD>*</TD><TD>All files and other material contained in this folder are copyrighted by the Roland. Any alteration, modification, duplication, distribution, or reproduction of this material is prohibited. Additionally, Roland reserves the right to make changes to these programs and files without prior notice.</TD></TR></TABLE>
+<TABLE cellspacing="0">
+<TR><TD>*</TD><TD>Apple and Mac are trademarks of Apple Inc., registered in the U.S. and other countries. </TD></TR>
+<TR><TD>*</TD><TD>macOS is a trademark of Apple Inc.</TD></TR>
+<TR><TD>*</TD><TD>All product names mentioned in this document are trademarks or registered trademarks of their respective owners.</TD></TR>
+</TABLE>
+
+<HR>
+
+<H2><A name="anchor0000">About this driver</A></H2>
+
+	
+	This is a driver for using the V51 on macOS 13/14/15.
+
+		<BR>To use this driver, you must set the USB AUDIO – Driver Mode of the V51 to &quot;VENDOR.&quot;
+
+
+
+<H3><A name="anchor0005">Features</A></H3>
+	<UL>
+		<LI>Universal Binary Driver(This driver can work on both Apple Silicon and Intel processors.)</LI>
+		<LI>Compatible with Apple's standards of CoreAudio and CoreMIDI</LI>
+		<LI>Can customize driver buffer size and managing precise recording and playback latencies</LI>
+	</UL>
+
+<H3><A name="anchor0010">System requirements</A></H3>
+	<P>This driver has the following requirements.</P>
+	<TABLE><TR><TD>*</TD><TD>Please also check the System requirements for the audio/MIDI application and the operating system you're using.</TD></TR></TABLE>
+	<DL>
+
+	<DT>Operating System</DT>
+		<DD>macOS 13/14/15</DD>
+		<DD>&nbsp;</DD>
+
+	<DT>Computer</DT>
+		<DD>Apple Mac series computer with on-board USB
+		<TABLE>
+			<TR><TD>*</TD><TD>This driver can work on both Apple Silicon and Intel processors.</TD></TR>
+			<TR><TD>*</TD><TD>Mac computers running Microsoft Windows are not supported.</TD></TR>
+        </TABLE>        
+		</DD>
+
+</DL>
+
+
+
+<H3><A name="anchor0020">Cautions and Limitations</A></H3>
+	<UL>
+		<LI>Before launching your audio/MIDI application, connect V51 to your computer using the USB cable, and turn on the power.</LI>
+		<LI>Do not turn off the power of the V51 or disconnect the USB cable during playback or recording. Doing so may cause your software or operating system to shut down abnormally.</LI>
+		<LI>Close your audio/MIDI application before turning off the power to V51 or disconnecting the USB cable.</LI>
+		<LI>If you start or restart Mac while V51 is still connected to Mac, the driver may not be loaded properly and you may not be able to use V51.In such a case, disconnect V51 and connect it to another USB port or turn on the power of V51 after  Mac starts up.</LI>
+		<LI>You must disconnect the V51 from the computer before performing a software update for macOS. If you performed the macOS software update with the V51 left connected, you will need to re-install the driver.</LI>
+		<LI>If the V51 does not work correctly after resuming from Sleep mode or after restarting the operating system, you should exit all applications that use the V51, and then disconnect the USB cable of the V51 and reconnect it.</LI>
+	</UL>
+<HR>
+<H2><A name="anchor0100">Installation</A></H2>
+	<TABLE>
+		<TR><TD>*</TD><TD>Be sure to close all running applications beforehand. Your computer will be restarted during driver installation procedure.</TD></TR>
+	</TABLE>
+	<OL>
+		<LI class="OL">Start computer with all USB cables disconnected.(except the keyboard and mouse)
+			<TABLE><TR><TD>*</TD><TD>Do not connect V51 to your computer until instructed to do so.</TD></TR></TABLE></LI>
+		<LI class="OL">Double-click V51_USBDriver13.pkg to launch the installer.</LI>
+		<LI class="OL">Follow the instructions on the screen to proceed with installation.
+			<TABLE>
+				<TR><TD>*</TD><TD>If the message &quot;"Installer" would like to access files in your Downloads folder. &quot; appears during installation, click [OK].</TD></TR>
+			</TABLE></LI>
+		<LI class="OL">When the installation is completed, click [Restart] to restart your computer.
+			<TABLE>
+				<TR><TD>*</TD><TD>If you are prompted to confirm wether to move the installer to the Trash, click [Keep].</TD></TR>
+				<TR><TD>*</TD><TD>It may take some time for restarting the computer.</TD></TR>
+			</TABLE></LI>
+    </OL>
+    <P>
+        When the computer restarts, connect V51 to the computer with a USB cable, and turn on the power of V51.
+    </P>
+	<TABLE>
+		<TR><TD>*</TD><TD>When prompted to confirm whether to allow the connection of the USB device, click [Allow].</TD></TR>
+	</TABLE>
+	<P>This completes installation of the V51 driver.</P>
+	<TABLE>
+		<TR><TD>*</TD><TD>The Readme file and driver uninstaller are installed in the Applications - Roland - V51 Driver folder.</TD></TR>
+	</TABLE>
+
+<HR>
+	<H2><A name="anchor0200">Before you begin</A></H2>
+
+
+		<TABLE><TR><TD>*</TD><TD>To use this driver, you must set the USB AUDIO – Driver Mode of the V51 to &quot;VENDOR.&quot;</TD></TR></TABLE>
+
+
+
+
+		<H3><A name="anchor0210">Settings for audio input and output on macOS</A></H3>
+		<OL>
+  <LI class="OL">Use a USB cable to connect the V51 to your computer and turn on the power of V51.
+  </LI>
+  <LI class="OL">In &quot;System Settings&quot;, click &quot;Sound.&quot;</LI>
+  <LI class="OL">In &quot;Play sound effects through&quot; and &quot;Output & Input&quot;, select &quot;V51.&quot;<BR>
+  </LI>
+</OL>
+
+		<H3><A name="anchor0220">Settings for MIDI input and output on macOS</A></H3>
+<OL>
+  <LI class="OL">Use a USB cable to connect the V51 to your computer and turn on the power of V51.
+  </LI>
+
+  <LI class="OL">In the Applications - Utilities folder, double-click &quot;Audio MIDI Setup&quot; to start it up.</LI>
+  <LI class="OL">From the Window menu, choose &quot;Show MIDI Studio&quot; to open the MIDI Studio window.</LI>
+  <LI class="OL">In the &quot;MIDI Studio&quot; dialog box, make sure that &quot;V51&quot; is displayed.
+    <TABLE>
+      <TR><TD>*</TD><TD>If &quot;V51&quot; is not shown, or is shown in gray, the V51 has not been recognized correctly. Try clicking &quot;Rescan MIDI&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAOpSURBVEhLxVfNL2NxFD3vtT5ShNigaZuqqe2ImdFuNLPB3h/AasbOwkokrETsRSysbCQSsRaCHSZTIoZFSz/MlNkJQhVt3/zOnXYyM31TNcmY+8vxmvd+H+ede+59oRkq7u7u8PXsK3RdFzxXZLNZZNIZ2B12VFRUAKlUyjgKHZHTfwueTx5aLBoz3M1upNPpHN/nD6vVingsDt3IGshkMyLZ/0L+fF236CAhpdaTYLFYUF5eXgDeN5tfFOp8rtNikZjhcDmQyWRyohUPTdPk0NPTU6ysrCAcDuPq6go1NTVobW1Fd3c3HA4H7u/v5aBSgkQSnxOKjPKM0+UsiQyJlJWVYXZ2Fpubm6iurpZ7LpcLoVBIcq+MCL/fj4GBATw8PJREiGS+fP4Cnbn6RbIiIJHJyUns7u6ivr5eXuDy8hI+nw8zMzOw2+2oqqrC3t4eJiYmZL7ZPmYQz2hQQ73dY2AfWF9fRzQahc1mk9T09/djbm4OnZ2dosro6KikinNPTk4kjfxttl8B1NAVL1Omv4OxuLgoqbm4uMD4+Di8Xi+GhoawvLwMNs6xsTHxEIlRoaWlJVlntl8B1NANzTBn+hModzwel15EMC0NDQ1ChL44ODjA4OCgqEUluDk7OaWPRCKy3mzfn0EeaoViztIuAjUdZ6dnYjSS6XjTgY2NDUkXD2dlUTE+p4GpEglRIT7TtVz7KALyKNkzv4dFU/1EDfnNHqHmJJNJvH/3Xirp9vZWnqnV/FOwXwHU0LPG92ri9U9g1TTaG+XKt93+sI3A2wBSt6kf5csrFXnZ9lJUY2qoYlNTk3wMzfbNI3++KPMY83QmDU+zR4gQwWAQiUQCU1NTqKurE0Oz1Kenp8Uj+/v7ohZ988L7Qtab7ZvHdwpqKPcbbrf70aZXWVmJtbU1LCwsSLdlf+nr60MgEMjNgJT+/Pw8amtrcX19jd7eXvT09IiPigWJs0C0cChsNHuaS+rANCubHnsIzUtfMBUkx0riZ4Kk6R2n04mRkRFJ3WNBMupLoKpJBXNWCrjx8PAw2tvbcX5+Lpuwn7CEWU1MC++3tbX9IGK2jxkYT1KGwRznP5Srq6vS5G5ubkQpdt+urq6/+lBSGe3w4NDwtHhKJpMPGpmkxIC54OEkwdQ9JUgmGokqMp8OjRZvS0m5/VdBLx6Hj6EpsxnBj0H4/D4pwVwfe55QolotVmxtbqHD3wH57yB5k8ROcEceUrLnCrGGevlXr1/BVmXDN/6aBv+IRenaAAAAAElFTkSuQmCC" width="35" height="23" alt=""/>. Alternatively, switch the power of the V51 off, then back on again.</TD></TR>
+      <TR><TD>*</TD><TD>If you installed a different version driver, it is possible that the previous settings are still present. If so, click the grayed &quot;V51&quot; to select it, and then click &quot;Remove Device&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAGbSURBVEhLzVfLboJAFL13wNKPULoRf8FuTBM/vKau6g53DdCYoh9RHGB6z4BuSoo2LePBQ8Zk5J4c7mNkI9BHTXmek1KKRv6IiOlvYfCRWwsJSYoV6VJTXdcUhiGN7iTusTiaOI6hyRm28RaGGE6T1EyjKVVV1eoeHp7nUZZk8mbELhFn7XJFxGfFpDzfs+qY2RkB3/dJ2dWNgHfvOzMOx85z5pAfSKHkuqwbmtBhXxMSyDUBhWy+FLAzCIKLiL3XADo4yzKDDtiXM8j2NE0pSRK7/gllWdJsNqMoiuy6DxBuJ4CpxaYraLv6Bez6bR9ZOp8JH/qdAXzPp1Nf6kNVVlRW/a4A1pmPnDh5S8wknDgv7X2+l2qSBmhYbHJM6LA5w7XUumNCh6pZhtWNUEFVVzUMTeiw48BeHV1xMLaX0lp3zoqhiaOvnKzEJVEHfFM8AJvATWwuPguzel7R4mlhFZ43/BdwlmpDnOKtX9a0XC7J/jsoioI2rxvb+IL74Lz5DHxvDmS/hvggj2iKBX0Fa8RFw5s/zmW4BvQFiq7KOllybi8AAAAASUVORK5CYII=" width="35" height="23" alt=""/> to delete the previous settings.</TD></TR>
+    </TABLE>
+  </LI>
+
+
+  <LI class="OL">To verify that MIDI transmission/reception is occurring correctly, perform the following procedure.</LI>
+  <LI class="OL">Click &quot;Test Setup&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAMVSURBVEhLxVdNT1pBFD3vgYrWmOjChZLGjzRxo4lK1ETpopAgcWPiXuMvcOePcOWfcee6LqqJsbjAr0cAq3FpBEF5vM65OOTxOtqmVnvgeHnjnbmHO3c+sDyFarWKqx9XsG1b+F6o1+tway4GogPo6OgAKpWKd5o9pab/BsanDsu5cLyh4SHUarUnve+PcDiMnJOD7dU9uHVXUmaidn4tCdP4pI5vKUXeYHQQrutKBz9YPyqL2N3dfWr5eySTSViWJUGDCIVCuCxewnLOHS/6MWoUw6La3NzE7e2tdAjCNLU6C35w7J6eHmxtbYGLJQiOXcwXYcOCKDaRuLm5QXd3Nzo7O1vIoFNTU5iYmGgyFotJe9CX/TkOYYpDUofNtHEqTCRMGSGYlfHxcYyNjTVJQc8tBD2OKQ5JHbbSZVRK6s50DJL1lMlkkM1mmzw6OpJ2k7+GKY5QvWyl6xeVmkR7ezv6+vrQ29vbwv7+fhSLRVxfXzdZKBSkPejL/nq8YIwm1cv2LM+sVFFDbUhi7+/vxepnTgnJOmGRtrW1iU/QT1vCFIekDpVTpVbtNSYSpVIJqVQKuVwOS0tLcBwH6cW02EQigcSXBPL5PBZTi4029cx2v186nW6uIlMckjp+WzOPj4+Ix+OyvOfn58UuxBfEiphkAnd3d4h/bvjwme1+P/arVBvZMcURsmbqXmM10Qb5L8FghCmOji+ZkbdBrR/ButGW+NM2whhH3syMmqyWqvbRj7W1NbHr6+stllhdXRXLNt3P5EcEY2hSB06yJ56qCznCgyRWVlbEvhbLy8tiTXEYnzos/uEVwnQ2RSIRbGxsYHJyUrb1INTYT58a6TeBmyBX5OHhIba3t1uWuQZ3Z14hRMzwyPCLp/bOzo7Y5wK+BN2P2wKtfzfWoBh1r4J1nDn2RkZHjGIICuIu/Fo8PDwYhRAUc3F+ocR8P/ZGP40aj/b3Aq8qZydnsMrlsrf/bR+zc7OouerEbV1Ebws16+FQGHtf9zAzNwP5dVAulXGwfyD/fO7K8BaQ0lBffjo2ja4PXfgJxk+JldoZAp0AAAAASUVORK5CYII=" width="35" height="23" alt=""/>.
+    <TABLE><TR><TD>*</TD><TD>The following step will cause a relatively loud sound to be produced by the sound generator, so it is a good idea to turn down the volume on the sound generator first.</TD></TR></TABLE>
+  </LI>
+  <LI class="OL">Click the &#x25BC; of the V51 that was shown in step 4. If you hear sound, the settings have been made correctly.</LI>
+  <LI class="OL">Click &quot;Test Setup&quot;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAN4SURBVEhLxVfNaxNBFP/N7jb9EBUKgrRpbBulIOKl0vai4tdBBA8e1JtfePSgUgSLVQ8evehd8B/wIOhFL17swRbBtkI/0rRp0oKiUMW4SXd3fG92YifptEXE+mt+ebuzL+/95s2b3a2QhFKphMWFRTiOo7hZiKIIYRCiJdmC+vp6wPd9OTUxxZr+Gzg/6xDZmaxs72hHEARa7+bD8zzMZmfhyEgijEJVMhsdROT89+Q4tvjMSn5BimRrshVhGGqdK/CofUIp8PCNHhDa/glkbG4eBlwhEUTxuQnXdVHIFyCymaxMppJWMdxTrfcdLHwXSLh60EDZsrIJTx8YKFPolq0ShbsRaK+sAovJ5/IkhnqmLdVmFZNISIhrLnY06wEDPgk52SVRMgQ1kJCXE0LZWnz+SkV6HKJcXl1eFjOfm4fDa0UNbaXCGjudRZzqinB8t2Y6wum91eKqoOPY8jBZhyOoEYSws4KQ1rmW3E8vJhy8no75ivj8o4j7zOJfgS2PIv9lpjMytSu1Zs+4/S727yTlulAmeKlqYVsil+b1fk5APgrX7JncXI62NnW4VSmRQRXEN18drlgdkBuYWU8CuElZCPvU+i0ZAmx5mKyDtz/4XmMjQxaB28ckPuQF7p0gOy9w52hsbxySuHFQYrQgMHAkHrtO5zxu+g3S71FW4ax5mKwDmamMDJYDWfJLqyilL3F1ObZXtL3E9qe2frWPOVbjh4uxteXh/KzDiWS8m9jWkuahPvrLsJWO5PPaa+aY6RdbW55KfrWb1MeyjlXQfQCfx4nKavy+pi3D5kew5lEfQfcZUs/KbDRn1H8uPu8/H89WWe1y62zlGlld0Co/5ciw52GyDjE5MSk7OjvW2Nq00y57kE8qe5hnyYFNy9hojI4uUJynAW3tyvUV8NamJ0Eshl8hbGIaGoDtAx7O7AvR3EiTjuPGWB1zBeTH1WdQH+AL7chnYy6WHgT0/hSPm2Ax6hWCT2zryAyWBT4N0pvYNocegA4aEwbr1iFdbyDLrHMd9XuOw/FseZhKx/jYuOxMd1orw6BYFJQO1qvERqBK+cvVjwUTXJmZzAyJGR2X6T1pWkvLfXqTwO+/05PTEMViUQ6/G0ZvXy+CkBrV7It/Daq253oYejuEnr4eqP8Oij+KGBkeURe5ZJsF1Ro0+e4D3Wja0oRfJO5QwcBxWYgAAAAASUVORK5CYII=" width="35" height="23" alt=""/> once again to end the test.</LI>
+  <LI class="OL">From the Audio MIDI Setup menu, choose &quot;Quit Audio MIDI Setup&quot; to exit the settings.</LI>
+</OL>
+
+
+
+<H3><A name="anchor0230">Before you use the V51 with software</A></H3>
+<OL>
+  <LI class="OL">Use a USB cable to connect the V51 with your computer. Then, start up the software you will be using.
+  </LI>
+  <LI class="OL">Select &quot;V51&quot; in the audio driver setting of your software.
+  </LI>
+
+  <LI class="OL">Select &quot;V51&quot; in the MIDI driver setting of your software.</LI>
+</OL>
+<P>For details, refer to the manual that came with your software. </P>
+
+<HR>
+<H2><A name="anchor0300">To change the settings (V51 Driver Setup)</A></H2>
+<H3><A name="anchor0310">To change or verify settings</A></H3>
+
+	<OL>
+	<LI class="OL">Use a USB cable to connect the V51 to your computer and turn on the power of V51.
+	</LI>
+
+	<LI class="OL">In the Applications - Roland - V51 Driver folder, double-click &quot;V51 Driver Setup&quot; to start it up.<BR>The Driver Settings Panel is displayed.</LI>
+	</OL>
+
+<H3><A name="anchor0320">About the items in the Driver Settings Panel</A></H3>
+	<DL>
+
+	<DT>&quot;Audio Buffer Size&quot;</DT>
+		<DD>You can adjust the audio input/output buffer size.</DD>
+		<DD>Decreasing the buffer size will shorten the latency and improve realtime performance, but might make it more likely that you will experience audio clicks and pops, depending on your computer's processing power and the song data load.<BR>Increasing the buffer size will lengthen the latency, but will make audio streaming more stable, and it will be less likely for audio clicks and pops to occur.</DD>
+		<DD>In general, you'll probably want to decrease the buffer size for better realtime performance if you're playing a software synthesizer in real time, or if you're monitoring an audio input that's being passed through your DAW software.<BR>Conversely, you can increase the buffer size to prevent audio clicks and pops if you're recording or playing back song data that contains numerous tracks and presents a heavy processing load.</DD>
+		<DD>By changing the buffer size as appropriate for your situation, you can obtain the right balance between realtime performance and audio streaming stability.</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Recording Margin&quot;</DT>
+		<DD>If the recorded audio data contains sound dropouts or noise even after you've adjusted the audio buffer size in your software and also adjusted the above &quot;Audio Buffer Size,&quot; try increasing this &quot;Recording Margin&quot; setting.
+		<TABLE><TR><TD>*</TD><TD>For some software, it may not be possible to adjust the buffer size.</TD></TR></TABLE>
+		</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;Recording Timing&quot;</DT>
+		<DD>If the timing of the recorded audio data is not correct, adjust this value.</DD>
+		<DD>&nbsp;</DD>
+	<DT class="FN"><FONT size="-1">Note)<BR>If you click the [Apply] while your audio software is running, the setting changes won't be immediately reflected. Only after all audio software have been quit, and the software is then started once again will the settings become effective.</FONT></DT>
+	</DL>
+
+
+<HR>
+<H2><A name="anchor0400">To uninstall</A></H2>
+	<OL>
+	<LI class="OL">Start computer with all USB cables disconnected.<BR>(except the keyboard and mouse)</LI>
+	<LI class="OL">Double-click &quot;Uninstaller.&quot;</LI>
+	<LI class="OL">The display will indicate &quot;This uninstalls V51 driver from this Mac.&quot;; click [Uninstall].
+		<TABLE><TR><TD>*</TD><TD>If any other message appears, proceed as directed by that message.</TD></TR></TABLE></LI>
+	<LI class="OL">The display will indicate &quot;Are you sure you want to uninstall the driver?&quot;; click [OK].</LI>
+	<LI class="OL">A dialog box will ask you for a password; enter your password and click [OK].</LI>
+	<LI class="OL">The display will indicate &quot;Uninstallation is completed.&quot;; click [Restart]. Your computer will then restart.
+		<TABLE><TR><TD>*</TD><TD>It may take some time for restarting the computer.</TD></TR></TABLE></LI>
+	</OL>
+<HR>
+<H2><A name="anchor0500">Troubleshooting</A></H2>
+
+<H3><A name="anchor0540">Cannot install/uninstall the driver</A></H3>
+	<DL>
+
+	<DT>Follow the procedure described below to start the installer/uninstaller.</DT>
+	
+		<DD><OL class="FS">
+			<LI class="OL">Hold down the Control key and click the installer/uninstaller icon.</LI>
+			<LI class="OL">On the menu that appears, select &quot;Open.&quot;</LI>
+			<LI class="OL">When you are prompted to confirm that you want to start the application, click &quot;Open.&quot;</LI>
+		</OL></DD>
+
+	<DT>Security settings may have an effect. Use the following procedure to check the Security settings in macOS.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">In &quot;System Settings&quot;, click &quot;Privacy & Security.&quot;</LI>
+		<LI class="OL">In Security settings, change the setting for &quot;Allow applications from&quot; or &quot;Allow applications downloaded from&quot; to &quot;App Store & Known Developers&quot; or &quot;App Store and identified developers.&quot;</LI>
+		<LI class="OL">A dialog box will appear prompting you to confirm the changes. Enter the password and click [Modify Settings].
+			<TABLE><TR><TD>*</TD><TD>When you finish installing or uninstalling the driver, change the setting back to the original setting using the same procedure.</TD></TR></TABLE></LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+
+<H3><A name="anchor0505">V51 cannot be used or recognized</A></H3>
+	<DL>
+		<DT>Is the V51's USB AUDIO – Driver Mode set to &quot;VENDOR&quot;?</DT>
+			<DD class="FS">Be sure to set the V51's USB AUDIO – Driver Mode to &quot;VENDOR.&quot;</DD>
+			<DD>&nbsp;</DD>
+	<DT>Did the computer enter a Sleep mode while the V51 was connected with its power turned on?</DT>
+		<DD class="FS">If the computer entered a Sleep mode while the V51 was connected with its power turned on, it may not operate correctly. In this case, after resuming, exit all software that are using the V51, and then turn on the power of the V51 once again.</DD>
+		<DD>&nbsp;</DD>
+	<DT>If you start or restart Mac while V51 is still connected to Mac, the driver may not be loaded properly and you may not be able to use V51.</DT>
+		<DD class="FS">In such a case, disconnect V51 and connect it to another USB port or turn on the power of V51 after  Mac starts up.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0510">No sound is heard; cannot playback or record</A></H3>
+	<DL>
+	<DT>Could you have entered Sleep mode during playback or recording?</DT>
+		<DD class="FS">If you entered Sleep mode during playback or recording, it will no longer be possible to play back or record from the V51. Exit all currently playing or recording software, and switch the power of the V51 off, then back on again.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Try adjusting the audio buffer size of the driver</DT>
+		<DD class="FS">If the size of the driver's audio buffer is too small, sound may not be produced, or it may be impossible to carry out normal playback and recording. </DD>
+		<DD class="FS">In such cases, you should refer to &quot;<A href="ReadmeEN2.htm#anchor0310">To change or verify settings</A>,&quot; and increase the size of the buffer.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Privacy settings may have an effect. Use the following procedure to check the Privacy settings in macOS.</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">In &quot;System Settings&quot;, click &quot;Privacy & Security.&quot;</LI>
+		<LI class="OL">In the list of Privacy settings, select &quot;Microphone.&quot;</LI>
+		<LI class="OL">Turn on the switches next to each application for which access to the audio input is to be allowed.</LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+<H3><A name="anchor0520">Occasional disruptions in the sound or noises occur</A></H3>
+	<DL>
+	<DT>Try adjusting the audio buffer size for the software you're using.</DT>
+		<DD class="FS">First, try adjusting the audio buffer size for the software you're using.<BR>If sound dropouts or noise still occur during playback or recording, try adjusting the &quot;<A href="ReadmeEN2.htm#anchor0300">Audio Buffer Size</A>&quot; in the Driver Settings panel.
+		<TABLE><TR><TD>*</TD><TD>For some software, it may not be possible to adjust the buffer size.</TD></TR></TABLE></DD>
+		<DD>&nbsp;</DD>
+	<DT>Could you have performed a macOS software update while the device was still connected?</DT>
+		<DD class="FS">If you performed the macOS software update with the device left connected, drop-outs may occur in the sound. If this occurs, please re-install the driver.</DD>
+		<DD>&nbsp;</DD>
+	<DT>Is the V51 connected to a USB hub?</DT>
+		<DD class="FS">Try connecting the V51 directly to the USB connector of your computer itself.</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0530">Occasional disruptions in the sound or noises are in the recorded audio data</A></H3>
+	<DL>
+	<DD class="FS">If the recorded audio still contains sound dropouts or noise even after you've adjusted the audio buffer size as described in &quot;Occasional disruptions in the sound or noises occur&quot; (above), try increasing the &quot;<A href="ReadmeEN2.htm#anchor0300">Recording Margin</A>&quot; in the Driver Settings panel.<BR>
+		<TABLE><TR><TD>*</TD><TD>For some software, it may not be possible to adjust the buffer size.</TD></TR></TABLE></DD>
+	</DL>
+
+<HR>
+
+<P>Copyright (C) 2025 Roland Corporation. All rights reserved.</P>
+
+</BODY>
+</HTML>

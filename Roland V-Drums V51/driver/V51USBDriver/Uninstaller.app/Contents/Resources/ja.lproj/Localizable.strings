@@ -1,0 +1,21 @@
+"Alert" = "注意";
+"FailToUninstall" = "アンインストールできませんでした。";
+"DeviceFound" = "USBキーボード、USB マウス以外のすべてのUSBデバイスをこのMacから外してから、このUninstallerを再度ダブルクリックしてください。";
+"SureToUninstall" = "ドライバを削除します。よろしいですか？";
+"FinishUninstall" = "アンインストールが完了しました。再起動・ボタンを押してください。";
+"NoNeedUninstall" = "このMacにはドライバがインストールされていませんので、アンインストールの必要はありません。終了・ボタンを押してください。";
+"QuitBtn" = "終了";
+"UninstallBtn" = "アンインストール";
+"RestartBtn" = "再起動";
+"CancelBtn" = "キャンセル";
+"OKBtn" = "OK";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "";
+"PreScrptMsgP" = "";
+"PostScrptMsgN" = "";
+"PostScrptMsgP" = "";
+
+/* Messages */
+"IDS_FILEERROR" = "ファイルが不足しているかファイルを読めません。\nプログラムを終了します。";
+"IDS_UNKNOWN_OS" = "ご使用の OS には対応していません。対応 OS をご確認ください。";

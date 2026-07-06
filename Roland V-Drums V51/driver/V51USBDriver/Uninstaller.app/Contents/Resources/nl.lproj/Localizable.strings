@@ -1,0 +1,21 @@
+"Alert" = "Waarschuwing";
+"FailToUninstall" = "Ongedaan maken van installatie is mislukt.";
+"DeviceFound" = "Koppel USB-apparaten los van de Mac, behalve het USB-toetsenbord en de muis. Probeer de installatie na het loskoppelen van USB-apparaten opnieuw ongedaan te maken.";
+"SureToUninstall" = "Bent u zeker dat u het stuurprogramma wilt verwijderen?";
+"FinishUninstall" = "Installatie ongedaan gemaakt. Klik op de knop Opnieuw opstarten.";
+"NoNeedUninstall" = "Aangezien het stuurprogramma niet op deze Mac aanwezig is, moet het niet worden verwijderd. Klik op de knop Sluiten.";
+"QuitBtn" = "Sluiten";
+"UninstallBtn" = "Verwijderen";
+"RestartBtn" = "Opnieuw opstarten";
+"CancelBtn" = "Annuleren";
+"OKBtn" = "OK";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "PreScript Message, it returns negative value that leads app quits.";
+"PreScrptMsgP" = "PreScript Message, it returns positive value that leads back to top page.";
+"PostScrptMsgN" = "PostScript Message, it returns negative value that leads app quits.";
+"PostScrptMsgP" = "PostScript Message, it returns positive value that leads back to top page.";
+
+/* Messages */
+"IDS_FILEERROR" = "Onvolledige bestanden of bestanden kunnen niet worden gelezen.\nHet programma werd beeindigd.";
+"IDS_UNKNOWN_OS" = "Het besturingssysteem dat u gebruikt, wordt niet ondersteund.\nControleer de ondersteunde besturingssystemen.";

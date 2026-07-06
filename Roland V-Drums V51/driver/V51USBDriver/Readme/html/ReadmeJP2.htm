@@ -1,0 +1,295 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0024)http://www.roland.co.jp/ -->
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>README_JP - V51 Driver for macOS</TITLE>
+<STYLE type="text/css">
+<!--
+BODY	{background-color: #FFFFFF;	color: #000000;}
+DL	{margin-left: 15pt;}
+DT	{font-weight: bold;	margin-bottom: 5pt;}
+DT.FN	{font-weight: normal;	margin-bottom: 0pt;}
+DD.FS	{font-size: smaller;}
+OL.FS	{font-size: smaller;}
+LI.OL	{margin-bottom: 15pt;}
+TABLE	{margin-top: 3pt;	margin-bottom: 5pt;}
+TD	{vertical-align: top;	font-size: smaller;}
+H3	{color: #000080;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H2>V51 Driver Ver.1.0.0 for macOS 13/14/15</H2>
+
+
+<TABLE><TR><TD>※</TD><TD>このフォルダに含まれるファイルの内容その他を、ローランド株式会社（「ローランド」）の許諾なく改変、複製、配布、転載することは禁止します。またファイルの内容については、プログラム改良の為予告なく変更されることがあります。</TD></TR></TABLE>
+<TABLE cellspacing="0">
+<TR><TD>※</TD><TD>Apple, Mac は、米国およびその他の国で登録されたApple Inc.の商標です。</TD></TR>
+<TR><TD>※</TD><TD>macOS は、Apple Inc.の商標です。</TD></TR>
+<TR><TD>※</TD><TD>文中記載のその他の会社名及び製品名は、各社の商標または登録商標です。</TD></TR>
+</TABLE>
+
+<HR>
+
+<H2><A name="anchor0000">このドライバについて</A></H2>
+
+	
+	このドライバは、macOS 13/14/15 で V51 を使用するためのドライバです。
+
+		<BR>お使いの前に、 V51 の USB AUDIO – Driver Mode を「VENDOR」に設定してからご使用ください。
+
+
+
+<H3><A name="anchor0005">特長</A></H3>
+	<UL>
+		<LI>Universal Binary対応（Appleシリコン MacとIntelベースMacでネイティブに動作）</LI>
+		<LI>macOS 標準の CoreAudio／CoreMIDI に対応</LI>
+		<LI>ドライバのバッファ・サイズ設定、緻密な録音、再生レイテンシの調整が可能</LI>
+	</UL>
+
+<H3><A name="anchor0010">動作条件</A></H3>
+	<P>このドライバは、以下の動作条件が必要になります。</P>
+	<TABLE><TR><TD>※</TD><TD>お使いのオーディオ／MIDIアプリケーションが必要とする動作条件、お使いのオペレーティング・システムが必要とする動作条件もご確認ください。</TD></TR></TABLE>
+	<DL>
+
+	<DT>対応 OS</DT>
+		<DD>macOS 13/14/15</DD>
+		<DD>&nbsp;</DD>
+
+	<DT>対応パソコン</DT>
+		<DD>USB ポートを標準で搭載している Apple Mac シリーズ
+		<TABLE>
+			<TR><TD>※</TD><TD>Appleシリコン MacとIntelベースMacでネイティブに動作</TD></TR>
+			<TR><TD>※</TD><TD>Windowsが動作しているMacはサポート対象外となります。</TD></TR>
+        </TABLE>        
+		</DD>
+
+</DL>
+
+
+
+<H3><A name="anchor0020">制限事項および注意事項</A></H3>
+	<UL>
+		<LI>お使いのオーディオ／MIDIアプリケーションを起動する前に、V51 とコンピューターを USB ケーブルで接続し、電源を入れてください。</LI>
+		<LI>再生・録音中に、V51 の電源を切ったり、USB ケーブルを抜いたりしないでください。ソフトウェアや OS が異常終了する場合があります。</LI>
+		<LI>お使いのオーディオ／MIDIアプリケーションを終了してから、V51 の電源を切る、もしくは USB ケーブルを抜いてください。</LI>
+		<LI>V51 を Mac に接続したまま Mac を起動、または再起動すると、ドライバが正しく読み込まれず V51 が使えないことがあります。その場合は、V51 を他の USB ポートに接続しなおすか、または、V51 の電源を Mac が起動した後に入れてください。</LI>
+		<LI>macOS のソフトウェア アップデートを行う場合には、コンピューターから V51 を抜いてから行ってください。V51 を挿したまま macOS のソフトウェア アップデートを行った場合は、再度ドライバのインストールを行ってください。</LI>
+		<LI>スリープ状態からの復帰後、またはOSの再起動後、V51 が正しく動作しない場合は、使用しているアプリケーションをすべて終了し、V51の USB ケーブルを抜き、差し直してください。</LI>
+	</UL>
+<HR>
+<H2><A name="anchor0100">インストールする</A></H2>
+	<TABLE>
+		<TR><TD>※</TD><TD>起動中のアプリケーションは、あらかじめ終了しておいてください。ドライバのインストール途中で、コンピューターの再起動を行います。</TD></TR>
+	</TABLE>
+	<OL>
+		<LI class="OL">すべての USB ケーブルをはずした状態でコンピューターを起動します。（キーボード、マウスを除く）
+			<TABLE><TR><TD>※</TD><TD>指示があるまで、 V51 をコンピュータに接続しないでください。</TD></TR></TABLE></LI>
+		<LI class="OL">「V51_USBDriver13.pkg」をダブルクリックし、インストーラーを起動します。</LI>
+		<LI class="OL">画面の指示に従って、インストールを進めます。
+			<TABLE>
+				<TR><TD>※</TD><TD>インストール中に、「"インストーラ"から"ダウンロード"フォルダ内のファイルにアクセスしようとしています。」というメッセージが表示された場合は、[OK] をクリックします。</TD></TR>
+			</TABLE></LI>
+		<LI class="OL">インストールが完了したら、［再起動］をクリックしてコンピューターを再起動します。
+			<TABLE>
+				<TR><TD>※</TD><TD>インストーラを削除するかどうかを確認する画面が表示された場合は、[残す] をクリックしてください。</TD></TR>
+				<TR><TD>※</TD><TD>コンピューターが再起動されるまでに時間がかかる場合があります。</TD></TR>
+			</TABLE></LI>
+    </OL>
+    <P>
+        コンピューターが再起動したら、V51 とコンピューターを USB ケーブルで接続し、V51 の電源を入れます。
+    </P>
+	<TABLE>
+		<TR><TD>※</TD><TD>USB機器の接続を許可するかどうかを確認する画面が表示された場合は、[許可] をクリックしてください。</TD></TR>
+	</TABLE>
+	<P>以上で V51 Driver のインストールは終了です。</P>
+	<TABLE>
+		<TR><TD>※</TD><TD>アプリケーション － Roland － V51 DriverフォルダにReadmeファイルとドライバのアンインストーラーがインストールされます。</TD></TR>
+	</TABLE>
+
+<HR>
+	<H2><A name="anchor0200">お使いになる前に</A></H2>
+
+
+		<TABLE><TR><TD>※</TD><TD>お使いの前に、 V51 の USB AUDIO – Driver Mode を「VENDOR」に設定してからご使用ください。</TD></TR></TABLE>
+
+
+
+
+		<H3><A name="anchor0210">macOS のオーディオ入出力の設定</A></H3>
+		<OL>
+  <LI class="OL">V51 とコンピューターを USB ケーブルで接続し、V51 の電源を入れます。
+  </LI>
+  <LI class="OL">「システム設定」で「サウンド」をクリックします。</LI>
+  <LI class="OL">「サウンドエフェクトの再生装置」および「出力と入力」で「V51」を選択します。<BR>
+  </LI>
+</OL>
+
+		<H3><A name="anchor0220">macOS の MIDI 入出力の設定</A></H3>
+<OL>
+  <LI class="OL">V51 とコンピューターを USB ケーブルで接続し、V51 の電源を入れます。
+  </LI>
+
+  <LI class="OL">アプリケーション － ユーティリティ・フォルダの中にある「Audio MIDI 設定」を、ダブルクリックして起動します。</LI>
+  <LI class="OL">ウインドウ メニューの「MIDIスタジオを表示」を選択して、MIDIスタジオ画面を開きます。</LI>
+  <LI class="OL">「MIDIスタジオ」ダイアログに、「V51」が表示されていることを確認します。
+    <TABLE>
+      <TR><TD>※</TD><TD>「V51」が表示されていない、または淡色表示されている場合、V51 が正常に認識されていません。「MIDI を再スキャン」<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAOpSURBVEhLxVfNL2NxFD3vtT5ShNigaZuqqe2ImdFuNLPB3h/AasbOwkokrETsRSysbCQSsRaCHSZTIoZFSz/MlNkJQhVt3/zOnXYyM31TNcmY+8vxmvd+H+ede+59oRkq7u7u8PXsK3RdFzxXZLNZZNIZ2B12VFRUAKlUyjgKHZHTfwueTx5aLBoz3M1upNPpHN/nD6vVingsDt3IGshkMyLZ/0L+fF236CAhpdaTYLFYUF5eXgDeN5tfFOp8rtNikZjhcDmQyWRyohUPTdPk0NPTU6ysrCAcDuPq6go1NTVobW1Fd3c3HA4H7u/v5aBSgkQSnxOKjPKM0+UsiQyJlJWVYXZ2Fpubm6iurpZ7LpcLoVBIcq+MCL/fj4GBATw8PJREiGS+fP4Cnbn6RbIiIJHJyUns7u6ivr5eXuDy8hI+nw8zMzOw2+2oqqrC3t4eJiYmZL7ZPmYQz2hQQ73dY2AfWF9fRzQahc1mk9T09/djbm4OnZ2dosro6KikinNPTk4kjfxttl8B1NAVL1Omv4OxuLgoqbm4uMD4+Di8Xi+GhoawvLwMNs6xsTHxEIlRoaWlJVlntl8B1NANzTBn+hModzwel15EMC0NDQ1ChL44ODjA4OCgqEUluDk7OaWPRCKy3mzfn0EeaoViztIuAjUdZ6dnYjSS6XjTgY2NDUkXD2dlUTE+p4GpEglRIT7TtVz7KALyKNkzv4dFU/1EDfnNHqHmJJNJvH/3Xirp9vZWnqnV/FOwXwHU0LPG92ri9U9g1TTaG+XKt93+sI3A2wBSt6kf5csrFXnZ9lJUY2qoYlNTk3wMzfbNI3++KPMY83QmDU+zR4gQwWAQiUQCU1NTqKurE0Oz1Kenp8Uj+/v7ohZ988L7Qtab7ZvHdwpqKPcbbrf70aZXWVmJtbU1LCwsSLdlf+nr60MgEMjNgJT+/Pw8amtrcX19jd7eXvT09IiPigWJs0C0cChsNHuaS+rANCubHnsIzUtfMBUkx0riZ4Kk6R2n04mRkRFJ3WNBMupLoKpJBXNWCrjx8PAw2tvbcX5+Lpuwn7CEWU1MC++3tbX9IGK2jxkYT1KGwRznP5Srq6vS5G5ubkQpdt+urq6/+lBSGe3w4NDwtHhKJpMPGpmkxIC54OEkwdQ9JUgmGokqMp8OjRZvS0m5/VdBLx6Hj6EpsxnBj0H4/D4pwVwfe55QolotVmxtbqHD3wH57yB5k8ROcEceUrLnCrGGevlXr1/BVmXDN/6aBv+IRenaAAAAAElFTkSuQmCC" width="35" height="23" alt=""/>をクリックしてみてください。また、V51 の電源を入れ直してみてください。</TD></TR>
+      <TR><TD>※</TD><TD>バージョンの違うドライバをインストールした場合、以前の設定が残っている場合があります。その場合は、淡色表示されている「V51」をクリックして選択し、「選択した装置を削除」<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAGbSURBVEhLzVfLboJAFL13wNKPULoRf8FuTBM/vKau6g53DdCYoh9RHGB6z4BuSoo2LePBQ8Zk5J4c7mNkI9BHTXmek1KKRv6IiOlvYfCRWwsJSYoV6VJTXdcUhiGN7iTusTiaOI6hyRm28RaGGE6T1EyjKVVV1eoeHp7nUZZk8mbELhFn7XJFxGfFpDzfs+qY2RkB3/dJ2dWNgHfvOzMOx85z5pAfSKHkuqwbmtBhXxMSyDUBhWy+FLAzCIKLiL3XADo4yzKDDtiXM8j2NE0pSRK7/gllWdJsNqMoiuy6DxBuJ4CpxaYraLv6Bez6bR9ZOp8JH/qdAXzPp1Nf6kNVVlRW/a4A1pmPnDh5S8wknDgv7X2+l2qSBmhYbHJM6LA5w7XUumNCh6pZhtWNUEFVVzUMTeiw48BeHV1xMLaX0lp3zoqhiaOvnKzEJVEHfFM8AJvATWwuPguzel7R4mlhFZ43/BdwlmpDnOKtX9a0XC7J/jsoioI2rxvb+IL74Lz5DHxvDmS/hvggj2iKBX0Fa8RFw5s/zmW4BvQFiq7KOllybi8AAAAASUVORK5CYII=" width="35" height="23" alt=""/>をクリックして、設定を削除してください。</TD></TR>
+    </TABLE>
+  </LI>
+
+
+  <LI class="OL">MIDI の送受信が正常に行われていることを確認します。以下の手順を行ってください。</LI>
+  <LI class="OL">「MIDI設定をテスト」<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAMVSURBVEhLxVdNT1pBFD3vgYrWmOjChZLGjzRxo4lK1ETpopAgcWPiXuMvcOePcOWfcee6LqqJsbjAr0cAq3FpBEF5vM65OOTxOtqmVnvgeHnjnbmHO3c+sDyFarWKqx9XsG1b+F6o1+tway4GogPo6OgAKpWKd5o9pab/BsanDsu5cLyh4SHUarUnve+PcDiMnJOD7dU9uHVXUmaidn4tCdP4pI5vKUXeYHQQrutKBz9YPyqL2N3dfWr5eySTSViWJUGDCIVCuCxewnLOHS/6MWoUw6La3NzE7e2tdAjCNLU6C35w7J6eHmxtbYGLJQiOXcwXYcOCKDaRuLm5QXd3Nzo7O1vIoFNTU5iYmGgyFotJe9CX/TkOYYpDUofNtHEqTCRMGSGYlfHxcYyNjTVJQc8tBD2OKQ5JHbbSZVRK6s50DJL1lMlkkM1mmzw6OpJ2k7+GKY5QvWyl6xeVmkR7ezv6+vrQ29vbwv7+fhSLRVxfXzdZKBSkPejL/nq8YIwm1cv2LM+sVFFDbUhi7+/vxepnTgnJOmGRtrW1iU/QT1vCFIekDpVTpVbtNSYSpVIJqVQKuVwOS0tLcBwH6cW02EQigcSXBPL5PBZTi4029cx2v186nW6uIlMckjp+WzOPj4+Ix+OyvOfn58UuxBfEiphkAnd3d4h/bvjwme1+P/arVBvZMcURsmbqXmM10Qb5L8FghCmOji+ZkbdBrR/ButGW+NM2whhH3syMmqyWqvbRj7W1NbHr6+stllhdXRXLNt3P5EcEY2hSB06yJ56qCznCgyRWVlbEvhbLy8tiTXEYnzos/uEVwnQ2RSIRbGxsYHJyUrb1INTYT58a6TeBmyBX5OHhIba3t1uWuQZ3Z14hRMzwyPCLp/bOzo7Y5wK+BN2P2wKtfzfWoBh1r4J1nDn2RkZHjGIICuIu/Fo8PDwYhRAUc3F+ocR8P/ZGP40aj/b3Aq8qZydnsMrlsrf/bR+zc7OouerEbV1Ebws16+FQGHtf9zAzNwP5dVAulXGwfyD/fO7K8BaQ0lBffjo2ja4PXfgJxk+JldoZAp0AAAAASUVORK5CYII=" width="35" height="23" alt=""/>をクリックします。
+    <TABLE><TR><TD>※</TD><TD>次の操作では音源から比較的大きな音が鳴りますので、音源のボリュームを小さめにしておいてください。</TD></TR></TABLE>
+  </LI>
+  <LI class="OL">手順4で表示されていたV51の下向きの矢印をクリックします。音源から音が鳴れば、正しく設定ができています。</LI>
+  <LI class="OL">再度「MIDI設定をテスト」<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAXCAYAAACBMvbiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAN4SURBVEhLxVfNaxNBFP/N7jb9EBUKgrRpbBulIOKl0vai4tdBBA8e1JtfePSgUgSLVQ8evehd8B/wIOhFL17swRbBtkI/0rRp0oKiUMW4SXd3fG92YifptEXE+mt+ebuzL+/95s2b3a2QhFKphMWFRTiOo7hZiKIIYRCiJdmC+vp6wPd9OTUxxZr+Gzg/6xDZmaxs72hHEARa7+bD8zzMZmfhyEgijEJVMhsdROT89+Q4tvjMSn5BimRrshVhGGqdK/CofUIp8PCNHhDa/glkbG4eBlwhEUTxuQnXdVHIFyCymaxMppJWMdxTrfcdLHwXSLh60EDZsrIJTx8YKFPolq0ShbsRaK+sAovJ5/IkhnqmLdVmFZNISIhrLnY06wEDPgk52SVRMgQ1kJCXE0LZWnz+SkV6HKJcXl1eFjOfm4fDa0UNbaXCGjudRZzqinB8t2Y6wum91eKqoOPY8jBZhyOoEYSws4KQ1rmW3E8vJhy8no75ivj8o4j7zOJfgS2PIv9lpjMytSu1Zs+4/S727yTlulAmeKlqYVsil+b1fk5APgrX7JncXI62NnW4VSmRQRXEN18drlgdkBuYWU8CuElZCPvU+i0ZAmx5mKyDtz/4XmMjQxaB28ckPuQF7p0gOy9w52hsbxySuHFQYrQgMHAkHrtO5zxu+g3S71FW4ax5mKwDmamMDJYDWfJLqyilL3F1ObZXtL3E9qe2frWPOVbjh4uxteXh/KzDiWS8m9jWkuahPvrLsJWO5PPaa+aY6RdbW55KfrWb1MeyjlXQfQCfx4nKavy+pi3D5kew5lEfQfcZUs/KbDRn1H8uPu8/H89WWe1y62zlGlld0Co/5ciw52GyDjE5MSk7OjvW2Nq00y57kE8qe5hnyYFNy9hojI4uUJynAW3tyvUV8NamJ0Eshl8hbGIaGoDtAx7O7AvR3EiTjuPGWB1zBeTH1WdQH+AL7chnYy6WHgT0/hSPm2Ax6hWCT2zryAyWBT4N0pvYNocegA4aEwbr1iFdbyDLrHMd9XuOw/FseZhKx/jYuOxMd1orw6BYFJQO1qvERqBK+cvVjwUTXJmZzAyJGR2X6T1pWkvLfXqTwO+/05PTEMViUQ6/G0ZvXy+CkBrV7It/Daq253oYejuEnr4eqP8Oij+KGBkeURe5ZJsF1Ro0+e4D3Wja0oRfJO5QwcBxWYgAAAAASUVORK5CYII=" width="35" height="23" alt=""/>をクリックし、確認を終了します。</LI>
+  <LI class="OL">Audio MIDI 設定 メニューの「Audio MIDI設定を終了」を選択し、設定を終了します。</LI>
+</OL>
+
+
+
+<H3><A name="anchor0230">ソフトウェアでお使いの前に</A></H3>
+<OL>
+  <LI class="OL">V51 とコンピューターを USB ケーブルで接続してから、ソフトウェアを起動します。
+  </LI>
+  <LI class="OL">ご使用のソフトウェアの Audio Driver の設定で、「V51」を選択します。
+  </LI>
+
+  <LI class="OL">ご使用のソフトウェアの MIDI Driver の設定で、「V51」を選択します。</LI>
+</OL>
+<P>詳しくは、ご使用のソフトウェアのマニュアルを参照してください。</P>
+
+<HR>
+<H2><A name="anchor0300">設定の変更をするには (V51 Driver Setup)</A></H2>
+<H3><A name="anchor0310">設定の変更／確認をするには</A></H3>
+
+	<OL>
+	<LI class="OL">V51 とコンピューターを USB ケーブルで接続し、V51 の電源を入れます。
+	</LI>
+
+	<LI class="OL">アプリケーション - Roland - V51 Driver・フォルダの中にある「V51 Driver Setup」を、ダブルクリックして起動します。<BR>ドライバ設定のパネルが表示されます。</LI>
+	</OL>
+
+<H3><A name="anchor0320">ドライバ設定パネルの項目について</A></H3>
+	<DL>
+
+	<DT>&quot;オーディオ入出力のバッファサイズ&quot;</DT>
+		<DD>オーディオ入出力のバッファサイズを調整することができます。</DD>
+		<DD>バッファ・サイズを小さくすると、レイテンシーが小さくなり、リアルタイム性が向上しますが、コンピューターの処理能力や曲データの負荷によっては、録音・再生に音切れなどが発生しやすくなります。<BR>バッファ・サイズを大きくすると、レイテンシーは大きくなりますが、オーディオ転送が安定し、音切れなどが起こりにくくなります。</DD>
+		<DD>一般に、ソフトシンセをリアルタイムで演奏したり、DAWソフトウェアでオーディオ入力をスルーさせてモニターする場合などには、リアルタイム性をあげるため、バッファサイズを小さくします。<BR>逆にトラック数が多く負荷の高い曲データの録音や再生には、音切れなどを防ぐため、バッファサイズを大きくします。</DD>
+		<DD>目的に応じてバッファサイズを変更し、音切れなどのトラブルが発生しないよう、リアルタイム性とオーディオ転送の安定性のバランスを調整してください。</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;録音のマージン&quot;</DT>
+		<DD>お使いのソフトウェアでオーディオのバッファサイズを調整し、上記「オーディオ入出力のバッファサイズ」を調節しても、録音したオーディオデータに音切れやノイズがある場合は、この録音のマージンを大きくしてください。
+		<TABLE><TR><TD>※</TD><TD>ソフトウェアによっては、バッファサイズを調整できない場合があります。</TD></TR></TABLE>
+		</DD>
+		<DD>&nbsp;</DD>
+	<DT>&quot;録音のタイミング&quot;</DT>
+		<DD>録音したオーディオデータのタイミングがずれるような場合は、この値を調整してください。</DD>
+		<DD>&nbsp;</DD>
+	<DT class="FN"><FONT size="-1">ご注意<BR>オーディオソフトウェアの起動中は、［適用］を押しても、これらの設定はすぐに反映されません。すべてのオーディオソフトウェアが終了し、次にソフトウェアを起動したときに設定が有効になります。</FONT></DT>
+	</DL>
+
+
+<HR>
+<H2><A name="anchor0400">アンインストールするには</A></H2>
+	<OL>
+	<LI class="OL">すべての USB ケーブルをはずした状態でコンピューターを起動します。<BR>（キーボード、マウスを除く）</LI>
+	<LI class="OL">「Uninstaller」をダブルクリックします。</LI>
+	<LI class="OL">「V51 ドライバを削除します。」と表示されますので、［アンインストール］をクリックします。
+		<TABLE><TR><TD>※</TD><TD>その他のメッセージが表示された場合は、そのメッセージの内容にしたがってください。</TD></TR></TABLE></LI>
+	<LI class="OL">「ドライバを削除します。よろしいですか？」と表示されますので、［OK］をクリックします。</LI>
+	<LI class="OL">パスワードの入力を求めるダイアログが表示されますので、パスワードを入力し、［OK］をクリックします。</LI>
+	<LI class="OL">「アンインストールが完了しました。」と表示されますので、［再起動］をクリックしてコンピューターを再起動します。
+		<TABLE><TR><TD>※</TD><TD>コンピューターが再起動されるまでに時間がかかる場合があります。</TD></TR></TABLE></LI>
+	</OL>
+<HR>
+<H2><A name="anchor0500">トラブルシューティング</A></H2>
+
+<H3><A name="anchor0540">ドライバをインストール／アンインストールできない</A></H3>
+	<DL>
+
+	<DT>以下の手順で、インストーラー／アンインストーラーを起動してみてください。</DT>
+	
+		<DD><OL class="FS">
+			<LI class="OL">control キーを押しながら、起動したいインストーラー／アンインストーラーのアイコンをクリックします。</LI>
+			<LI class="OL">表示されたメニューから「開く」を選びます。</LI>
+			<LI class="OL">アプリケーションの実行を確認するメッセージが表示されますので、「開く」をクリックします。</LI>
+		</OL></DD>
+
+	<DT>セキュリティ設定による影響が考えられます。以下の手順で macOS のセキュリティ設定を確認してください。</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">「システム設定」で「プライバシーとセキュリティ」をクリックします。</LI>
+		<LI class="OL">セキュリティ設定の中にある「アプリケーションの実行許可」または「ダウンロードしたアプリケーションの実行許可」の設定を「App Store と既知のデベロッパ」または「App Store と確認済みの開発元からのアプリを許可」に変更します。</LI>
+		<LI class="OL">変更の許可を求めるダイアログが表示されますので、パスワードを入力し、［設定を変更］をクリックします。
+			<TABLE><TR><TD>※</TD><TD>ドライバのインストール、またはアンインストールが終了したら、同様の手順で元の設定に戻してください。</TD></TR></TABLE></LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+
+<H3><A name="anchor0505">V51 が使用できない、認識されない</A></H3>
+	<DL>
+		<DT>V51 のUSB AUDIO – Driver Modeは「VENDOR」に設定されていますか？</DT>
+			<DD class="FS">V51 の USB AUDIO – Driver Modeを「VENDOR」に設定してからご使用ください。</DD>
+			<DD>&nbsp;</DD>
+	<DT>V51 が電源の入った状態で接続されているときにコンピューターがスリープ状態に入りませんでしたか？</DT>
+		<DD class="FS">V51 が電源の入った状態で接続されているときにスリープ状態に入った場合、正しく動作しなくなる場合があります。このような場合は、復帰後、V51 を使用しているソフトウェアをすべて終了し、V51 の電源を入れなおしてください。</DD>
+		<DD>&nbsp;</DD>
+	<DT>V51 を Mac に接続したまま Mac を起動、または再起動すると、ドライバが正しく読み込まれず V51 が使えないことがあります。</DT>
+		<DD class="FS">その場合は、V51 を他の USB ポートに接続しなおすか、または、V51 の電源を Mac が起動した後に入れてください。</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0510">音が鳴らない、再生／録音ができない</A></H3>
+	<DL>
+	<DT>再生／録音中にコンピューターがスリープ状態に入りませんでしたか？</DT>
+		<DD class="FS">再生／録音中にスリープ状態に入った場合、正しく動作しなくなる場合があります。V51 を使用しているソフトウェアをすべて終了し、V51 の電源を入れなおしてください。</DD>
+		<DD>&nbsp;</DD>
+	<DT>ドライバのオーディオのバッファサイズを調整してみてください</DT>
+		<DD class="FS">ドライバのオーディオのバッファサイズが小さすぎると、音が鳴らなかったり、正常に再生／録音ができない場合があります。</DD>
+		<DD class="FS">「<A href="ReadmeJP2.htm#anchor0310">設定の変更／確認をするには</A>」を参照してバッファサイズを大きくしてみてください。</DD>
+		<DD>&nbsp;</DD>
+	<DT>プライバシー設定による影響が考えられます。以下の手順で macOS のプライバシー設定を確認してください。</DT>
+	<DD>
+			<DD><OL class="FS">
+		<LI class="OL">「システム設定」で「プライバシーとセキュリティ」をクリックします。</LI>
+		<LI class="OL">プライバシー設定の一覧から、「マイク」を選択します。</LI>
+		<LI class="OL">アプリケーションの横のスイッチをONにし、オーディオ入力へのアクセスを許可します。</LI>
+	</OL></DD>
+	</DD>
+	</DL>
+
+<H3><A name="anchor0520">音切れやノイズがある</A></H3>
+	<DL>
+	<DT>お使いのソフトウェアで、オーディオのバッファサイズを調整してみてください。</DT>
+		<DD class="FS">まず、お使いのソフトウェアで、オーディオのバッファサイズを調整してみてください。<BR>それでも再生・録音の際に音切れやノイズなどが発生する場合は、ドライバ設定パネルの「<A href="ReadmeJP2.htm#anchor0300">オーディオ入出力のバッファサイズ</A>」を調整してみてください。
+		<TABLE><TR><TD>※</TD><TD>ソフトウェアによっては、バッファサイズを調整できない場合があります。</TD></TR></TABLE></DD>
+		<DD>&nbsp;</DD>
+	<DT>デバイスを挿したまま macOS のソフトウェア アップデートを行いませんでしたか？</DT>
+		<DD class="FS">デバイスを挿したまま macOS のソフトウェア アップデートを行った場合、音切れが発生する場合が確認されています。その場合は、再度ドライバのインストールを行ってください。</DD>
+		<DD>&nbsp;</DD>
+	<DT>USB ハブに V51 を接続していませんか？</DT>
+		<DD class="FS">コンピューター本体の USB 端子に直接、接続してみてください。</DD>
+		<DD>&nbsp;</DD>
+	</DL>
+
+<H3><A name="anchor0530">録音したオーディオデータに音切れやノイズがある</A></H3>
+	<DL>
+	<DD class="FS">上記「音切れやノイズがある」の項目を参考に、バッファサイズの調整を行っても、まだ録音したオーディオデータに音切れやノイズがある場合は、ドライバ設定パネルの「<A href="ReadmeJP2.htm#anchor0300">録音のマージン</A>」を大きくしてみてください。<BR>
+		<TABLE><TR><TD>※</TD><TD>ソフトウェアによっては、バッファサイズを調整できない場合があります。</TD></TR></TABLE></DD>
+	</DL>
+
+<HR>
+
+<P>Copyright (C) 2025 Roland Corporation. All rights reserved.</P>
+
+</BODY>
+</HTML>

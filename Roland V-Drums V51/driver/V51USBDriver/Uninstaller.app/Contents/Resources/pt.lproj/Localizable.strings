@@ -1,0 +1,21 @@
+"Alert" = "Alerta";
+"FailToUninstall" = "Falha na desinstalação.";
+"DeviceFound" = "Desconecte os dispositivos USB, exceto o teclado e o mouse USB deste Mac. Depois de desconectar os dispositivos USB, reinicie este desinstalador novamente.";
+"SureToUninstall" = "Tem certeza de que deseja desinstalar o driver?";
+"FinishUninstall" = "A desinstalação foi concluída. Clique no botão Reiniciar.";
+"NoNeedUninstall" = "Como o driver não existe neste Mac, não há necessidade de desinstalá-lo. Clique no botão Sair.";
+"QuitBtn" = "Sair";
+"UninstallBtn" = "Desinstalar";
+"RestartBtn" = "Reiniciar";
+"CancelBtn" = "Cancelar";
+"OKBtn" = "OK";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "PreScript Message, it returns negative value that leads app quits.";
+"PreScrptMsgP" = "PreScript Message, it returns positive value that leads back to top page.";
+"PostScrptMsgN" = "PostScript Message, it returns negative value that leads app quits.";
+"PostScrptMsgP" = "PostScript Message, it returns positive value that leads back to top page.";
+
+/* Messages */
+"IDS_FILEERROR" = "Arquivos incompletos, ou os eles nao puderam ser lidos.\nO programa foi encerrado.";
+"IDS_UNKNOWN_OS" = "O sistema operacional que você está usando não é compatível.\nVerifique os sistemas operacionais compatíveis.";

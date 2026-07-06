@@ -1,0 +1,21 @@
+"Alert" = "Warnung";
+"FailToUninstall" = "Die Deinstallation ist fehlgeschlagen.";
+"DeviceFound" = "Trennen Sie alle USB-Geräte außer USB-Tastatur und -Maus von diesem Mac. Starten Sie den Deinstallationsvorgang erneut, nachdem Sie die USB-Geräte getrennt haben.";
+"SureToUninstall" = "Möchten Sie den Treiber wirklich deinstallieren?";
+"FinishUninstall" = "Die Deinstallation ist abgeschlossen. Klicken Sie auf die Taste „Neustart“.";
+"NoNeedUninstall" = "Da der Treiber auf diesem Mac nicht vorhanden ist, muss er nicht entfernt werden. Klicken Sie auf die Taste zum Beenden.";
+"QuitBtn" = "Beenden";
+"UninstallBtn" = "Deinstallieren";
+"RestartBtn" = "Neustart";
+"CancelBtn" = "Abbrechen";
+"OKBtn" = "OK";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "PreScript Message, it returns negative value that leads app quits.";
+"PreScrptMsgP" = "PreScript Message, it returns positive value that leads back to top page.";
+"PostScrptMsgN" = "PostScript Message, it returns negative value that leads app quits.";
+"PostScrptMsgP" = "PostScript Message, it returns positive value that leads back to top page.";
+
+/* Messages */
+"IDS_FILEERROR" = "Dateien unvollstandig oder Dateien konnen nicht gelesen werden.\nDas Programm wurde beendet.";
+"IDS_UNKNOWN_OS" = "Das von Ihnen verwendete Betriebssystem wird nicht unterstützt.\nÜberprüfen Sie, welche Betriebssysteme unterstützt werden.";

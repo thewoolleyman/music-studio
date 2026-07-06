@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+"RDDEVICE" = "V51";
+CFBundleName = "Uninstaller";
+CFBundleShortVersionString = "Uninstaller version 1.2.0";
+CFBundleGetInfoString = "Uninstaller version 1.2.0, Copyright © 2020 Roland Corporation.";
+NSHumanReadableCopyright = "Copyright © 2020 Roland Corporation.";

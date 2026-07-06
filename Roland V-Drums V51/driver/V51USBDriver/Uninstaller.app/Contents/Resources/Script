@@ -1,0 +1,264 @@
+#!/bin/sh
+
+TRACE=":"
+
+# =========================================================================
+# Uninstall Script
+# =========================================================================
+$TRACE "========== V51 Driver Uninstaller =========="
+
+# =========================================================================
+# Parameters
+# =========================================================================
+AandM="1"
+AUDIO="0"
+MIDI="0"
+APP="0"
+fRet=1
+
+### check flags ###
+if [ "$AandM" = "1" -a "$AUDIO" = "1" ] ; then
+	$TRACE "Both AandM and Audio are defined..."
+	exit -1
+fi
+if [ "$AandM" = "1" -a "$MIDI" = "1" ] ; then
+	$TRACE "Both AandM and Midi are defined..."
+	exit -1
+fi
+
+### check OS version ###
+osVer=`sw_vers -productVersion`
+majorVer=`echo $osVer | cut -d '.' -f 1`
+minorVer=`echo $osVer | cut -d '.' -f 2`
+
+
+$TRACE "Start Script" "$1"
+
+# =========================================================================
+# functions
+# =========================================================================
+function rm_old_pkg_receipt() {
+	local fRun=$1
+	local pkgId=$2
+
+	if [ -e "$pkgId" ] ; then
+		if [ "$fRun" = "RUN" ] ; then
+			$TRACE "remove $pkgId"
+			rm -R "$pkgId"
+		else
+			$TRACE "$pkgId exists"
+		fi
+		fRet=0
+	fi
+}
+
+function forget_pkg_receipt() {
+	local fRun=$1
+	local pkg=$2
+
+	pkgutil --pkgs | grep "$pkg" | while read pkgId ; do
+		if pkgutil --pkg-info $pkgId ; then
+			if [ "$fRun" = "RUN" ] ; then
+				$TRACE "forget $pkgId"
+				pkgutil --forget "$pkgId"
+			else
+				$TRACE "$pkgId exists"
+			fi
+			fRet=0
+		fi
+	done
+}
+
+function delete_files_if_exist() {
+	local fRun=$1
+	local dname=$2
+	local fname=$3
+	local fTouch=$4
+
+	if [ -e "$dname""$fname" ] ; then
+		if [ "$fRun" = "RUN" ] ; then
+			$TRACE remove "$dname""$fname"
+			mv "$dname""$fname" "/tmp"
+			rm -R /tmp/"$fname"
+			if [ "$fTouch" = "1" ] ; then
+				$TRACE touch "$dname"
+				touch "$dname"
+			fi
+		else
+			$TRACE "$dname""$fname" exists
+		fi
+		fRet=0
+	fi
+}
+
+function delete_launch_daemon() {
+	local fRun=$1
+	local plist=$2
+
+	if [ -e "$plist" ] ; then
+		if [ "$fRun" = "RUN" ] ; then
+			$TRACE "unload and remove $plist"
+			launchctl unload -w "$plist"
+			rm -f "$plist"
+		else
+			$TRACE "$plist exists"
+		fi
+	fi
+}
+
+function remove_dir_if_empty() {
+	local fRun=$1
+	local path=$2
+
+	if [ -d "$path" ] ; then
+		if [ "$fRun" = "RUN" ] ; then
+			$TRACE "remove $path"
+			rm -f "$path/.DS_Store"
+			rmdir "$path"
+		else
+			$TRACE "$path exists"
+		fi
+	fi
+}
+
+# =========================================================================
+# Delete PKG in Receipts (Installer)
+# =========================================================================
+
+# remove old pkg receipt
+rm_old_pkg_receipt "$1" "/Library/Receipts/V51USBDriver.pkg"
+
+# forget pkg receipt
+if [ $majorVer -eq 10 -a $minorVer -ge 9 ] || [ $majorVer -ge 11 ] ; then
+	# pkgs for user-space driver
+	forget_pkg_receipt "$1" "jp.co.roland.V51.audio"
+	forget_pkg_receipt "$1" "jp.co.roland.V51.midi"
+	forget_pkg_receipt "$1" "jp.co.roland.V51.setup"
+	forget_pkg_receipt "$1" "jp.co.roland.V51.daemon"
+	forget_pkg_receipt "$1" "jp.co.roland.V51.app"
+
+	# clean-up receipt for KEXT driver
+	forget_pkg_receipt "$1" "jp.co.roland.V51.kext"
+	forget_pkg_receipt "$1" "jp.co.roland.V51.pref"
+	forget_pkg_receipt "$1" "jp.co.roland.V51.start"
+
+	# old style pkgs
+	if [ "$AandM" = "1" ] ; then
+		forget_pkg_receipt "$1" "jp.co.roland.RDUSB032F.SN"
+	fi
+	if [ "$AUDIO" = "1" ] ; then
+		forget_pkg_receipt "$1" "jp.co.roland.RDUSB.SN"
+	fi
+	if [ "$MIDI" = "1" ] ; then
+		forget_pkg_receipt "$1" "jp.co.roland.RDUSB.SN"
+    fi
+fi
+
+# =========================================================================
+# Delete Files
+# =========================================================================
+function delete_driver_files() {
+	local fRun=$1
+	local Pid=$2
+	# kext
+	delete_files_if_exist "$fRun" "/System/Library/Extensions/" "RDUSB"$Pid"Dev.kext" 1
+	delete_files_if_exist "$fRun" "/Library/Extensions/" "RDUSB"$Pid"Dev.kext" 1
+	# PrefPane
+	delete_files_if_exist "$fRun" "/Library/PreferencePanes/" "RDUSB"$Pid"Pref.prefPane"
+	# StartupItems
+	delete_files_if_exist "$fRun" "/Library/StartupItems/" "RDUSB"$Pid"Startup"
+	# daemon
+	delete_launch_daemon "$fRun" "/Library/LaunchAgents/jp.co.roland.RDUSB"$Pid"Setupd.plist"
+	delete_launch_daemon "$fRun" "/Library/LaunchDaemons/jp.co.roland.RDUSB"$Pid"Setupd.plist"
+	delete_files_if_exist "$fRun" "/Library/Application Support/RolandDrv/RDUSB$Pid/" "RDUSB"$Pid"Setupd.plist"
+	delete_files_if_exist "$fRun" "/Library/Application Support/RolandDrv/RDUSB$Pid/" "RDUSB"$Pid"Setupd"
+	remove_dir_if_empty "$fRun" "/Library/Application Support/RolandDrv/RDUSB$Pid"
+	# preferences
+	delete_files_if_exist "$fRun" "/Library/Preferences/" "jp_co_roland_RDUSB"$Pid"Dev.pref.plist"
+	# MIDI plugin
+	delete_files_if_exist "$fRun" "/Library/Audio/MIDI Drivers/" "RDUSB"$Pid"Midi.plugin"
+	# Audio plugin
+	delete_files_if_exist "$fRun" "/Library/Audio/Plug-Ins/HAL/" "RDUSB"$Pid"Audio.driver"
+}
+
+### Audio and MIDI
+if [ "$AandM" = "1" ] ; then
+	delete_driver_files "$1" 032F
+fi
+
+### Audio
+if [ "$AUDIO" = "1" ] ; then
+	delete_driver_files "$1" 
+fi
+
+### MIDI
+if [ "$MIDI" = "1" ] ; then
+	delete_driver_files "$1" 
+fi
+
+### Delete Roland Application Support root dir ###
+	remove_dir_if_empty "$1" "/Library/Application Support/RolandDrv"
+
+### Applications
+if [ "$APP" = "1" ] ; then
+	# Mixer CPL
+	delete_files_if_exist "$1" "/Applications/" ""
+	delete_files_if_exist "$1" "$HOME""/Library/Preferences/" "jp.co.roland.RDUSB032F.cpl.plist"
+fi
+
+### Uninstall old version
+if [ ! "" = "" ] ; then
+	delete_driver_files "$1" 
+fi
+
+# =========================================================================
+# Delete Uninstaller / Readme
+# =========================================================================
+TempDir="/tmp/V51.$RANDOM"
+UninstName=Uninstaller.app
+ReadmeDir=Readme
+ReadmeName=Readme.htm
+SetupAppName="V51 Driver Setup.app"
+
+function delete_install_folder () {
+	local fRun=$1
+	local InstRoot="$2"
+	local InstDir="$InstRoot"/"V51 Driver"
+
+	for Target in "$InstDir/$UninstName" "$InstDir/$ReadmeName" "$InstDir/$ReadmeDir" "$InstDir/$SetupAppName"
+	do
+		if [ -e "$Target" ] ; then
+			$TRACE $Target" exists"
+			if [ "$1" = "RUN" ] ; then
+				mv "$Target" "$TempDir"
+			fi
+			fRet=0
+		fi
+	done
+
+	if [ "$1" = "RUN" ]
+	then
+# should not delete the Uninstaller.app itself. it causes the app crash.
+# files/dirs in /tmp will automatically be deleted at the reboot sequence.
+#		rm -R "$TempDir"
+		rm "$InstDir/.DS_Store"
+		rmdir "$InstDir"
+		rm "$InstRoot/.DS_Store"
+		rmdir "$InstRoot"
+	fi
+}
+
+if [ "$1" = "RUN" ] ; then
+	if [ ! -e "$TempDir" ] ; then
+		mkdir "$TempDir"
+	fi
+fi
+
+delete_install_folder "$1" "/Applications/Roland"
+delete_install_folder "$1" "/Applications/BOSS"
+
+# =========================================================================
+# Return Value
+# =========================================================================
+$TRACE "V51 Driver Uninstaller returns = "$fRet
+exit $fRet

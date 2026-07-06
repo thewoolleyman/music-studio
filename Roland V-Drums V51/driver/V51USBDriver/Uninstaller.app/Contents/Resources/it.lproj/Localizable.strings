@@ -1,0 +1,21 @@
+"Alert" = "Avviso";
+"FailToUninstall" = "Disinstallazione non riuscita.";
+"DeviceFound" = "Scollegare i dispositivi USB eccetto la tastiera e il mouse USB dal Mac. Dopo aver scollegato di dispositivi USB, riavviare nuovamente il programma di disinstallazione.";
+"SureToUninstall" = "Disinstallare il driver?";
+"FinishUninstall" = "Disinstallazione completata. Selezionare il pulsante Riavvia.";
+"NoNeedUninstall" = "Poiché il driver non esiste in questo Mac, non è necessario disinstallarlo. Selezionare il pulsante Chiudi.";
+"QuitBtn" = "Chiudi";
+"UninstallBtn" = "Disinstalla";
+"RestartBtn" = "Riavvia";
+"CancelBtn" = "Annulla";
+"OKBtn" = "OK";
+"PreCheckMsgN" = "PreCheck Message, it returns negative value that leads app quits.";
+"PreCheckMsgP" = "PreCheck Message, it returns positive value that leads back to top page.";
+"PreScrptMsgN" = "PreScript Message, it returns negative value that leads app quits.";
+"PreScrptMsgP" = "PreScript Message, it returns positive value that leads back to top page.";
+"PostScrptMsgN" = "PostScript Message, it returns negative value that leads app quits.";
+"PostScrptMsgP" = "PostScript Message, it returns positive value that leads back to top page.";
+
+/* Messages */
+"IDS_FILEERROR" = "File incompleti o file non leggibili.\nIl programma e terminato.";
+"IDS_UNKNOWN_OS" = "Il sistema operativo in uso non è supportato.\nControllare i sistemi operativi supportati.";
