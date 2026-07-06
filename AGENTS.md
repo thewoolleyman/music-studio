@@ -205,5 +205,6 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 ### Operational / Repo Discipline
 
 - Keep hardware documentation changes in this repo committed and pushed when done.
+- If SSH push fails because the key is not loaded or needs an interactive passphrase, use the authenticated GitHub CLI as the alternate push path. Check `gh auth status`, run `gh auth setup-git` if needed, and push through GitHub CLI-backed HTTPS credentials rather than treating SSH auth as a blocker.
 - Before committing, check the diff and avoid committing unrelated local changes.
 - Preserve the folder-per-device organization for manuals, installers, saved vendor pages, and supporting assets.
