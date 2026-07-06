@@ -57,11 +57,12 @@ This file captures the working studio hardware context for future Codex sessions
 
 ### Roland V-Drums V51
 
-- Role: Drum sound module and stereo audio source.
+- Role: Drum sound module, stereo audio source, and USB MIDI source for Logic.
 - Folder: `Roland V-Drums V51`
 - Main manuals: `Roland V-Drums V51/V51_QuickStart_eng02_W.pdf`, `Roland V-Drums V51/V51_Reference_eng03_W.pdf`, `Roland V-Drums V51/V51_MIDI_Implementation_eng01_W.pdf`
 - Current stereo audio path: V51 MASTER OUT L/MONO and R feed Scarlett 18i20 rear line inputs 1/2.
-- Cable approach: Use two separate 1/4" TRS cables for stereo audio, one for left and one for right.
+- Current USB MIDI path: V51 USB COMPUTER connects to the Gitfos C1Pro USB hub, then to the Mac.
+- Cable approach: Use two separate 1/4" TRS cables for stereo audio, one for left and one for right. Use a USB data cable for USB MIDI.
 
 ### Yamaha P-125 Digital Piano
 
@@ -109,6 +110,7 @@ flowchart TB
                 V51OutL["MASTER OUT L/MONO"]
                 V51OutR["MASTER OUT R"]
             end
+            V51USB["USB COMPUTER"]
         end
 
         subgraph MPC["Akai MPC One Plus"]
@@ -180,6 +182,7 @@ flowchart TB
     MPCMidiIn ---|5-pin DIN MIDI cable| ScarlettMidiOut
     ScarlettHP1 -->|1/4&quot; TRS headphone cable| Headphones
     ScarlettUSB -->|USB-C cable| Hub
+    V51USB -->|USB data cable| Hub
     YamahaUSB -->|USB data cable| Hub
     AlesisUSB -->|USB data cable| Hub
     MPCUSB -->|USB-B data cable; updates only| Hub
@@ -193,6 +196,7 @@ flowchart TB
     subgraph USBDevices["USB MIDI / interface devices"]
         direction LR
         AlesisUSB["Alesis V49 MKII USB MIDI"]
+        V51USB["Roland V51 USB COMPUTER"]
         YamahaUSB["Yamaha P-125 USB TO HOST"]
         MPCUSB["MPC One Plus USB-B updates only"]
         ScarlettUSB["Scarlett 18i20 USB-C computer port"]
@@ -202,6 +206,7 @@ flowchart TB
     Logic["Mac / Logic"]
 
     AlesisUSB -->|USB data cable| Hub
+    V51USB -->|USB data cable| Hub
     YamahaUSB -->|USB data cable| Hub
     MPCUSB -->|USB-B data cable; updates only| Hub
     ScarlettUSB -->|USB-C cable| Hub
@@ -225,6 +230,7 @@ Yamaha P-125 AUX OUT R -> Scarlett 18i20 rear line input 6
 MPC One Plus MIDI OUT -> Scarlett 18i20 MIDI IN
 Scarlett 18i20 MIDI OUT -> MPC One Plus MIDI IN
 
+Roland V51 USB COMPUTER -> Gitfos C1Pro USB hub -> Mac -> Logic
 MPC One Plus USB-B -> Gitfos C1Pro USB hub -> Mac (updates/file maintenance only; not MIDI/audio)
 Yamaha P-125 USB TO HOST -> Gitfos C1Pro USB hub -> Mac -> Logic
 Alesis V49 MKII USB -> Gitfos C1Pro USB hub -> Mac -> Logic
