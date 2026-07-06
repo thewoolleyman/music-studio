@@ -17,6 +17,11 @@ Icon?
 *.tmp
 *.temp
 
+# Obsidian local workspace/session state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
 # Roland device/browser sidecar metadata; keep manuals and installers tracked.
 Roland*/**/.DS_Store
 Roland*/**/._*
