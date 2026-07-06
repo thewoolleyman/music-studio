@@ -53,6 +53,7 @@ This file captures the working studio hardware context for future Codex sessions
 - Current audio path: MPC main left/right outputs feed Scarlett 18i20 rear line inputs 3/4.
 - Cable approach: Use two separate 1/4" TRS cables for stereo, one for left and one for right. Short TS instrument cables can work if needed.
 - Current MIDI path: Use the Scarlett 18i20 5-pin DIN MIDI In/Out loop with the MPC One Plus.
+- USB maintenance path: MPC USB-B connects to the Gitfos C1Pro USB hub for updates/file maintenance only. Do not treat this USB cable as the active MIDI or audio path.
 
 ### Roland V-Drums V51
 
@@ -94,7 +95,7 @@ This file captures the working studio hardware context for future Codex sessions
 - Current path: Scarlett 18i20 Headphone out 1.
 - Source note: Identified from the Sweetwater recommendation for AIAIAI TMA-2 Studio Wireless headphones.
 
-## Audio / Interface Connection Diagram
+## Studio Connection Diagram
 
 ```mermaid
 flowchart TB
@@ -122,6 +123,7 @@ flowchart TB
                 MPCMidiOut["MIDI OUT"]
                 MPCMidiIn["MIDI IN"]
             end
+            MPCUSB["USB-B maintenance port"]
         end
 
         subgraph Yamaha["Yamaha P-125 Digital Piano"]
@@ -131,6 +133,12 @@ flowchart TB
                 YamahaOutL["AUX OUT L/L+R"]
                 YamahaOutR["AUX OUT R"]
             end
+            YamahaUSB["USB TO HOST"]
+        end
+
+        subgraph Alesis["Alesis V49 MKII"]
+            direction TB
+            AlesisUSB["USB MIDI"]
         end
     end
 
@@ -172,6 +180,9 @@ flowchart TB
     MPCMidiIn ---|5-pin DIN MIDI cable| ScarlettMidiOut
     ScarlettHP1 -->|1/4&quot; TRS headphone cable| Headphones
     ScarlettUSB -->|USB-C cable| Hub
+    YamahaUSB -->|USB data cable| Hub
+    AlesisUSB -->|USB data cable| Hub
+    MPCUSB -->|USB-B data cable; updates only| Hub
     Hub -->|USB-C hub cable| Logic
 ```
 
@@ -183,6 +194,7 @@ flowchart TB
         direction LR
         AlesisUSB["Alesis V49 MKII USB MIDI"]
         YamahaUSB["Yamaha P-125 USB TO HOST"]
+        MPCUSB["MPC One Plus USB-B updates only"]
         ScarlettUSB["Scarlett 18i20 USB-C computer port"]
     end
 
@@ -191,6 +203,7 @@ flowchart TB
 
     AlesisUSB -->|USB data cable| Hub
     YamahaUSB -->|USB data cable| Hub
+    MPCUSB -->|USB-B data cable; updates only| Hub
     ScarlettUSB -->|USB-C cable| Hub
     Hub -->|USB-C hub cable| Logic
 ```
@@ -212,6 +225,7 @@ Yamaha P-125 AUX OUT R -> Scarlett 18i20 rear line input 6
 MPC One Plus MIDI OUT -> Scarlett 18i20 MIDI IN
 Scarlett 18i20 MIDI OUT -> MPC One Plus MIDI IN
 
+MPC One Plus USB-B -> Gitfos C1Pro USB hub -> Mac (updates/file maintenance only; not MIDI/audio)
 Yamaha P-125 USB TO HOST -> Gitfos C1Pro USB hub -> Mac -> Logic
 Alesis V49 MKII USB -> Gitfos C1Pro USB hub -> Mac -> Logic
 
