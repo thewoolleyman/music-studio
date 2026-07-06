@@ -15,11 +15,14 @@ This file captures the working studio hardware context for future Codex sessions
 - Role: Primary Mac audio and MIDI interface for Logic.
 - Folder: `Focusrite Scarlett 18i20 4th Gen`
 - Manual: `Focusrite Scarlett 18i20 4th Gen/scarlett_18i20_4th_gen_user_guide_v3_en.pdf`
-- Current use: Replaces both the Focusrite Saffire Pro 40 and the Focusrite Scarlett 4i4.
-- Planned MPC input pair: rear line inputs 3/4.
-- Planned Roland V51 audio input pair: rear line inputs 5/6.
-- Planned Roland V51 MIDI path: V51 MIDI OUT/THRU to Scarlett 18i20 MIDI IN.
-- Notes: Logic should use the Scarlett 18i20 4th Gen as the audio device. The 18i20 connects directly to the Mac over USB-C and acts as the MIDI interface for the V51 5-pin MIDI path.
+- Current use: Replaces both the Focusrite Saffire Pro 40 and the Focusrite Scarlett 4i4 as the single active Mac audio/MIDI interface.
+- Roland V51 input pair: rear line inputs 1/2.
+- MPC input pair: rear line inputs 3/4.
+- MPC MIDI path: Scarlett 18i20 MIDI OUT to MPC MIDI IN, and MPC MIDI OUT to Scarlett 18i20 MIDI IN.
+- Monitoring path: Headphone out 1 feeds the AIAIAI TMA-2 Studio Wireless headphones.
+- USB path: Scarlett 18i20 USB-C computer port connects to the Gitfos C1Pro USB-C hub input, then the hub connects to the Mac.
+- Important constraint: No Scarlett 18i20 rear line output jacks are currently connected. Audio and MIDI go to the DAW over USB, and local monitoring uses Headphone out 1.
+- Notes: Logic should use the Scarlett 18i20 4th Gen as the audio and MIDI device.
 
 ### Focusrite Scarlett 4i4
 
@@ -44,17 +47,15 @@ This file captures the working studio hardware context for future Codex sessions
 - Logic MIDI setup note: `Akai MPC One Plus/logic-midi-setup.md`
 - Current audio path: MPC main left/right outputs feed Scarlett 18i20 rear line inputs 3/4.
 - Cable approach: Use two separate 1/4" TRS cables for stereo, one for left and one for right. Short TS instrument cables can work if needed.
-- Current MIDI investigation: As of 2026-06-30, the active Logic Pro 12.2 bench uses the Scarlett 4i4 as the Mac MIDI interface. Audio MIDI Setup showed the Scarlett 4i4 and Alesis V49 MKII online, but did not show an Akai/MPC USB MIDI endpoint after rescan. Do not assume USB MIDI is working until the MPC appears in macOS; use the Scarlett 4i4 5-pin DIN MIDI path as the fallback.
+- Current MIDI path: Use the Scarlett 18i20 5-pin DIN MIDI In/Out loop with the MPC One Plus.
 
 ### Roland V-Drums V51
 
-- Role: Drum sound module, stereo audio source, MIDI source, and direct USB device for the Mac.
+- Role: Drum sound module and stereo audio source.
 - Folder: `Roland V-Drums V51`
 - Main manuals: `Roland V-Drums V51/V51_QuickStart_eng02_W.pdf`, `Roland V-Drums V51/V51_Reference_eng03_W.pdf`, `Roland V-Drums V51/V51_MIDI_Implementation_eng01_W.pdf`
-- Current stereo audio path: V51 MASTER OUT L/MONO and R feed Scarlett 18i20 rear line inputs 5/6.
-- Current 5-pin MIDI path: V51 MIDI OUT/THRU feeds Scarlett 18i20 MIDI IN.
-- Current USB path: V51 USB COMPUTER connects directly to the Mac for USB audio/MIDI/editor workflows.
-- Cable approach: Use two separate 1/4" TRS cables for stereo audio, one for left and one for right. Use a 5-pin DIN MIDI cable from V51 MIDI OUT/THRU to Scarlett 18i20 MIDI IN. Use a USB-C data cable from V51 USB COMPUTER to the Mac.
+- Current stereo audio path: V51 MASTER OUT L/MONO and R feed Scarlett 18i20 rear line inputs 1/2.
+- Cable approach: Use two separate 1/4" TRS cables for stereo audio, one for left and one for right.
 
 ### Alesis V49 MKII
 
@@ -68,8 +69,14 @@ This file captures the working studio hardware context for future Codex sessions
 
 - Role: USB-C hub/dock used for Mac connectivity.
 - Folder: `Gitfos C1pro USB hub`
-- Current use: General USB/peripheral connectivity.
+- Current use: Receives the Scarlett 18i20 USB-C computer connection and passes it through to the Mac; also used for general USB/peripheral connectivity.
 - Note: For MIDI controllers, a port can provide power while failing data negotiation. If a USB MIDI device lights up but does not appear in macOS, bypass the hub or move to a known-good data port.
+
+### AIAIAI TMA-2 Studio Wireless Headphones
+
+- Role: Wireless monitoring headphones for the current Scarlett 18i20 setup.
+- Current path: Scarlett 18i20 Headphone out 1.
+- Source note: Identified from the Sweetwater recommendation for AIAIAI TMA-2 Studio Wireless headphones.
 
 ## Connection Diagram
 
@@ -79,66 +86,71 @@ flowchart TB
         direction TB
         MPCL["Main Out L"]
         MPCR["Main Out R"]
+        MPCMidiIn["MIDI IN"]
+        MPCMidiOut["MIDI OUT"]
     end
 
     subgraph V51["Roland V-Drums V51"]
         direction TB
         V51OutL["MASTER OUT L/MONO"]
         V51OutR["MASTER OUT R"]
-        V51Midi["MIDI OUT/THRU"]
-        V51USB["USB COMPUTER"]
     end
 
     subgraph Scarlett["Focusrite Scarlett 18i20 4th Gen"]
         direction TB
+        ScarlettIn1["Rear line input 1"]
+        ScarlettIn2["Rear line input 2"]
         ScarlettIn3["Rear line input 3"]
         ScarlettIn4["Rear line input 4"]
-        ScarlettIn5["Rear line input 5"]
-        ScarlettIn6["Rear line input 6"]
         ScarlettMidiIn["MIDI IN"]
+        ScarlettMidiOut["MIDI OUT"]
+        ScarlettHP1["Headphone out 1"]
         ScarlettUSB["USB-C computer port"]
+        ScarlettIn1 -.-> ScarlettUSB
+        ScarlettIn2 -.-> ScarlettUSB
         ScarlettIn3 -.-> ScarlettUSB
         ScarlettIn4 -.-> ScarlettUSB
-        ScarlettIn5 -.-> ScarlettUSB
-        ScarlettIn6 -.-> ScarlettUSB
         ScarlettMidiIn -.-> ScarlettUSB
     end
 
-    Logic["Mac / Logic"]
+    Headphones["AIAIAI TMA-2 Studio Wireless headphones"]
 
-    subgraph MIDI["USB MIDI control"]
+    subgraph HubPath["USB to Mac"]
         direction TB
-        V49["Alesis V49 MKII"]
         Hub["Gitfos C1Pro USB hub"]
+        Logic["Mac / Logic"]
     end
 
+    V51OutL -->|1/4&quot; TRS cable| ScarlettIn1
+    V51OutR -->|1/4&quot; TRS cable| ScarlettIn2
     MPCL -->|1/4&quot; TRS cable| ScarlettIn3
     MPCR -->|1/4&quot; TRS cable| ScarlettIn4
-    V51OutL -->|1/4&quot; TRS cable| ScarlettIn5
-    V51OutR -->|1/4&quot; TRS cable| ScarlettIn6
-    V51Midi -->|5-pin DIN MIDI cable| ScarlettMidiIn
-    ScarlettUSB -->|USB-C cable| Logic
-    V51USB -->|USB-C data cable| Logic
-
-    V49 -->|USB 2.0 data cable| Hub
+    MPCMidiOut -->|5-pin DIN MIDI cable| ScarlettMidiIn
+    ScarlettMidiOut -->|5-pin DIN MIDI cable| MPCMidiIn
+    ScarlettHP1 -->|1/4&quot; TRS headphone cable| Headphones
+    ScarlettUSB -->|USB-C cable| Hub
     Hub -->|USB-C hub cable| Logic
 ```
 
 ## Current Capture Path
 
-Use this as the first tested path for capturing MPC and V51 audio/MIDI in Logic:
+Use this as the first tested path for capturing V51 and MPC audio/MIDI in Logic:
 
 ```text
+Roland V51 MASTER OUT L/MONO -> Scarlett 18i20 rear line input 1
+Roland V51 MASTER OUT R -> Scarlett 18i20 rear line input 2
+
 MPC One Plus MAIN OUT L -> Scarlett 18i20 rear line input 3
 MPC One Plus MAIN OUT R -> Scarlett 18i20 rear line input 4
 
-Roland V51 MASTER OUT L/MONO -> Scarlett 18i20 rear line input 5
-Roland V51 MASTER OUT R -> Scarlett 18i20 rear line input 6
+MPC One Plus MIDI OUT -> Scarlett 18i20 MIDI IN
+Scarlett 18i20 MIDI OUT -> MPC One Plus MIDI IN
 
-Roland V51 MIDI OUT/THRU -> Scarlett 18i20 MIDI IN
-Roland V51 USB COMPUTER -> Mac
+Scarlett 18i20 Headphone out 1 -> AIAIAI TMA-2 Studio Wireless headphones
 
-Scarlett 18i20 USB-C -> Mac -> Logic
+Scarlett 18i20 USB-C computer port -> Gitfos C1Pro USB-C hub input -> Mac -> Logic
+
+No Scarlett 18i20 rear line output jacks are connected in this setup.
 ```
 
 ## Repository Inventory And Management

@@ -1,44 +1,42 @@
 # Akai MPC One Plus MIDI With Logic Pro 12.2
 
-This note covers MIDI behavior between the Akai MPC One Plus and Logic Pro 12.2. It intentionally keeps MIDI separate from the Saffire audio path except where the audio path is needed to hear MPC internal sounds.
+This note covers MIDI behavior between the Akai MPC One Plus and Logic Pro 12.2. It intentionally keeps MIDI separate from the Scarlett 18i20 audio path except where the audio path is needed to hear MPC internal sounds.
 
-## RESOLVED: MPC -> Logic DIN MIDI Working (verified 2026-06-30)
+## Current MPC <-> Logic DIN MIDI Path
 
-Root cause of the "no MIDI in Logic" failure: the Scarlett 4i4's 5-pin MIDI OUT was cabled straight back into the Scarlett's own MIDI IN (an accidental self-loopback). The MPC was therefore never in the MIDI path, so every test failed in both directions regardless of MPC or Logic settings. This was a cabling fault, not a software-settings fault. The previously suspected causes (drum track vs MIDI track, MPC preference toggles, Logic input routing) were not the problem.
+Failure mode to avoid: cabling the Scarlett 18i20's 5-pin MIDI OUT straight back into its own MIDI IN creates an accidental self-loopback. The MPC is then not in the MIDI path, so tests fail in both directions regardless of MPC or Logic settings. Treat that as a cabling fault, not a software-settings fault.
 
 Correct cabling, OUT-to-IN at each end:
 
-- `MPC One Plus MIDI OUT -> 5-pin DIN -> Scarlett 4i4 MIDI IN` (MPC into Logic; this is the goal path, verified working).
-- `Scarlett 4i4 MIDI OUT -> 5-pin DIN -> MPC One Plus MIDI IN` (Logic into MPC; reverse path, cabled).
+- `MPC One Plus MIDI OUT -> 5-pin DIN -> Scarlett 18i20 MIDI IN` (MPC into Logic).
+- `Scarlett 18i20 MIDI OUT -> 5-pin DIN -> MPC One Plus MIDI IN` (Logic into MPC; reverse path, cabled).
 
-Verified-working Logic receive setup (2026-06-30):
+Logic receive setup:
 
-- Incoming DIN MIDI arrives as a CoreMIDI source under `Scarlett 4i4 4th Gen`, not as an `Akai`/`MPC` device. In Audio MIDI Setup > MIDI Studio the Scarlett shows online with 1 MIDI In and 1 MIDI Out.
+- Incoming DIN MIDI arrives as a CoreMIDI source under `Scarlett 18i20 4th Gen`, not as an `Akai`/`MPC` device. In Audio MIDI Setup > MIDI Studio the Scarlett shows online with 1 MIDI In and 1 MIDI Out.
 - A record-enabled Software Instrument track captured a MIDI region from the MPC. Logic merges all MIDI inputs into the record-enabled (or focused) instrument track, so no per-device input selector is needed.
 
 Second gotcha (after the cabling fix): not every MPC pad was bound to send on the MIDI track, so hitting an unbound pad produced nothing in Logic and looked like a continued failure. Only pads mapped to the MIDI track transmit out the DIN. When testing, hit a pad you know is bound (or play the recorded sequence), not an arbitrary empty pad.
 
-Reverse direction (Logic -> MPC) also verified working 2026-06-30. Key gotcha: when you create a Logic External MIDI track, its **MIDI Destination defaults to `Logic Pro Virtual Out`**, which goes nowhere physical. You must change the MIDI Destination to **`Scarlett 4i4 4th Gen`** (channel 1 for the first pass). With that set, Logic's Musical Typing (or any region/controller on that track) transmits out the DIN and triggers the MPC's internal sounds. Audio MIDI Setup's "Test Setup" send is not a reliable way to test this and was misleading; use a correctly-routed Logic External MIDI track instead.
+Reverse direction key gotcha: when you create a Logic External MIDI track, its **MIDI Destination defaults to `Logic Pro Virtual Out`**, which goes nowhere physical. You must change the MIDI Destination to **`Scarlett 18i20 4th Gen`** (channel 1 for the first pass). With that set, Logic's Musical Typing (or any region/controller on that track) transmits out the DIN and triggers the MPC's internal sounds. Audio MIDI Setup's "Test Setup" send is not a reliable way to test this; use a correctly-routed Logic External MIDI track instead.
 
 Note on proof: an External MIDI track has no internal instrument, so notes on it can only leave via the assigned hardware MIDI port. The proof it crossed the wire is hearing the MPC's own engine (audio returns on Scarlett inputs 3-4), which Logic cannot produce by any other means. On the External MIDI track, Audio Input can be `No Input` and Audio Output `No Output` so the track is pure MIDI.
 
 ## Current Bench State
 
-Observed on 2026-06-30:
+Current 18i20 setup:
 
 - Logic project: `Test Project 1.logicx`.
-- Main Mac interface: Focusrite Scarlett 4i4 4th Gen.
-- Audio MIDI Setup, after Rescan MIDI: `Scarlett 4i4 4th Gen` and `V49 MKII` were online; no `Akai`, `MPC`, or `MPC One Plus` MIDI device was visible.
+- Main Mac audio and MIDI interface: Focusrite Scarlett 18i20 4th Gen.
+- Audio MIDI Setup should show `Scarlett 18i20 4th Gen` online. The MPC may not appear as a separate `Akai`, `MPC`, or `MPC One Plus` MIDI device when using the 5-pin DIN path through the Scarlett.
 - Logic track menu contains `New External MIDI Track`.
 - Logic software instrument tracks did not show a per-device MIDI input selector in the visible track inspector. In normal use, treat a selected or record-enabled software instrument track as listening to available MIDI inputs.
 - Existing working audio path:
-  - MPC One Plus main output L -> 1/4" TRS cable -> Saffire Pro 40 rear line input 3.
-  - MPC One Plus main output R -> 1/4" TRS cable -> Saffire Pro 40 rear line input 4.
-  - Saffire Pro 40 line output 3 -> 1/4" TRS cable -> Scarlett 4i4 rear input 3.
-  - Saffire Pro 40 line output 4 -> 1/4" TRS cable -> Scarlett 4i4 rear input 4.
-  - Scarlett 4i4 USB-C cable -> Mac -> Logic stereo audio track input 3-4.
+  - MPC One Plus main output L -> 1/4" TRS cable -> Scarlett 18i20 rear line input 3.
+  - MPC One Plus main output R -> 1/4" TRS cable -> Scarlett 18i20 rear line input 4.
+  - Scarlett 18i20 USB-C computer port -> USB-C cable -> Gitfos C1Pro USB-C hub input -> Mac -> Logic stereo audio track input 3-4.
 
-The USB MIDI branch is currently blocked before Logic: the MPC is not visible to macOS as a MIDI device in the observed state. Do not spend time changing Logic track settings until Audio MIDI Setup or `system_profiler` shows an MPC/Akai endpoint.
+Do not depend on the MPC USB MIDI branch unless Audio MIDI Setup or `system_profiler` shows an MPC/Akai endpoint. The current documented path is the 18i20 5-pin DIN MIDI loop.
 
 ## MPC Manual Facts
 
@@ -71,7 +69,7 @@ Cable path:
 
 ```text
 MPC One Plus USB Type-B port -> USB data cable -> Mac or Mac dock
-Scarlett 4i4 USB-C cable -> Mac
+Scarlett 18i20 USB-C cable -> Gitfos C1Pro USB-C hub input -> Mac
 ```
 
 MPC state:
@@ -109,13 +107,13 @@ Practical Logic workaround:
 Cable path:
 
 ```text
-MPC One Plus MIDI OUT -> 5-pin DIN MIDI cable -> Scarlett 4i4 MIDI IN
-Scarlett 4i4 USB-C cable -> Mac
+MPC One Plus MIDI OUT -> 5-pin DIN MIDI cable -> Scarlett 18i20 MIDI IN
+Scarlett 18i20 USB-C cable -> Gitfos C1Pro USB-C hub input -> Mac
 ```
 
 Mac verification:
 
-- Audio MIDI Setup should show `Scarlett 4i4 4th Gen` online.
+- Audio MIDI Setup should show `Scarlett 18i20 4th Gen` online.
 - Logic will see incoming DIN MIDI under the Scarlett interface, not as a separate `Akai` or `MPC` USB device.
 
 MPC settings to check:
@@ -133,18 +131,16 @@ Current result:
 Cable path:
 
 ```text
-Scarlett 4i4 MIDI OUT -> 5-pin DIN MIDI cable -> MPC One Plus MIDI IN
-MPC One Plus main output L -> 1/4" TRS cable -> Saffire Pro 40 rear line input 3
-MPC One Plus main output R -> 1/4" TRS cable -> Saffire Pro 40 rear line input 4
-Saffire Pro 40 line output 3 -> 1/4" TRS cable -> Scarlett 4i4 rear input 3
-Saffire Pro 40 line output 4 -> 1/4" TRS cable -> Scarlett 4i4 rear input 4
-Scarlett 4i4 USB-C cable -> Mac
+Scarlett 18i20 MIDI OUT -> 5-pin DIN MIDI cable -> MPC One Plus MIDI IN
+MPC One Plus main output L -> 1/4" TRS cable -> Scarlett 18i20 rear line input 3
+MPC One Plus main output R -> 1/4" TRS cable -> Scarlett 18i20 rear line input 4
+Scarlett 18i20 USB-C computer port -> USB-C cable -> Gitfos C1Pro USB-C hub input -> Mac
 ```
 
 Logic setup:
 
 - Use `Track > New External MIDI Track` (or the `+` button > MIDI > External MIDI).
-- In the create dialog, expand `Details` and set `MIDI Destination` to `Scarlett 4i4 4th Gen` - this defaults to `Logic Pro Virtual Out`, which sends MIDI nowhere physical. This is the single most common reason "Logic -> MPC" appears dead.
+- In the create dialog, expand `Details` and set `MIDI Destination` to `Scarlett 18i20 4th Gen` - this defaults to `Logic Pro Virtual Out`, which sends MIDI nowhere physical. This is the single most common reason "Logic -> MPC" appears dead.
 - Use MIDI channel 1 for the first pass unless the MPC drum track is set to a different channel.
 - Optional but clean: set Audio Input `No Input` and Audio Output `No Output` so the track only transmits MIDI.
 - Keep a separate stereo audio track on input 3-4 to hear or record the MPC main outputs.
@@ -156,7 +152,7 @@ What you are actually hearing:
   - Which MPC track receives the MIDI. Set by `Preferences > MIDI / Sync` for the input port named `MPC`: `Global` routes incoming MIDI to the currently selected MPC track/program; `Track` makes the port selectable as a track's `MIDI Input` (the track whose `MIDI Input = MPC` on a matching channel receives it).
   - The program loaded on that receiving track: Drum (kit of samples), Keygroup (multisampled instrument), or Plugin (internal MPC synth). Changing this program changes the sound; nothing in Logic changes.
   - The note number selects the specific sound within the program. For a Drum program, notes ~36-51 map to the 16 pads, so a note with no pad mapped produces silence. For Keygroup/Plugin programs the note is the pitch.
-- The audio returns to Logic over the separate path: MPC Main Out L/R -> Saffire -> Scarlett inputs 3-4 -> Logic. MIDI and this audio are independent.
+- The audio returns to Logic over the separate path: MPC Main Out L/R -> Scarlett 18i20 inputs 3-4 -> Logic. MIDI and this audio are independent.
 
 MPC project setup:
 
@@ -217,8 +213,8 @@ After the Logic-to-MPC trigger settings are confirmed on the hardware:
 - [ ] Confirm whether Audio MIDI Setup shows an online Akai/MPC USB MIDI endpoint after Rescan MIDI.
 - [ ] If USB appears, test MPC pads on a Logic software instrument track.
 - [ ] If USB does not appear, document USB as unavailable in this setup and use DIN through the Scarlett.
-- [ ] Connect Scarlett 4i4 MIDI OUT to MPC MIDI IN with a 5-pin DIN MIDI cable.
-- [ ] Create or select a Logic external MIDI track routed to `Scarlett 4i4 4th Gen`, channel 1.
+- [ ] Connect Scarlett 18i20 MIDI OUT to MPC MIDI IN with a 5-pin DIN MIDI cable.
+- [ ] Create or select a Logic external MIDI track routed to `Scarlett 18i20 4th Gen`, channel 1.
 - [ ] On the MPC, load a Drum track and test `MIDI Monitor` set to `In`, then `Merge`.
 - [ ] Record the exact MPC `MIDI Input Port`, `MIDI Input Channel`, `MIDI Monitor`, and any Preferences > MIDI / Sync port toggles that make the MPC sound.
 - [ ] Save the confirmed MPC setup as a template or User Auto Load File.
