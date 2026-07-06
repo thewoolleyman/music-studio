@@ -82,41 +82,38 @@ This file captures the working studio hardware context for future Codex sessions
 
 ```mermaid
 flowchart TB
-    subgraph MPC["Akai MPC One Plus"]
-        direction TB
-        MPCL["Main Out L"]
-        MPCR["Main Out R"]
-        MPCMidiIn["MIDI IN"]
-        MPCMidiOut["MIDI OUT"]
-    end
-
-    subgraph V51["Roland V-Drums V51"]
-        direction TB
-        V51OutL["MASTER OUT L/MONO"]
-        V51OutR["MASTER OUT R"]
+    subgraph Inputs["Input devices"]
+        direction LR
+        V51OutL["V51 MASTER OUT L/MONO"]
+        V51OutR["V51 MASTER OUT R"]
+        MPCL["MPC Main Out L"]
+        MPCR["MPC Main Out R"]
+        MPCMidiOut["MPC MIDI OUT"]
+        MPCMidiIn["MPC MIDI IN"]
     end
 
     subgraph Scarlett["Focusrite Scarlett 18i20 4th Gen"]
         direction TB
-        ScarlettIn1["Rear line input 1"]
-        ScarlettIn2["Rear line input 2"]
-        ScarlettIn3["Rear line input 3"]
-        ScarlettIn4["Rear line input 4"]
-        ScarlettMidiIn["MIDI IN"]
-        ScarlettMidiOut["MIDI OUT"]
-        ScarlettHP1["Headphone out 1"]
-        ScarlettUSB["USB-C computer port"]
-        ScarlettIn1 -.-> ScarlettUSB
-        ScarlettIn2 -.-> ScarlettUSB
-        ScarlettIn3 -.-> ScarlettUSB
-        ScarlettIn4 -.-> ScarlettUSB
-        ScarlettMidiIn -.-> ScarlettUSB
+        subgraph ScarlettInputs["Inputs and MIDI ports"]
+            direction LR
+            ScarlettIn1["Rear line input 1"]
+            ScarlettIn2["Rear line input 2"]
+            ScarlettIn3["Rear line input 3"]
+            ScarlettIn4["Rear line input 4"]
+            ScarlettMidiIn["MIDI IN"]
+            ScarlettMidiOut["MIDI OUT"]
+        end
+
+        subgraph ScarlettOutputs["Monitor and computer ports"]
+            direction LR
+            ScarlettHP1["Headphone out 1"]
+            ScarlettUSB["USB-C computer port"]
+        end
     end
 
-    Headphones["AIAIAI TMA-2 Studio Wireless headphones"]
-
-    subgraph HubPath["USB to Mac"]
-        direction TB
+    subgraph Outputs["Monitoring and USB to Mac"]
+        direction LR
+        Headphones["AIAIAI TMA-2 Studio Wireless headphones"]
         Hub["Gitfos C1Pro USB hub"]
         Logic["Mac / Logic"]
     end
@@ -126,7 +123,7 @@ flowchart TB
     MPCL -->|1/4&quot; TRS cable| ScarlettIn3
     MPCR -->|1/4&quot; TRS cable| ScarlettIn4
     MPCMidiOut -->|5-pin DIN MIDI cable| ScarlettMidiIn
-    ScarlettMidiOut -->|5-pin DIN MIDI cable| MPCMidiIn
+    MPCMidiIn ---|5-pin DIN MIDI cable| ScarlettMidiOut
     ScarlettHP1 -->|1/4&quot; TRS headphone cable| Headphones
     ScarlettUSB -->|USB-C cable| Hub
     Hub -->|USB-C hub cable| Logic
