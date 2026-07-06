@@ -22,6 +22,7 @@ This file captures the working studio hardware context for future Codex sessions
 - Current use: Replaces both the Focusrite Saffire Pro 40 and the Focusrite Scarlett 4i4 as the single active Mac audio/MIDI interface.
 - Roland V51 input pair: rear line inputs 1/2.
 - MPC input pair: rear line inputs 3/4.
+- Yamaha P-125 input pair: rear line inputs 5/6.
 - MPC MIDI path: Scarlett 18i20 MIDI OUT to MPC MIDI IN, and MPC MIDI OUT to Scarlett 18i20 MIDI IN.
 - Monitoring path: Headphone out 1 feeds the AIAIAI TMA-2 Studio Wireless headphones.
 - USB path: Scarlett 18i20 USB-C computer port connects to the Gitfos C1Pro USB-C hub input, then the hub connects to the Mac.
@@ -61,19 +62,30 @@ This file captures the working studio hardware context for future Codex sessions
 - Current stereo audio path: V51 MASTER OUT L/MONO and R feed Scarlett 18i20 rear line inputs 1/2.
 - Cable approach: Use two separate 1/4" TRS cables for stereo audio, one for left and one for right.
 
+### Yamaha P-125 Digital Piano
+
+- Role: Digital piano, stereo audio source, and USB MIDI keyboard/controller for Logic.
+- Folder: `Yamaha P-125 Digital Piano`
+- Main manuals: `Yamaha P-125 Digital Piano/P-125 Owner's Manual.pdf`, `Yamaha P-125 Digital Piano/P-125 P-121 MIDI Reference.pdf`, `Yamaha P-125 Digital Piano/MIDI Basics.pdf`
+- Current stereo audio path: Yamaha AUX OUT L/L+R and R feed Scarlett 18i20 rear line inputs 5/6.
+- Current USB MIDI path: Yamaha USB TO HOST connects to the Gitfos C1Pro USB hub, then to the Mac.
+- Cable approach: Use two separate 1/4" TS cables for stereo audio, one for left and one for right. Use a USB data cable for USB MIDI.
+
 ### Alesis V49 MKII
 
 - Role: USB MIDI keyboard controller for playing software instruments in Logic.
 - Folder: `Alesis V49 MKII`
 - Manual: `Alesis V49 MKII/V49 MKII - User Guide - v1.3.pdf`
 - Current use: MIDI controller only; it does not provide audio to the Scarlett 18i20 or Logic.
+- Current USB MIDI path: Alesis V49 MKII USB connects to the Gitfos C1Pro USB hub, then to the Mac.
+- Cable approach: Use a USB data cable for MIDI only.
 - Troubleshooting rule: Verify macOS sees the V49 MKII as a MIDI device before changing Logic track settings.
 
 ### Gitfos C1Pro USB Hub
 
 - Role: USB-C hub/dock used for Mac connectivity.
 - Folder: `Gitfos C1pro USB hub`
-- Current use: Receives the Scarlett 18i20 USB-C computer connection and passes it through to the Mac; also used for general USB/peripheral connectivity.
+- Current use: Receives USB from the Scarlett 18i20, Alesis V49 MKII, and Yamaha P-125, then passes those connections through to the Mac; also used for general USB/peripheral connectivity.
 - Note: For MIDI controllers, a port can provide power while failing data negotiation. If a USB MIDI device lights up but does not appear in macOS, bypass the hub or move to a known-good data port.
 
 ### AIAIAI TMA-2 Studio Wireless Headphones
@@ -82,12 +94,12 @@ This file captures the working studio hardware context for future Codex sessions
 - Current path: Scarlett 18i20 Headphone out 1.
 - Source note: Identified from the Sweetwater recommendation for AIAIAI TMA-2 Studio Wireless headphones.
 
-## Connection Diagram
+## Audio / Interface Connection Diagram
 
 ```mermaid
 flowchart TB
     subgraph Sources["Input / source devices"]
-        direction LR
+        direction RL
 
         subgraph V51["Roland V-Drums V51"]
             direction TB
@@ -111,16 +123,27 @@ flowchart TB
                 MPCMidiIn["MIDI IN"]
             end
         end
+
+        subgraph Yamaha["Yamaha P-125 Digital Piano"]
+            direction TB
+            subgraph YamahaStereo["Stereo audio outputs"]
+                direction LR
+                YamahaOutL["AUX OUT L/L+R"]
+                YamahaOutR["AUX OUT R"]
+            end
+        end
     end
 
     subgraph Scarlett["Focusrite Scarlett 18i20 4th Gen"]
         direction TB
         subgraph ScarlettInputs["Inputs and MIDI ports"]
-            direction LR
+            direction RL
             ScarlettIn1["Rear line input 1"]
             ScarlettIn2["Rear line input 2"]
             ScarlettIn3["Rear line input 3"]
             ScarlettIn4["Rear line input 4"]
+            ScarlettIn5["Rear line input 5"]
+            ScarlettIn6["Rear line input 6"]
             ScarlettMidiIn["MIDI IN"]
             ScarlettMidiOut["MIDI OUT"]
         end
@@ -143,9 +166,31 @@ flowchart TB
     V51OutR -->|1/4&quot; TRS cable| ScarlettIn2
     MPCL -->|1/4&quot; TRS cable| ScarlettIn3
     MPCR -->|1/4&quot; TRS cable| ScarlettIn4
+    YamahaOutL -->|1/4&quot; TS cable| ScarlettIn5
+    YamahaOutR -->|1/4&quot; TS cable| ScarlettIn6
     MPCMidiOut -->|5-pin DIN MIDI cable| ScarlettMidiIn
     MPCMidiIn ---|5-pin DIN MIDI cable| ScarlettMidiOut
     ScarlettHP1 -->|1/4&quot; TRS headphone cable| Headphones
+    ScarlettUSB -->|USB-C cable| Hub
+    Hub -->|USB-C hub cable| Logic
+```
+
+## USB MIDI Connection Diagram
+
+```mermaid
+flowchart TB
+    subgraph USBDevices["USB MIDI / interface devices"]
+        direction LR
+        AlesisUSB["Alesis V49 MKII USB MIDI"]
+        YamahaUSB["Yamaha P-125 USB TO HOST"]
+        ScarlettUSB["Scarlett 18i20 USB-C computer port"]
+    end
+
+    Hub["Gitfos C1Pro USB hub"]
+    Logic["Mac / Logic"]
+
+    AlesisUSB -->|USB data cable| Hub
+    YamahaUSB -->|USB data cable| Hub
     ScarlettUSB -->|USB-C cable| Hub
     Hub -->|USB-C hub cable| Logic
 ```
@@ -161,8 +206,14 @@ Roland V51 MASTER OUT R -> Scarlett 18i20 rear line input 2
 MPC One Plus MAIN OUT L -> Scarlett 18i20 rear line input 3
 MPC One Plus MAIN OUT R -> Scarlett 18i20 rear line input 4
 
+Yamaha P-125 AUX OUT L/L+R -> Scarlett 18i20 rear line input 5
+Yamaha P-125 AUX OUT R -> Scarlett 18i20 rear line input 6
+
 MPC One Plus MIDI OUT -> Scarlett 18i20 MIDI IN
 Scarlett 18i20 MIDI OUT -> MPC One Plus MIDI IN
+
+Yamaha P-125 USB TO HOST -> Gitfos C1Pro USB hub -> Mac -> Logic
+Alesis V49 MKII USB -> Gitfos C1Pro USB hub -> Mac -> Logic
 
 Scarlett 18i20 Headphone out 1 -> AIAIAI TMA-2 Studio Wireless headphones
 
@@ -189,6 +240,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | [`Roland V-Drums V51/cloud manager`](<Roland V-Drums V51/cloud manager>) | Roland Cloud Manager installer |
 | [`Roland V-Drums V51/driver`](<Roland V-Drums V51/driver>) | Roland V51 Mac driver |
 | [`Roland V-Drums V51/system-program`](<Roland V-Drums V51/system-program>) | Roland V51 system program update |
+| [`Yamaha P-125 Digital Piano`](<Yamaha P-125 Digital Piano>) | Yamaha P-125 Digital Piano |
 
 ### Device Documents And Websites
 
@@ -201,6 +253,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | Focusrite Scarlett 4i4, superseded | [`Focusrite Control 2 1.1014.0.0.dmg.zip`](<Focusrite Scarlett 4i4/Focusrite Control 2 1.1014.0.0.dmg.zip>) | [Focusrite Scarlett 4i4](https://focusrite.com/products/scarlett-4i4) |
 | Gitfos C1Pro USB Hub | [`Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html`](<Gitfos C1pro USB hub/Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html>) | [Gitfos C1Pro](https://gitfos.com/products/c1pro) |
 | Roland V-Drums V51 | [`V51_QuickStart_eng02_W.pdf`](<Roland V-Drums V51/V51_QuickStart_eng02_W.pdf>); [`V51_Reference_eng03_W.pdf`](<Roland V-Drums V51/V51_Reference_eng03_W.pdf>); [`V51_MIDI_Implementation_eng01_W.pdf`](<Roland V-Drums V51/V51_MIDI_Implementation_eng01_W.pdf>); [`V51_DataList_eng02_W.pdf`](<Roland V-Drums V51/V51_DataList_eng02_W.pdf>); [`V51_RCC_SetupGuide_eng01_W.pdf`](<Roland V-Drums V51/V51_RCC_SetupGuide_eng01_W.pdf>); [`V71_V51_V31_RolandCloud_eng02_W.pdf`](<Roland V-Drums V51/V71_V51_V31_RolandCloud_eng02_W.pdf>); [`V-Drums_Play_eng03_W.pdf`](<Roland V-Drums V51/V-Drums_Play_eng03_W.pdf>); [`RolandCloudManager-3-1-23-Universal.dmg`](<Roland V-Drums V51/cloud manager/RolandCloudManager-3-1-23-Universal.dmg>); [`v51_mac13drv_m100.tgz`](<Roland V-Drums V51/driver/v51_mac13drv_m100.tgz>); [`v51_sys_v210.zip`](<Roland V-Drums V51/system-program/v51_sys_v210.zip>) | [Roland V-Drums V51](https://www.roland.com/us/products/v51/) |
+| Yamaha P-125 Digital Piano | [`P-125 Owner's Manual.pdf`](<Yamaha P-125 Digital Piano/P-125 Owner's Manual.pdf>); [`P-125 P-121 MIDI Reference.pdf`](<Yamaha P-125 Digital Piano/P-125 P-121 MIDI Reference.pdf>); [`MIDI Basics.pdf`](<Yamaha P-125 Digital Piano/MIDI Basics.pdf>); [`P-125 Quick Operation Guide.pdf`](<Yamaha P-125 Digital Piano/P-125 Quick Operation Guide.pdf>); [`Smart Device Connection Manual for Android.pdf`](<Yamaha P-125 Digital Piano/Smart Device Connection Manual for Android.pdf>) | [Yamaha P-125](https://usa.yamaha.com/products/musical_instruments/pianos/p_series/p-125/index.html) |
 
 ### Operational / Repo Discipline
 
