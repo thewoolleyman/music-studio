@@ -4,7 +4,7 @@ This file captures the working studio hardware context for future Codex sessions
 
 ## Documentation Rules
 
-- In Mermaid connection diagrams, every physical cable must have its own line/edge. Do not combine stereo pairs, paired line outputs, or USB chains into a single diagram edge.
+- In detailed Mermaid connection diagrams, every physical cable must have its own line/edge. Do not combine stereo pairs, paired line outputs, or USB chains into a single diagram edge. Topology diagrams are the exception: they may aggregate connection roles into a single device-to-device edge.
 - Diagram edge labels must specify the cable type, such as `1/4" TRS cable`, `5-pin DIN MIDI cable`, or `USB-C cable`, rather than generic labels like `audio cable` or `USB cable`.
 - Internal device routing may be shown, but it must be labeled as internal routing rather than as a cable.
 - Preserve physical device identity in diagrams. Do not collapse multiple devices into a generic `Input devices` box just to make layout easier.
@@ -97,126 +97,136 @@ This file captures the working studio hardware context for future Codex sessions
 - Current path: Scarlett 18i20 Headphone out 1.
 - Source note: Identified from the Sweetwater recommendation for AIAIAI TMA-2 Studio Wireless headphones.
 
-## Studio Connection Diagram
+## Topology Diagram
 
 ```mermaid
 flowchart TB
-    subgraph Sources["Input / source devices"]
-        direction RL
+    subgraph Devices["Source and controller devices"]
+        direction LR
+        V51["Roland V-Drums V51"]
+        MPC["Akai MPC One Plus"]
+        Yamaha["Yamaha P-125 Digital Piano"]
+        Alesis["Alesis V49 MKII"]
+    end
 
-        subgraph V51["Roland V-Drums V51"]
+    Scarlett["Focusrite Scarlett 18i20 4th Gen"]
+    Headphones["AIAIAI TMA-2 Studio Wireless headphones"]
+    Hub["Gitfos C1Pro USB hub"]
+    Logic["Mac / Logic"]
+
+    V51 ---|AUDIO L/R to inputs 1/2| Scarlett
+    MPC ---|AUDIO L/R to inputs 3/4; DIN MIDI OUT to Scarlett IN; Scarlett OUT to MPC IN| Scarlett
+    Yamaha ---|AUDIO L/R to inputs 5/6| Scarlett
+    Scarlett ---|Headphone out 1 monitoring| Headphones
+    Scarlett ---|USB audio and MIDI interface| Hub
+    V51 ---|USB MIDI| Hub
+    Yamaha ---|USB MIDI| Hub
+    Alesis ---|USB MIDI| Hub
+    MPC ---|USB-B maintenance/update only| Hub
+    Hub -->|USB-C hub cable| Logic
+```
+
+## Audio Connections Diagram
+
+```mermaid
+flowchart TB
+    subgraph AudioSources["Audio source devices"]
+        direction LR
+
+        subgraph V51Audio["Roland V-Drums V51"]
             direction TB
-            subgraph V51Stereo["Stereo audio outputs"]
-                direction LR
-                V51OutL["MASTER OUT L/MONO"]
-                V51OutR["MASTER OUT R"]
-            end
-            V51USB["USB MIDI"]
+            V51OutL["MASTER OUT L/MONO"]
+            V51OutR["MASTER OUT R"]
         end
 
-        subgraph MPC["Akai MPC One Plus"]
+        subgraph MPCAudio["Akai MPC One Plus"]
             direction TB
-            subgraph MPCStereo["Stereo audio outputs"]
-                direction LR
-                MPCL["Main Out L"]
-                MPCR["Main Out R"]
-            end
-            subgraph MPCMidi["5-pin MIDI ports"]
-                direction LR
-                MPCMidiOut["MIDI OUT"]
-                MPCMidiIn["MIDI IN"]
-            end
-            MPCUSB["USB-B maintenance port"]
+            MPCL["Main Out L"]
+            MPCR["Main Out R"]
         end
 
-        subgraph Yamaha["Yamaha P-125 Digital Piano"]
+        subgraph YamahaAudio["Yamaha P-125 Digital Piano"]
             direction TB
-            subgraph YamahaStereo["Stereo audio outputs"]
-                direction LR
-                YamahaOutL["AUX OUT L/L+R"]
-                YamahaOutR["AUX OUT R"]
-            end
-            YamahaUSB["USB MIDI"]
-        end
-
-        subgraph Alesis["Alesis V49 MKII"]
-            direction TB
-            AlesisUSB["USB MIDI"]
+            YamahaOutL["AUX OUT L/L+R"]
+            YamahaOutR["AUX OUT R"]
         end
     end
 
-    subgraph Scarlett["Focusrite Scarlett 18i20 4th Gen"]
+    subgraph ScarlettAudio["Focusrite Scarlett 18i20 4th Gen"]
         direction TB
-        subgraph ScarlettInputs["Inputs and MIDI ports"]
-            direction RL
-            ScarlettIn1["Rear line input 1"]
-            ScarlettIn2["Rear line input 2"]
-            ScarlettIn3["Rear line input 3"]
-            ScarlettIn4["Rear line input 4"]
-            ScarlettIn5["Rear line input 5"]
-            ScarlettIn6["Rear line input 6"]
-            ScarlettMidiIn["MIDI IN"]
-            ScarlettMidiOut["MIDI OUT"]
-        end
-
-        subgraph ScarlettOutputs["Monitor and computer ports"]
+        subgraph ScarlettInputs["Rear line inputs"]
             direction LR
-            ScarlettHP1["Headphone out 1"]
-            ScarlettUSB["USB-C computer port"]
+            ScarlettIn1["Input 1"]
+            ScarlettIn2["Input 2"]
+            ScarlettIn3["Input 3"]
+            ScarlettIn4["Input 4"]
+            ScarlettIn5["Input 5"]
+            ScarlettIn6["Input 6"]
         end
+        ScarlettHP1["Headphone out 1"]
+        ScarlettUSB["USB-C computer port"]
     end
 
-    subgraph Outputs["Monitoring and USB to Mac"]
+    subgraph AudioDestinations["Audio destinations"]
         direction LR
         Headphones["AIAIAI TMA-2 Studio Wireless headphones"]
         Hub["Gitfos C1Pro USB hub"]
         Logic["Mac / Logic"]
     end
 
-    V51OutL -->|1/4&quot; TS cable| ScarlettIn1
-    V51OutR -->|1/4&quot; TS cable| ScarlettIn2
-    MPCL -->|1/4&quot; TRS cable| ScarlettIn3
-    MPCR -->|1/4&quot; TRS cable| ScarlettIn4
-    YamahaOutL -->|1/4&quot; TS cable| ScarlettIn5
-    YamahaOutR -->|1/4&quot; TS cable| ScarlettIn6
-    MPCMidiOut -->|5-pin DIN MIDI cable| ScarlettMidiIn
-    MPCMidiIn ---|5-pin DIN MIDI cable| ScarlettMidiOut
+    V51OutL -->|1/4&quot; TS cable; left audio| ScarlettIn1
+    V51OutR -->|1/4&quot; TS cable; right audio| ScarlettIn2
+    MPCL -->|1/4&quot; TRS cable; left audio| ScarlettIn3
+    MPCR -->|1/4&quot; TRS cable; right audio| ScarlettIn4
+    YamahaOutL -->|1/4&quot; TS cable; left audio| ScarlettIn5
+    YamahaOutR -->|1/4&quot; TS cable; right audio| ScarlettIn6
     ScarlettHP1 -->|1/4&quot; TRS headphone cable| Headphones
-    ScarlettUSB -->|USB-C cable| Hub
-    V51USB -->|USB data cable| Hub
-    YamahaUSB -->|USB data cable| Hub
-    AlesisUSB -->|USB data cable| Hub
-    MPCUSB -->|USB-B data cable; updates only| Hub
+    ScarlettUSB -->|USB-C cable; audio interface| Hub
     Hub -->|USB-C hub cable| Logic
 ```
 
-## USB MIDI Connection Diagram
+## MIDI Connections Diagram
 
 ```mermaid
 flowchart TB
-    subgraph USBDevices["USB MIDI / interface devices"]
+    subgraph USBMIDIDevices["USB MIDI devices"]
         direction LR
-        AlesisUSB["Alesis V49 MKII USB MIDI"]
         V51USB["Roland V51 USB MIDI"]
         YamahaUSB["Yamaha P-125 USB MIDI"]
-        MPCUSB["MPC One Plus USB-B updates only"]
-        ScarlettUSB["Scarlett 18i20 USB-C computer port"]
+        AlesisUSB["Alesis V49 MKII USB MIDI"]
+    end
+
+    subgraph DINMidiLoop["5-pin DIN MIDI loop"]
+        direction TB
+        subgraph ScarlettMidi["Focusrite Scarlett 18i20 4th Gen"]
+            direction LR
+            ScarlettMidiOut["MIDI OUT"]
+            ScarlettMidiIn["MIDI IN"]
+            ScarlettUSB["USB-C computer port"]
+        end
+
+        subgraph MPCMidi["Akai MPC One Plus"]
+            direction LR
+            MPCMidiIn["MIDI IN"]
+            MPCMidiOut["MIDI OUT"]
+        end
     end
 
     Hub["Gitfos C1Pro USB hub"]
     Logic["Mac / Logic"]
 
-    AlesisUSB -->|USB data cable| Hub
-    V51USB -->|USB data cable| Hub
-    YamahaUSB -->|USB data cable| Hub
-    MPCUSB -->|USB-B data cable; updates only| Hub
-    ScarlettUSB -->|USB-C cable| Hub
+    MPCMidiOut -->|5-pin DIN MIDI cable| ScarlettMidiIn
+    ScarlettMidiOut -->|5-pin DIN MIDI cable| MPCMidiIn
+    ScarlettUSB -->|USB-C cable; USB MIDI interface| Hub
+    V51USB -->|USB data cable; USB MIDI| Hub
+    YamahaUSB -->|USB data cable; USB MIDI| Hub
+    AlesisUSB -->|USB data cable; USB MIDI| Hub
     Hub -->|USB-C hub cable| Logic
 ```
 
 ## Current Capture Path
 
-Use this as the first tested path for capturing V51 and MPC audio/MIDI in Logic:
+Use this as the first tested path for capturing the current audio/MIDI setup in Logic:
 
 ```text
 Roland V51 MASTER OUT L/MONO -- 1/4" TS cable -> Scarlett 18i20 rear line input 1
