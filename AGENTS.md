@@ -11,7 +11,7 @@ This file captures the working studio hardware context for future Codex sessions
 - Keep stereo pairs visually grouped within their actual device, but still draw one cable edge per left/right connection.
 - Preferred diagram layout: input/source devices on the top row, the primary interface/mixer alone on the middle row, and monitoring/USB/computer destinations on the bottom row.
 - If a bidirectional MIDI loop causes Mermaid to make a bad horizontal layout, use an undirected edge for one physical MIDI cable rather than flattening device structure.
-- Use `USB MIDI` consistently for USB ports carrying MIDI, regardless of device-specific panel labels such as `USB TO HOST` or `USB COMPUTER`. Use the cable label to distinguish the physical cable type. Keep non-MIDI USB roles explicit, such as `USB-B maintenance`.
+- Use `USB MIDI` consistently for USB ports carrying MIDI. Use the cable label to distinguish the physical cable type. Keep non-MIDI USB roles explicit, such as `USB-B maintenance`.
 
 ## Device Summary
 
@@ -219,26 +219,26 @@ flowchart TB
 Use this as the first tested path for capturing V51 and MPC audio/MIDI in Logic:
 
 ```text
-Roland V51 MASTER OUT L/MONO -> Scarlett 18i20 rear line input 1
-Roland V51 MASTER OUT R -> Scarlett 18i20 rear line input 2
+Roland V51 MASTER OUT L/MONO -- 1/4" TS cable -> Scarlett 18i20 rear line input 1
+Roland V51 MASTER OUT R -- 1/4" TS cable -> Scarlett 18i20 rear line input 2
 
-MPC One Plus MAIN OUT L -> Scarlett 18i20 rear line input 3
-MPC One Plus MAIN OUT R -> Scarlett 18i20 rear line input 4
+MPC One Plus MAIN OUT L -- 1/4" TRS cable -> Scarlett 18i20 rear line input 3
+MPC One Plus MAIN OUT R -- 1/4" TRS cable -> Scarlett 18i20 rear line input 4
 
-Yamaha P-125 AUX OUT L/L+R -> Scarlett 18i20 rear line input 5
-Yamaha P-125 AUX OUT R -> Scarlett 18i20 rear line input 6
+Yamaha P-125 AUX OUT L/L+R -- 1/4" TS cable -> Scarlett 18i20 rear line input 5
+Yamaha P-125 AUX OUT R -- 1/4" TS cable -> Scarlett 18i20 rear line input 6
 
-MPC One Plus MIDI OUT -> Scarlett 18i20 MIDI IN
-Scarlett 18i20 MIDI OUT -> MPC One Plus MIDI IN
+MPC One Plus MIDI OUT -- 5-pin DIN MIDI cable -> Scarlett 18i20 MIDI IN
+Scarlett 18i20 MIDI OUT -- 5-pin DIN MIDI cable -> MPC One Plus MIDI IN
 
-Roland V51 USB MIDI -> Gitfos C1Pro USB hub -> Mac -> Logic
-MPC One Plus USB-B -> Gitfos C1Pro USB hub -> Mac (updates/file maintenance only; not MIDI/audio)
-Yamaha P-125 USB MIDI -> Gitfos C1Pro USB hub -> Mac -> Logic
-Alesis V49 MKII USB MIDI -> Gitfos C1Pro USB hub -> Mac -> Logic
+Roland V51 USB MIDI -- USB data cable -> Gitfos C1Pro USB hub -> Mac -> Logic
+MPC One Plus USB-B -- USB-B data cable -> Gitfos C1Pro USB hub -> Mac (updates/file maintenance only; not MIDI/audio)
+Yamaha P-125 USB MIDI -- USB data cable -> Gitfos C1Pro USB hub -> Mac -> Logic
+Alesis V49 MKII USB MIDI -- USB data cable -> Gitfos C1Pro USB hub -> Mac -> Logic
 
-Scarlett 18i20 Headphone out 1 -> AIAIAI TMA-2 Studio Wireless headphones
+Scarlett 18i20 Headphone out 1 -- 1/4" TRS headphone cable -> AIAIAI TMA-2 Studio Wireless headphones
 
-Scarlett 18i20 USB-C computer port -> Gitfos C1Pro USB-C hub input -> Mac -> Logic
+Scarlett 18i20 USB-C computer port -- USB-C cable -> Gitfos C1Pro USB-C hub input -- USB-C hub cable -> Mac -> Logic
 
 No Scarlett 18i20 rear line output jacks are connected in this setup.
 ```
