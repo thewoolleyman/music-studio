@@ -130,6 +130,16 @@ This file captures the working studio hardware context for future Codex sessions
 - Current use: Receives USB from the Scarlett 18i20, Roland V51, Alesis V49 MKII, Yamaha P-125, and MPC maintenance path, then passes those connections through to the Mac; also used for general USB/peripheral connectivity.
 - Note: For MIDI controllers, a port can provide power while failing data negotiation. If a USB MIDI device lights up but does not appear in macOS, bypass the hub or move to a known-good data port.
 
+### Anker Prime TB5 Docking Station
+
+- Role: Thunderbolt 5 desktop docking station for workstation and USB-C/Thunderbolt expansion.
+- Exact purchased hardware: Two Anker Prime TB5 Docking Stations, 14-in-1 Thunderbolt 5 docks with up to 120Gbps transfer, 140W max host charging, active cooling, up to 8K display support, and dual-display support for Thunderbolt 5/4 laptops.
+- Model identifiers: Anker model `A83B5`, Amazon ASIN `B0DSVVJXK5`.
+- Home Inventory row: `INV-0003`, quantity `2`.
+- Purchase note: Amazon order `111-8180438-6170663`, ordered 2026-06-23, line-item price $309.99 each.
+- Product page: [Anker Prime TB5 Docking Station](https://www.anker.com/products/a83b5-anker-prime-thunderbolt5-docking-station-14-in-1-140w-8k)
+- Current setup note: Purchased and inventoried, but not yet added to the studio routing diagrams. Do not assume either dock is part of the active audio/MIDI capture path until physical placement and cabling are documented.
+
 ### AIAIAI TMA-2 Studio Wireless Headphones
 
 - Role: Wireless monitoring headphones for the current Scarlett 18i20 setup.
@@ -330,6 +340,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | Focusrite Saffire Pro 40, superseded | [`userguidepro40english04.pdf`](<Focusrite Saffire Pro 40/userguidepro40english04.pdf>); [`Saffire MixControl-3.9.3168_0.dmg.zip`](<Focusrite Saffire Pro 40/Saffire MixControl-3.9.3168_0.dmg.zip>) | [Focusrite Saffire Pro 40](https://focusrite.com/products/saffire-pro-40) |
 | Focusrite Scarlett 4i4, superseded | [`Focusrite Control 2 1.1014.0.0.dmg.zip`](<Focusrite Scarlett 4i4/Focusrite Control 2 1.1014.0.0.dmg.zip>) | [Focusrite Scarlett 4i4](https://focusrite.com/products/scarlett-4i4) |
 | Gitfos C1Pro USB Hub | [`Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html`](<Gitfos C1pro USB hub/Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html>) | [Gitfos C1Pro](https://gitfos.com/products/c1pro) |
+| Anker Prime TB5 Docking Station | No local docs saved yet; Amazon ASIN `B0DSVVJXK5`; Anker model `A83B5`; Home Inventory row `INV-0003` | [Anker Prime TB5 Docking Station](https://www.anker.com/products/a83b5-anker-prime-thunderbolt5-docking-station-14-in-1-140w-8k) |
 | Neural DSP Quad Cortex | [`Quad Cortex User Manual 4.0.0.pdf`](<Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.pdf>); [`Quad Cortex Device List 2026-01-21.pdf`](<Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.pdf>); [`Quad Cortex User Manual 4.0.0.html`](<Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.html>); [`Quad Cortex Device List 2026-01-21.html`](<Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.html>); [`Neural DSP User Manuals support page 2026-02-12.html`](<Neural DSP Quad Cortex/docs/Neural DSP User Manuals support page 2026-02-12.html>); [`Cortex Control v4.0.1.pkg`](<Neural DSP Quad Cortex/software/Cortex Control v4.0.1.pkg>) | [Neural DSP Quad Cortex](https://neuraldsp.com/quad-cortex) |
 | Roland V-Drums V51 | [`V51_QuickStart_eng02_W.pdf`](<Roland V-Drums V51/V51_QuickStart_eng02_W.pdf>); [`V51_Reference_eng03_W.pdf`](<Roland V-Drums V51/V51_Reference_eng03_W.pdf>); [`V51_MIDI_Implementation_eng01_W.pdf`](<Roland V-Drums V51/V51_MIDI_Implementation_eng01_W.pdf>); [`V51_DataList_eng02_W.pdf`](<Roland V-Drums V51/V51_DataList_eng02_W.pdf>); [`V51_RCC_SetupGuide_eng01_W.pdf`](<Roland V-Drums V51/V51_RCC_SetupGuide_eng01_W.pdf>); [`V71_V51_V31_RolandCloud_eng02_W.pdf`](<Roland V-Drums V51/V71_V51_V31_RolandCloud_eng02_W.pdf>); [`V-Drums_Play_eng03_W.pdf`](<Roland V-Drums V51/V-Drums_Play_eng03_W.pdf>); [`RolandCloudManager-3-1-23-Universal.dmg`](<Roland V-Drums V51/cloud manager/RolandCloudManager-3-1-23-Universal.dmg>); [`v51_mac13drv_m100.tgz`](<Roland V-Drums V51/driver/v51_mac13drv_m100.tgz>); [`v51_sys_v210.zip`](<Roland V-Drums V51/system-program/v51_sys_v210.zip>) | [Roland V-Drums V51](https://www.roland.com/us/products/v51/) |
 | Xvive A58 Guitar Wireless System | [`Xvive-A58-Guitar-wireless-system-manual-V1.pdf`](<XVive A58 Guitar Wireless System/Xvive-A58-Guitar-wireless-system-manual-V1.pdf>) | [Xvive A58 Guitar Wireless System](https://xvive.com/audio/product/a58-guitar-wireless-system/) |
