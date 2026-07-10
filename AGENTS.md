@@ -123,6 +123,10 @@ This file captures the working studio hardware context for future Codex sessions
 
 - Role: USB-C hub/dock used for Mac connectivity.
 - Folder: `Gitfos C1pro USB hub`
+- Exact purchased hardware: Gitfos/Giftos 18-in-1 powered USB 3.2 USB-C hub with 4K HDMI, 100W PD, 45W charging, 10Gbps USB, SD/TF, audio, 65W adapter, 3.3 ft cable, aluminum body, and smart button.
+- Model identifiers: Gitfos C1Pro, US-plug SKU `C1PRO-1`, Amazon ASIN `B0GGRPJT3X`.
+- Home Inventory row: `INV-0037`.
+- Purchase note: Amazon order `111-8180438-6170663`, ordered 2026-06-23, line-item price $71.99; Amazon email spells the brand as `Giftos`, while the saved vendor page and repo use `Gitfos`.
 - Current use: Receives USB from the Scarlett 18i20, Roland V51, Alesis V49 MKII, Yamaha P-125, and MPC maintenance path, then passes those connections through to the Mac; also used for general USB/peripheral connectivity.
 - Note: For MIDI controllers, a port can provide power while failing data negotiation. If a USB MIDI device lights up but does not appear in macOS, bypass the hub or move to a known-good data port.
 
