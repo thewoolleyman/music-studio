@@ -21,7 +21,9 @@ This file captures the working studio hardware context for future Codex sessions
 - Folder: `Boss RC-600`
 - Main manuals: `Boss RC-600/RC-600_eng05_W.pdf`, `Boss RC-600/RC-600_Parameter_eng04_W.pdf`
 - Installed Mac software: BOSS TONE STUDIO for RC 1.5.0, RC Rhythm Converter 1.0.1, and RC-600 Driver 1.0.1.
+- System program archive: `Boss RC-600/system-program/rc600_sys_v150.zip` for RC-600 System Program 1.50.
 - Driver note: The RC-600 driver requires the RC-600 `SYSTEM > USB > AUDIO` setting to be `VENDOR`; the installer reports that macOS must be restarted after installation.
+- Update note: The system program is firmware for the RC-600 itself; check the unit version before applying it, and copy the extracted files to the RC-600 while it is booted in update mode.
 
 ### Focusrite Scarlett 18i20 4th Gen
 
@@ -272,6 +274,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | [`Alesis V49 MKII/V49_media`](<Alesis V49 MKII/V49_media>) | Alesis V49 MKII media assets |
 | [`Boss RC-600`](<Boss RC-600>) | Boss RC-600 |
 | [`Boss RC-600/software`](<Boss RC-600/software>) | Boss RC-600 Mac software installers |
+| [`Boss RC-600/system-program`](<Boss RC-600/system-program>) | Boss RC-600 system program update |
 | [`Focusrite Saffire Pro 40`](<Focusrite Saffire Pro 40>) | Focusrite Saffire Pro 40, superseded |
 | [`Focusrite Scarlett 18i20 4th Gen`](<Focusrite Scarlett 18i20 4th Gen>) | Focusrite Scarlett 18i20 4th Gen |
 | [`Focusrite Scarlett 4i4`](<Focusrite Scarlett 4i4>) | Focusrite Scarlett 4i4, superseded |
@@ -289,7 +292,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | --- | --- | --- |
 | Akai MPC One Plus | [`MPC Standalone OS - User Guide - v3.9.pdf`](<Akai MPC One Plus/MPC Standalone OS - User Guide - v3.9.pdf>); [`inMusic Software Center-darwin-universal-1.39.0.zip`](<Akai MPC One Plus/inMusic Software Center-darwin-universal-1.39.0.zip>); [`MPC (Gen 1) 3.9.0 Updater.app.zip`](<Akai MPC One Plus/MPC (Gen 1) 3.9.0 Updater.app.zip>); [`MPC (Gen 2) 3.9.0 Updater.app.zip`](<Akai MPC One Plus/MPC (Gen 2) 3.9.0 Updater.app.zip>) | [Akai MPC One Plus](https://www.akaipro.com/mpc-one-plus/) |
 | Alesis V49 MKII | [`V49 MKII - User Guide - v1.3.pdf`](<Alesis V49 MKII/V49 MKII - User Guide - v1.3.pdf>); [`Alesis V Series MKII Preset Editor 1.0.1.dmg.zip`](<Alesis V49 MKII/Alesis V Series MKII Preset Editor 1.0.1.dmg.zip>) | [Alesis V49 MKII](https://www.alesis.com/products/view2/v49-mkii) |
-| Boss RC-600 | [`RC-600_eng05_W.pdf`](<Boss RC-600/RC-600_eng05_W.pdf>); [`RC-600_Parameter_eng04_W.pdf`](<Boss RC-600/RC-600_Parameter_eng04_W.pdf>); [`Erp_Lot6_IR-200_Leaflet_multi01_W.pdf`](<Boss RC-600/Erp_Lot6_IR-200_Leaflet_multi01_W.pdf>); [`rc_bts_m150.zip`](<Boss RC-600/software/rc_bts_m150.zip>); [`rc_rhythmconv_m101.zip`](<Boss RC-600/software/rc_rhythmconv_m101.zip>); [`rc600_mac14drv_m101.tgz`](<Boss RC-600/software/rc600_mac14drv_m101.tgz>) | [Boss RC-600](https://www.boss.info/global/products/rc-600/) |
+| Boss RC-600 | [`RC-600_eng05_W.pdf`](<Boss RC-600/RC-600_eng05_W.pdf>); [`RC-600_Parameter_eng04_W.pdf`](<Boss RC-600/RC-600_Parameter_eng04_W.pdf>); [`Erp_Lot6_IR-200_Leaflet_multi01_W.pdf`](<Boss RC-600/Erp_Lot6_IR-200_Leaflet_multi01_W.pdf>); [`rc_bts_m150.zip`](<Boss RC-600/software/rc_bts_m150.zip>); [`rc_rhythmconv_m101.zip`](<Boss RC-600/software/rc_rhythmconv_m101.zip>); [`rc600_mac14drv_m101.tgz`](<Boss RC-600/software/rc600_mac14drv_m101.tgz>); [`rc600_sys_v150.zip`](<Boss RC-600/system-program/rc600_sys_v150.zip>) | [Boss RC-600](https://www.boss.info/global/products/rc-600/) |
 | Focusrite Scarlett 18i20 4th Gen | [`scarlett_18i20_4th_gen_user_guide_v3_en.pdf`](<Focusrite Scarlett 18i20 4th Gen/scarlett_18i20_4th_gen_user_guide_v3_en.pdf>) | [Focusrite Scarlett 18i20 4th Gen](https://us.focusrite.com/products/scarlett-18i20) |
 | Focusrite Saffire Pro 40, superseded | [`userguidepro40english04.pdf`](<Focusrite Saffire Pro 40/userguidepro40english04.pdf>); [`Saffire MixControl-3.9.3168_0.dmg.zip`](<Focusrite Saffire Pro 40/Saffire MixControl-3.9.3168_0.dmg.zip>) | [Focusrite Saffire Pro 40](https://focusrite.com/products/saffire-pro-40) |
 | Focusrite Scarlett 4i4, superseded | [`Focusrite Control 2 1.1014.0.0.dmg.zip`](<Focusrite Scarlett 4i4/Focusrite Control 2 1.1014.0.0.dmg.zip>) | [Focusrite Scarlett 4i4](https://focusrite.com/products/scarlett-4i4) |
