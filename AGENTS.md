@@ -25,6 +25,19 @@ This file captures the working studio hardware context for future Codex sessions
 - Driver note: The RC-600 driver requires the RC-600 `SYSTEM > USB > AUDIO` setting to be `VENDOR`; the installer reports that macOS must be restarted after installation.
 - Update note: The system program is firmware for the RC-600 itself; check the unit version before applying it, and copy the extracted files to the RC-600 while it is booted in update mode.
 
+### Neural DSP Quad Cortex
+
+- Role: Guitar/bass digital amp modeler, multi-effects floorboard, profiler/capture device, and USB audio/MIDI-capable hardware unit.
+- Folder: `Neural DSP Quad Cortex`
+- Main docs: `Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.pdf`, `Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.pdf`
+- Saved web docs: `Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.html`, `Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.html`, `Neural DSP Quad Cortex/docs/Neural DSP User Manuals support page 2026-02-12.html`
+- Mac software archive: `Neural DSP Quad Cortex/software/Cortex Control v4.0.1.pkg`
+- Inventory serial: `QA00AN529`
+- USB audio note: The user manual describes Quad Cortex as USB Audio Class 2.0 compliant with 16 channels, 8 in / 8 out, fixed at 48 kHz.
+- MIDI note: The device has 5-pin DIN MIDI IN and THRU/OUT plus USB MIDI capability.
+- Power note: The user manual lists 12V DC, 3A, center-negative power.
+- Current setup note: Routing diagrams have not yet been updated for this device.
+
 ### Focusrite Scarlett 18i20 4th Gen
 
 - Role: Primary Mac audio and MIDI interface for Logic.
@@ -280,6 +293,9 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | [`Focusrite Scarlett 4i4`](<Focusrite Scarlett 4i4>) | Focusrite Scarlett 4i4, superseded |
 | [`Gitfos C1pro USB hub`](<Gitfos C1pro USB hub>) | Gitfos C1Pro USB Hub |
 | [`Gitfos C1pro USB hub/Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro_files`](<Gitfos C1pro USB hub/Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro_files>) | Gitfos C1Pro saved webpage assets |
+| [`Neural DSP Quad Cortex`](<Neural DSP Quad Cortex>) | Neural DSP Quad Cortex |
+| [`Neural DSP Quad Cortex/docs`](<Neural DSP Quad Cortex/docs>) | Neural DSP Quad Cortex docs and saved web manuals |
+| [`Neural DSP Quad Cortex/software`](<Neural DSP Quad Cortex/software>) | Neural DSP Quad Cortex Mac software installer |
 | [`Roland V-Drums V51`](<Roland V-Drums V51>) | Roland V-Drums V51 |
 | [`Roland V-Drums V51/cloud manager`](<Roland V-Drums V51/cloud manager>) | Roland Cloud Manager installer |
 | [`Roland V-Drums V51/driver`](<Roland V-Drums V51/driver>) | Roland V51 Mac driver |
@@ -297,6 +313,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | Focusrite Saffire Pro 40, superseded | [`userguidepro40english04.pdf`](<Focusrite Saffire Pro 40/userguidepro40english04.pdf>); [`Saffire MixControl-3.9.3168_0.dmg.zip`](<Focusrite Saffire Pro 40/Saffire MixControl-3.9.3168_0.dmg.zip>) | [Focusrite Saffire Pro 40](https://focusrite.com/products/saffire-pro-40) |
 | Focusrite Scarlett 4i4, superseded | [`Focusrite Control 2 1.1014.0.0.dmg.zip`](<Focusrite Scarlett 4i4/Focusrite Control 2 1.1014.0.0.dmg.zip>) | [Focusrite Scarlett 4i4](https://focusrite.com/products/scarlett-4i4) |
 | Gitfos C1Pro USB Hub | [`Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html`](<Gitfos C1pro USB hub/Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html>) | [Gitfos C1Pro](https://gitfos.com/products/c1pro) |
+| Neural DSP Quad Cortex | [`Quad Cortex User Manual 4.0.0.pdf`](<Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.pdf>); [`Quad Cortex Device List 2026-01-21.pdf`](<Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.pdf>); [`Quad Cortex User Manual 4.0.0.html`](<Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.html>); [`Quad Cortex Device List 2026-01-21.html`](<Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.html>); [`Neural DSP User Manuals support page 2026-02-12.html`](<Neural DSP Quad Cortex/docs/Neural DSP User Manuals support page 2026-02-12.html>); [`Cortex Control v4.0.1.pkg`](<Neural DSP Quad Cortex/software/Cortex Control v4.0.1.pkg>) | [Neural DSP Quad Cortex](https://neuraldsp.com/quad-cortex) |
 | Roland V-Drums V51 | [`V51_QuickStart_eng02_W.pdf`](<Roland V-Drums V51/V51_QuickStart_eng02_W.pdf>); [`V51_Reference_eng03_W.pdf`](<Roland V-Drums V51/V51_Reference_eng03_W.pdf>); [`V51_MIDI_Implementation_eng01_W.pdf`](<Roland V-Drums V51/V51_MIDI_Implementation_eng01_W.pdf>); [`V51_DataList_eng02_W.pdf`](<Roland V-Drums V51/V51_DataList_eng02_W.pdf>); [`V51_RCC_SetupGuide_eng01_W.pdf`](<Roland V-Drums V51/V51_RCC_SetupGuide_eng01_W.pdf>); [`V71_V51_V31_RolandCloud_eng02_W.pdf`](<Roland V-Drums V51/V71_V51_V31_RolandCloud_eng02_W.pdf>); [`V-Drums_Play_eng03_W.pdf`](<Roland V-Drums V51/V-Drums_Play_eng03_W.pdf>); [`RolandCloudManager-3-1-23-Universal.dmg`](<Roland V-Drums V51/cloud manager/RolandCloudManager-3-1-23-Universal.dmg>); [`v51_mac13drv_m100.tgz`](<Roland V-Drums V51/driver/v51_mac13drv_m100.tgz>); [`v51_sys_v210.zip`](<Roland V-Drums V51/system-program/v51_sys_v210.zip>) | [Roland V-Drums V51](https://www.roland.com/us/products/v51/) |
 | Yamaha P-125 Digital Piano | [`P-125 Owner's Manual.pdf`](<Yamaha P-125 Digital Piano/P-125 Owner's Manual.pdf>); [`P-125 P-121 MIDI Reference.pdf`](<Yamaha P-125 Digital Piano/P-125 P-121 MIDI Reference.pdf>); [`MIDI Basics.pdf`](<Yamaha P-125 Digital Piano/MIDI Basics.pdf>); [`P-125 Quick Operation Guide.pdf`](<Yamaha P-125 Digital Piano/P-125 Quick Operation Guide.pdf>); [`Smart Device Connection Manual for Android.pdf`](<Yamaha P-125 Digital Piano/Smart Device Connection Manual for Android.pdf>) | [Yamaha P-125](https://usa.yamaha.com/products/musical_instruments/pianos/p_series/p-125/index.html) |
 
