@@ -38,6 +38,18 @@ This file captures the working studio hardware context for future Codex sessions
 - Power note: The user manual lists 12V DC, 3A, center-negative power.
 - Current setup note: Routing diagrams have not yet been updated for this device.
 
+### Xvive A58 Guitar Wireless System
+
+- Role: 5.8 GHz wireless guitar/bass/instrument system for replacing a 1/4" instrument cable between an instrument or pedal and an amp, amp modeler, pedalboard, or audio interface.
+- Folder: `XVive A58 Guitar Wireless System`
+- Manual: `XVive A58 Guitar Wireless System/Xvive-A58-Guitar-wireless-system-manual-V1.pdf`
+- Product page: [Xvive A58 Guitar Wireless System](https://xvive.com/audio/product/a58-guitar-wireless-system/)
+- System contents note: Complete systems include a transmitter, receiver, USB-C charging cable, and carry case.
+- Audio note: The A58 uses 24-bit/48 kHz audio, less than 5 ms latency, six wireless channels, and 1/4" TS instrument connections.
+- Pickup note: Supports passive and active pickups; active mode is enabled from the transmitter channel button.
+- Power note: Transmitter and receiver are rechargeable over USB-C with up to 5 hours of battery life.
+- Current setup note: Routing diagrams have not yet been updated for this device.
+
 ### Focusrite Scarlett 18i20 4th Gen
 
 - Role: Primary Mac audio and MIDI interface for Logic.
@@ -300,6 +312,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | [`Roland V-Drums V51/cloud manager`](<Roland V-Drums V51/cloud manager>) | Roland Cloud Manager installer |
 | [`Roland V-Drums V51/driver`](<Roland V-Drums V51/driver>) | Roland V51 Mac driver |
 | [`Roland V-Drums V51/system-program`](<Roland V-Drums V51/system-program>) | Roland V51 system program update |
+| [`XVive A58 Guitar Wireless System`](<XVive A58 Guitar Wireless System>) | Xvive A58 Guitar Wireless System |
 | [`Yamaha P-125 Digital Piano`](<Yamaha P-125 Digital Piano>) | Yamaha P-125 Digital Piano |
 
 ### Device Documents And Websites
@@ -315,6 +328,7 @@ No Scarlett 18i20 rear line output jacks are connected in this setup.
 | Gitfos C1Pro USB Hub | [`Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html`](<Gitfos C1pro USB hub/Gitfos 18 in 1 Powered USB C Hub with 4K HDMI _ C1Pro.html>) | [Gitfos C1Pro](https://gitfos.com/products/c1pro) |
 | Neural DSP Quad Cortex | [`Quad Cortex User Manual 4.0.0.pdf`](<Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.pdf>); [`Quad Cortex Device List 2026-01-21.pdf`](<Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.pdf>); [`Quad Cortex User Manual 4.0.0.html`](<Neural DSP Quad Cortex/docs/Quad Cortex User Manual 4.0.0.html>); [`Quad Cortex Device List 2026-01-21.html`](<Neural DSP Quad Cortex/docs/Quad Cortex Device List 2026-01-21.html>); [`Neural DSP User Manuals support page 2026-02-12.html`](<Neural DSP Quad Cortex/docs/Neural DSP User Manuals support page 2026-02-12.html>); [`Cortex Control v4.0.1.pkg`](<Neural DSP Quad Cortex/software/Cortex Control v4.0.1.pkg>) | [Neural DSP Quad Cortex](https://neuraldsp.com/quad-cortex) |
 | Roland V-Drums V51 | [`V51_QuickStart_eng02_W.pdf`](<Roland V-Drums V51/V51_QuickStart_eng02_W.pdf>); [`V51_Reference_eng03_W.pdf`](<Roland V-Drums V51/V51_Reference_eng03_W.pdf>); [`V51_MIDI_Implementation_eng01_W.pdf`](<Roland V-Drums V51/V51_MIDI_Implementation_eng01_W.pdf>); [`V51_DataList_eng02_W.pdf`](<Roland V-Drums V51/V51_DataList_eng02_W.pdf>); [`V51_RCC_SetupGuide_eng01_W.pdf`](<Roland V-Drums V51/V51_RCC_SetupGuide_eng01_W.pdf>); [`V71_V51_V31_RolandCloud_eng02_W.pdf`](<Roland V-Drums V51/V71_V51_V31_RolandCloud_eng02_W.pdf>); [`V-Drums_Play_eng03_W.pdf`](<Roland V-Drums V51/V-Drums_Play_eng03_W.pdf>); [`RolandCloudManager-3-1-23-Universal.dmg`](<Roland V-Drums V51/cloud manager/RolandCloudManager-3-1-23-Universal.dmg>); [`v51_mac13drv_m100.tgz`](<Roland V-Drums V51/driver/v51_mac13drv_m100.tgz>); [`v51_sys_v210.zip`](<Roland V-Drums V51/system-program/v51_sys_v210.zip>) | [Roland V-Drums V51](https://www.roland.com/us/products/v51/) |
+| Xvive A58 Guitar Wireless System | [`Xvive-A58-Guitar-wireless-system-manual-V1.pdf`](<XVive A58 Guitar Wireless System/Xvive-A58-Guitar-wireless-system-manual-V1.pdf>) | [Xvive A58 Guitar Wireless System](https://xvive.com/audio/product/a58-guitar-wireless-system/) |
 | Yamaha P-125 Digital Piano | [`P-125 Owner's Manual.pdf`](<Yamaha P-125 Digital Piano/P-125 Owner's Manual.pdf>); [`P-125 P-121 MIDI Reference.pdf`](<Yamaha P-125 Digital Piano/P-125 P-121 MIDI Reference.pdf>); [`MIDI Basics.pdf`](<Yamaha P-125 Digital Piano/MIDI Basics.pdf>); [`P-125 Quick Operation Guide.pdf`](<Yamaha P-125 Digital Piano/P-125 Quick Operation Guide.pdf>); [`Smart Device Connection Manual for Android.pdf`](<Yamaha P-125 Digital Piano/Smart Device Connection Manual for Android.pdf>) | [Yamaha P-125](https://usa.yamaha.com/products/musical_instruments/pianos/p_series/p-125/index.html) |
 
 ### Operational / Repo Discipline
