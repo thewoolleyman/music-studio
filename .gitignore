@@ -18,6 +18,7 @@ Icon?
 *.temp
 
 # Obsidian local workspace/session state
+.obsidian/appearance.json
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache/
